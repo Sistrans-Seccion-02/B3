@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ProyectoSistrans" id="655440A9-D77C-8550-F50C-E874F2F183EC" version="3.5">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 16:31:21 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>655440A9-D77C-8550-F50C-E874F2F183EC</designId>
+</OSDM_Design>
