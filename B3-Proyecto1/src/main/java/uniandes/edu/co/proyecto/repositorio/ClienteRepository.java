@@ -10,29 +10,27 @@ import uniandes.edu.co.proyecto.modelo.Cliente;
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     @Query(value = "SELECT * FROM clientes WHERE id_cliente = :idCliente", nativeQuery = true)
-    Cliente darCliente(@Param("idCliente") String idCliente);
+    Cliente darCliente(@Param("idCliente") int idCliente);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO clientes ( nombre, reserva_id, id_cliente) VALUES (:nombre, :reservaId, :idCliente)", nativeQuery = true)
+    @Query(value = "INSERT INTO clientes ( nombre, id_cliente) VALUES (:nombre, :idCliente)", nativeQuery = true)
     void registrarCliente(
         @Param("nombre") String nombre, 
-        @Param("reservaId") String reservaId,
-        @Param("idCliente") String idCliente
+        @Param("idCliente") int idCliente
 
     );
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE clientes SET nombre=:nombre, reserva_id=:reservaId WHERE id_cliente=:idCliente", nativeQuery = true)
+    @Query(value = "UPDATE clientes SET nombre=:nombre WHERE id_cliente=:idCliente", nativeQuery = true)
     void actualizarCliente(
-        @Param("idCliente") String idCliente,
-        @Param("nombre") String nombre, 
-        @Param("reservaId") String reservaId
+        @Param("idCliente") int idCliente,
+        @Param("nombre") String nombre
     );
 
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM clientes WHERE id_cliente=:idCliente", nativeQuery = true)
-    void eliminarCliente(@Param("idCliente") String idCliente);
+    void eliminarCliente(@Param("idCliente") int idCliente);
 }

@@ -1,30 +1,75 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.sql.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="consumos")
 public class Consumo {
-    
-    private double descuentoAlojamiento; // Porcentaje de descuento en el alojamiento
-    private double descuentoBarRestaurante; // Porcentaje de descuento en consumos de bar y restaurante
-    private boolean incluyeAlimentacion;
-    private int limiteBebidas; // Por ejemplo: 3 cervezas diarias
-    
+
+    private Servicio consumo;
+    private String descripcion;
+    private Double costo;
+    private Date fecha;
+    private int habitacioId;
+    private int id;
+
     // Constructor
-    public Consumo(double descuentoAlojamiento, double descuentoBarRestaurante, boolean incluyeAlimentacion, int limiteBebidas) {
-        this.descuentoAlojamiento = descuentoAlojamiento;
-        this.descuentoBarRestaurante = descuentoBarRestaurante;
-        this.incluyeAlimentacion = incluyeAlimentacion;
-        this.limiteBebidas = limiteBebidas;
+    
+    public Consumo(Servicio consumo, String descripcion, Double costo, Date fecha, int habitacioId, int id) {    
+        this.consumo = consumo;
+        this.descripcion = descripcion;
+        this.costo = costo;
+        this.fecha = fecha;
+        this.habitacioId = habitacioId;
+        this.id = id;
+    }
+    public Consumo() 
+    {;}
+
+    // Getters y Setters
+    public Servicio getConsumo() {
+        return consumo;
+    }
+    public void setConsumo(Servicio consumo) {
+        this.consumo = consumo;
+    }
+    public String getDescripcion() {
+        return descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;    
+    }
+    public Double getCosto() {
+        return costo;
+    }
+    public void setCosto(Double costo) {
+        this.costo = costo;
+    }
+    public Date getFecha() {
+        return fecha;
+    }
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;    
+    }
+    public int getHabitacioId() {
+        return habitacioId;
+    }
+    public void setHabitacioId(int habitacioId) {
+        this.habitacioId = habitacioId;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;    
     }
 
-    // Métodos getters y setters
-    // ... (aquí deberías agregar todos los getters y setters para cada atributo)
 
-    @Override
-    public String toString() {
-        return "Consumo{" +
-                "descuentoAlojamiento=" + descuentoAlojamiento +
-                ", descuentoBarRestaurante=" + descuentoBarRestaurante +
-                ", incluyeAlimentacion=" + incluyeAlimentacion +
-                ", limiteBebidas=" + limiteBebidas +
-                '}';
-    }
+
 }
