@@ -12,7 +12,7 @@ private Integer capacidad;
 private String estilo;
 //falta plato(relacion)
 
-public Restaurante(String nombre, Integer capacidad, String estilo)
+public Restaurante(int id, String nombre, Integer capacidad, String estilo)
 {   
     this.nombre = nombre;
     this.capacidad = capacidad;

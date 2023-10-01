@@ -14,7 +14,7 @@ public class Piscina extends Servicio{
     private int capacidad;
     private float profundidad;
     
-    public Piscina(Date horaInicio, Date horaFinal, int capacidad, float profundidad) {
+    public Piscina(int id, Date horaInicio, Date horaFinal, int capacidad, float profundidad) {
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
         this.capacidad = capacidad;

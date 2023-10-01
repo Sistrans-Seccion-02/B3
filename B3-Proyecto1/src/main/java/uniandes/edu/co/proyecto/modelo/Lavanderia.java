@@ -13,7 +13,7 @@ public class Lavanderia extends Servicio{
     private int prenda;
     private int costo;
 
-public Lavanderia(int prenda, int zapatos, int costo) {
+public Lavanderia(int id, int prenda, int zapatos, int costo) {
     this.zapatos = zapatos;
     this.prenda = prenda;
     this.costo = costo;

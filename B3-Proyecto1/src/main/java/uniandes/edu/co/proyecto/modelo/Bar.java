@@ -10,7 +10,7 @@ public class Bar extends Servicio{
     private int capacidad;
     private String estilo;
     
-    public Bar(int capacidad, String estilo) {
+    public Bar(int id, int capacidad, String estilo) {
         this.capacidad = capacidad;
         this.estilo = estilo;
     }

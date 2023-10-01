@@ -13,7 +13,7 @@ public class Gimnasio extends Servicio{
     private Date horaInicio;
     private Date horaFinal;
     
-    public Gimnasio(int capacidad, int maquinas, Date horaInicio, Date horaFinal) {
+    public Gimnasio(int id, int capacidad, int maquinas, Date horaInicio, Date horaFinal) {
         this.capacidad = capacidad;
         this.maquinas = maquinas;
         this.horaInicio = horaInicio;

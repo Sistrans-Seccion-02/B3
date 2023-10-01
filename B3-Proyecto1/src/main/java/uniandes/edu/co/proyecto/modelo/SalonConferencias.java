@@ -9,7 +9,7 @@ public class SalonConferencias extends Servicio{
     private int capacidad;
     //clase de reserva servicio
     
-    public SalonConferencias(int costo, int capacidad) {
+    public SalonConferencias(int id, int costo, int capacidad) {
         this.costo = costo;
         this.capacidad = capacidad;
     }
