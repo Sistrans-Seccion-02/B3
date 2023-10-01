@@ -3,7 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 
-@Table(name="salon de reuniones")
+@Table(name="salon_de_reuniones")
 @Entity
 public class SalonReuniones extends Servicio{
 

@@ -10,10 +10,14 @@ public class Bar extends Servicio{
     private int capacidad;
     private String estilo;
     
-    public Bar() {
+    public Bar(int capacidad, String estilo) {
         this.capacidad = capacidad;
         this.estilo = estilo;
     }
+
+    public Bar()
+    {;}
+
 
     public int getCapacidad() {
         return capacidad;
