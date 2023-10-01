@@ -7,133 +7,84 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
-@Table(name="reservas")
+@Table(name="Reservas")
 @Entity
 public class Reserva {
-
+    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String tipo;
-    private Date fechaEntrada;
-    private Date fechaSalida;
-    private String responsable;
+
+    @JoinColumn(name="fechaEntrada", referencedColumnName = "fechaEntrada")
+    private Checkin fechaEntrada;
+
+    @JoinColumn(name="fechaSalida", referencedColumnName = "fechaSalida")
+    private Checkout fechaSalida;
 
 
-    @ManyToOne
-    @JoinColumn(name="nombre_hotel", referencedColumnName = "nombre")
-    private Hotel nombre_hotel;
-
-
-    //@ManytoOne
-    //@JoinColumn(name="planReserva", referencedColumnName = "plan")
-    //private Plan planReserva;
-
-    //@ManytoOne
-    //@JoinColumn(name="id_cliente", referencedColumnName = "id")
-    //private Cliente id_cliente;
-
-    //@ManytoOne
-    //@JoinColumn(name="checkin_id", referencedColumnName = "id")
-    //private Check-In checkin_id;
     
-    //@ManytoOne
-    //@JoinColumn(name="checkout_id", referencedColumnName = "id")
-    //private Check-Out checkout_id;
+    @JoinColumn(name="idCliente", referencedColumnName = "responsable")
+    private Cliente responsable;
+    
+    @JoinColumn(name="tipoPlan", referencedColumnName = "plan")
+    private Plan tipoPlan;
 
-    public Reserva(Integer id, String tipo, Date fechaEntrada, Date fechaSalida, String responsable,
-            Hotel nombre_hotel) {
-        this.id = id;
-        this.tipo = tipo;
+    private int numPersonas;
+
+    public Reserva(Cliente responsable, Plan tipoPlan, Checkin fechaEntrada, Checkout fechaSalida, int numPersonas){
+        this.responsable = responsable;
+        this.tipoPlan = tipoPlan;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
-        this.responsable = responsable;
-        this.nombre_hotel = nombre_hotel;
+        this.numPersonas=numPersonas;
     }
 
+    public Reserva(){
+        ;
+    }
 
-
-    public Integer getId() {
+    public Integer getId(){
         return id;
     }
-
-
-
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(){
+        this.id=id;
     }
 
-
-
-    public String getTipo() {
-        return tipo;
-    }
-
-
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-
-
-    public Date getFechaEntrada() {
-        return fechaEntrada;
-    }
-
-
-
-    public void setFechaEntrada(Date fechaEntrada) {
-        this.fechaEntrada = fechaEntrada;
-    }
-
-
-
-    public Date getFechaSalida() {
-        return fechaSalida;
-    }
-
-
-
-    public void setFechaSalida(Date fechaSalida) {
-        this.fechaSalida = fechaSalida;
-    }
-
-
-
-    public String getResponsable() {
+    public Cliente getResponsable(){
         return responsable;
     }
-
-
-
-    public void setResponsable(String responsable) {
-        this.responsable = responsable;
+    public void setResponsable(){
+        this.responsable=responsable;
+    }
+    
+    public Plan getTipoPlan(){
+        return tipoPlan;
+    }
+    public void setTipoPlan(){
+        this.tipoPlan=tipoPlan;
     }
 
-
-
-    public Hotel getNombre_hotel() {
-        return nombre_hotel;
+    public Checkin getFechaEntrada(){
+        return fechaEntrada;
+    }
+    public void setfechaEntrada(){
+        this.fechaEntrada=fechaEntrada;
+    }
+     public Checkout getFechaSalida(){
+        return fechaSalida;
+    }
+    public void setfechaSalida(){
+        this.fechaSalida=fechaSalida;
     }
 
-
-
-    public void setNombre_hotel(Hotel nombre_hotel) {
-        this.nombre_hotel = nombre_hotel;
+    public int getNumPersonas(){
+        return numPersonas;
     }
-
-    
-
-    
-
-    
-
-
+    public void setNumPersonas(){
+        this.numPersonas=numPersonas;
+    }
     
 }
