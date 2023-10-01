@@ -11,7 +11,7 @@ private int capacidad;
 private int costoAdicional;
 private int costo;
 
-public SalonReuniones(int capacidad, int costoAdicional, int costo) {
+public SalonReuniones(int id, int capacidad, int costoAdicional, int costo) {
     this.capacidad = capacidad;
     this.costoAdicional = costoAdicional;
     this.costo = costo;

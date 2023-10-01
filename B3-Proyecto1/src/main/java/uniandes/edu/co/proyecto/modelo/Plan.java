@@ -7,7 +7,7 @@ public class Plan {
     private Consumo consumo;
     
     // Constructor
-    public Plan(String nombre, double costoTotal, Consumo consumo) {
+    public Plan(int id, String nombre, double costoTotal, Consumo consumo) {
         this.nombre = nombre;
         this.costoTotal = costoTotal;
         this.consumo = consumo;

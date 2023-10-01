@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 public class Internet extends Servicio{
     private int capacidad;
 
-    public Internet(int capacidad){
+    public Internet(int id, int capacidad){
         this.capacidad = capacidad;
     }
 
