@@ -9,11 +9,12 @@ import jakarta.persistence.Table;
 @Entity
 //MIRARNOMBRE
 @Table(name="servicios")
-public abstract class Servicio {
+public class Servicio {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
+    
 
 }

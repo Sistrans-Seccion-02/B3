@@ -14,6 +14,10 @@ public class Spa extends Servicio{
         this.costo = costo;
     }
 
+    public Spa()
+    {;}
+
+
     public int getDuracion() {
         return duracion;
     }

@@ -50,10 +50,16 @@ public class BaresController {
     @PostMapping("/bares/{id}/edit/save")
     public String barEditarGuardar(@PathVariable("id") int id, @ModelAttribute Bar bar){
         barRepository.actualizarrBar(id, bar.getCapacidad(), bar.getEstilo());
-        return "redirect/bares";
+        return "redirect:/bares";
 
     }
-    
+
+    @GetMapping("/bares/{id}/delete")
+    public String barEliminar(@PathVariable("id") int id){
+        barRepository.eliminarBar(id);
+        return "redirect:/bares"; 
+    }
+
 
     
     
