@@ -14,6 +14,11 @@ public class SalonConferencias extends Servicio{
         this.capacidad = capacidad;
     }
 
+    public SalonConferencias()
+    {;}
+
+
+
     public int getCosto() {
         return costo;
     }

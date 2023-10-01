@@ -5,7 +5,6 @@ import jakarta.persistence.Table;
 
 @Table(name="spa")
 @Entity
-
 public class Spa extends Servicio{
     private int duracion;
     private int costo;
@@ -31,6 +30,6 @@ public class Spa extends Servicio{
         this.costo = costo;
     } 
 
-    
+
     
 }
