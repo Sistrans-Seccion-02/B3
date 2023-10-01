@@ -2,7 +2,7 @@ package uniandes.edu.co.proyecto.modelo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-@Table(name="salon conferencias")
+@Table(name="salon_conferencias")
 @Entity
 public class SalonConferencias extends Servicio{
     private int costo;

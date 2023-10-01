@@ -1,12 +1,19 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+
+@Table(name="lavanderias")
+@Entity
+
 public class Lavanderia extends Servicio{
 
-    private char zapatos;
-    private char prenda;
+    private int zapatos;
+    private int prenda;
     private int costo;
 
-public Lavanderia(char zapatos, char prenda, int costo) {
+public Lavanderia(int prenda, int zapatos, int costo) {
     this.zapatos = zapatos;
     this.prenda = prenda;
     this.costo = costo;
@@ -15,19 +22,19 @@ public Lavanderia(char zapatos, char prenda, int costo) {
 public Lavanderia()
 {;}
 
-public char getZapatos() {
+public int getZapatos() {
     return zapatos;
 }
 
-public void setZapatos(char zapatos) {
+public void setZapatos(int zapatos) {
     this.zapatos = zapatos;
 }
 
-public char getPrenda() {
+public int getPrenda() {
     return prenda;
 }
 
-public void setPrenda(char prenda) {
+public void setPrenda(int prenda) {
     this.prenda = prenda;
 }
 

@@ -4,23 +4,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
-@Table(name="piscina")
+@Table(name="productos_supermercado")
 @Entity
-public class Producto {
+public class ProductoSupermercado {
     
     @Id
     private String nombre;
     private int costo;
 
+    @ManyToOne
     @JoinColumn(name="idServicio", referencedColumnName = "id")
     private Servicio idServicio;
 
-    public Producto(String nombre, int costo, Servicio idServicio) {
+    public ProductoSupermercado(String nombre, int costo, Servicio idServicio) {
         this.nombre = nombre;
         this.costo = costo;
         this.idServicio = idServicio;
     }
+
+    public ProductoSupermercado()
+    {;}
 
     public String getNombre() {
         return nombre;

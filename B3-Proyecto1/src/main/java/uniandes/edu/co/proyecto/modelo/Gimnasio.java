@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 
-@Table(name="gimnasio")
+@Table(name="gimnasios")
 @Entity
 public class Gimnasio extends Servicio{
     private int capacidad;

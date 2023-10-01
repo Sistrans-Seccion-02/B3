@@ -3,7 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 
-@Table(name="internet")
+@Table(name="internets")
 @Entity
 public class Internet extends Servicio{
     private int capacidad;
