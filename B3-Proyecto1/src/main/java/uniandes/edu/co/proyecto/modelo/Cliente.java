@@ -1,30 +1,23 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.ArrayList;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+@Table(name="Clientes")
 @Entity
-@Table(name="clientes")
-public class Cliente {
+public class Cliente{
 
-    // Atributos
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private String nombre;
-    private String reservaId;  
-    private String idCliente;       
-    // Constructor
-    public Cliente(String nombre, String reservaId, String idCliente) {
-        this.nombre = nombre;
-        this.reservaId = reservaId;
-        this.idCliente = idCliente;
+
+    public Cliente(String nombre){
+        this.nombre=nombre;
     }
-
-    public Cliente()
-    {;}
-
-    // Métodos getters y setters
-
     public String getNombre() {
         return nombre;
     }
@@ -33,22 +26,4 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getReservaId() {
-        return reservaId;
-    }
-
-    public void setReservaId(String reservaId) {
-        this.reservaId = reservaId;
-    }
-
-    public String getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
-    }
-
-
 }
-
