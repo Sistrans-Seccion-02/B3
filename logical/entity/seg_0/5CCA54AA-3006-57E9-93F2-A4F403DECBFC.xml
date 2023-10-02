@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5CCA54AA-3006-57E9-93F2-A4F403DECBFC" name="Piscinas">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 17:34:14 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>16D00166-0F15-602B-7BF5-84AF91D12BEC</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="capacidad" id="F2830224-EC80-EE51-3919-78C815776329">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 17:34:43 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="profundidad" id="4A3179D1-7BC7-D60C-C1EB-80193CD95A9C">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 17:50:36 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="horaInicio" id="695316C2-61C5-A5CF-612B-5637D6DB10FF">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-02 02:07:06 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="horaFinal" id="1260537D-76CA-25F5-66DB-6C4870328BD2">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-02 02:11:27 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

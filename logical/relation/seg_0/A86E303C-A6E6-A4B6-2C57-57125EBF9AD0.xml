@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SupermercadoProducto" directorySegmentName="seg_0" id="A86E303C-A6E6-A4B6-2C57-57125EBF9AD0">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:34:28 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="C620A825-F3B7-6132-4F35-D2FC96CA1EAF" value="true"/>
+</engineerTo>
+<sourcePk>AA52D276-FB5A-CDE6-407F-2F08084258F0</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>60143A4B-7B66-C7F6-3EDC-B04D2325637E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7A20E094-705E-3906-156F-7CC394D24AC7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

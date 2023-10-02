@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B25C0EF5-E11C-5A51-B81B-E9425B4BA674" name="Lavanderias">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 17:51:21 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>16D00166-0F15-602B-7BF5-84AF91D12BEC</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="zapatos" id="3952EBDF-B77A-FE19-3143-714EEBC2DEE8">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 17:51:30 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prenda" id="AD4EE6E9-BD64-4BE4-F3E3-9D450EB81C24">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 17:51:42 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="ABAE4235-4BA2-7E7E-E749-16C55E83F6D5">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 17:51:49 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

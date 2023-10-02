@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TipoHabitacion-Habitacion" directorySegmentName="seg_0" id="6D2898E2-44E4-07FF-4505-43D82EC512DE">
+<createdBy>manul</createdBy>
+<createdTime>2023-09-16 18:03:39 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<sourcePk>D5137FB8-340B-019B-DC82-78B6F2D4ED86</sourcePk>
+<targetPk>CD311256-1E81-FC62-19D4-6800EFAA9AA7</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>29E16AFA-B5FE-AF80-6CC7-54E4238D397D</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>276DB035-9EF8-9E64-568D-3B56AF8A2B0D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

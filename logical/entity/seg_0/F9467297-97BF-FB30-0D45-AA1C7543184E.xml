@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F9467297-97BF-FB30-0D45-AA1C7543184E" name="Bebidas_Bar">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:54:52 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="82F0D14C-A1B7-645C-BBB9-1465A43CBB28" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nombre" id="30928008-7E23-6FDD-57D5-43C4B872135B">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:55:45 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="82F0D14C-A1B7-645C-BBB9-1465A43CBB28" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="D2C2241A-6A87-929E-11FD-21D724E165EA">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:55:55 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="82F0D14C-A1B7-645C-BBB9-1465A43CBB28" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="8F006376-57E1-8EC8-BC25-B5924FD45B8C">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-02 01:21:41 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="82F0D14C-A1B7-645C-BBB9-1465A43CBB28" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_servicio" id="19032EDD-F734-3D5D-02D5-1E0305267FC2">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-02 02:47:44 UTC</createdTime>
+<generatorID>D2DADF74-E9B6-96E0-D716-544EFD096A02</generatorID>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="82F0D14C-A1B7-645C-BBB9-1465A43CBB28" value="true"/>
+</engineerTo>
+<referedAttribute>F2A9B781-14F0-E204-F494-3D8B8282F889</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="408EC582-1346-C7E5-70E0-E9CF87FE010F" name="BebidaBar PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:55:21 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="82F0D14C-A1B7-645C-BBB9-1465A43CBB28" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>8F006376-57E1-8EC8-BC25-B5924FD45B8C,D2DADF74-E9B6-96E0-D716-544EFD096A02</newElementsIDs>
+<usedAttributes>
+<attributeRef>8F006376-57E1-8EC8-BC25-B5924FD45B8C</attributeRef>
+<attributeRef>19032EDD-F734-3D5D-02D5-1E0305267FC2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

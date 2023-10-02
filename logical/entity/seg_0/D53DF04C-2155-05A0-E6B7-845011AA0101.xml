@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D53DF04C-2155-05A0-E6B7-845011AA0101" name="Productos_Tienda">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:52:51 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nombre" id="C8C2ADCA-14C0-1ABF-FA55-8BC27869F76F">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:53:08 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="3FC24C81-6949-1122-286A-FD29BCDE0B2F">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:53:17 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_servicio" id="47B08FC7-D2A6-7AD5-3238-C6DD2805706B">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:54:30 UTC</createdTime>
+<generatorID>299C7657-CE99-523B-3384-5EA85DD8CFEB</generatorID>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<referedAttribute>F2A9B781-14F0-E204-F494-3D8B8282F889</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="A9FD8EFD-326A-8F27-35B8-BB6AB40A8277">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-02 01:24:54 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7E93CE0D-8F6D-9291-E341-1B9B9B0A3099" name="ProductoTienda PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-01 02:53:38 UTC</createdTime>
+<ownerDesignName>ProyectoSistrans</ownerDesignName>
+<engineerTo>
+<item key="B872552E-F2C5-9C67-856B-B6431AA27ADA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>A9FD8EFD-326A-8F27-35B8-BB6AB40A8277</newElementsIDs>
+<usedAttributes>
+<attributeRef>A9FD8EFD-326A-8F27-35B8-BB6AB40A8277</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
