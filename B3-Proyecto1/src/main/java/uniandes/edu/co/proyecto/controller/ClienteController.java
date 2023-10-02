@@ -33,13 +33,13 @@ public class ClienteController {
 
     @PostMapping("/clientes/new/save")
     public String clienteGuardar(@ModelAttribute Cliente cliente){
-        clienteRepository.insertarCliente(cliente.getNombre());
+        clienteRepository.insertarCliente(cliente.getNumAcompañantes());
         return "redirect:/clientes";
     }
 
     @PostMapping("/clientes/{id}/edit/save")
     public String clienteEditarGuardar(@PathVariable("id") Integer id, @ModelAttribute Cliente cliente){
-        clienteRepository.actualizarCliente(id, cliente.getNombre());
+        clienteRepository.actualizarCliente(id, cliente.getNumAcompañantes());
         return "redirect:/clientes";
     }
 

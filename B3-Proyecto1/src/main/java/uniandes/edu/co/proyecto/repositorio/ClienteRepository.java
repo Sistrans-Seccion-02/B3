@@ -25,13 +25,13 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO clientes (nombre) VALUES (B3-Proyecto1_sequence.nextval, :nombre)", nativeQuery = true)
-    void insertarCliente(@Param("nombre") String nombre);
+    @Query(value = "INSERT INTO clientes (id, numAcompañantes) VALUES (:id, :numAcompañantes)", nativeQuery = true)
+    void insertarCliente( @Param("numAcompañantes") Integer numAcompañantes) ;
    
     @Modifying
     @Transactional
-    @Query(value = "UPDATE clientes SET nombre=:nombre WHERE id=:id", nativeQuery = true)
-    void actualizarCliente(@Param("id") int id, @Param("nombre") String nombre);
+    @Query(value = "UPDATE clientes SET  numAcompañantes=:numAcompañantes WHERE id=:id", nativeQuery = true)
+    void actualizarCliente(@Param("id") int id, @Param("numAcompañantes") Integer numAcompañantes);
 
 
     @Modifying
