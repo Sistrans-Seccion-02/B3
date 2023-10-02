@@ -1,5 +1,6 @@
 package uniandes.edu.co.proyecto.modelo;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import uniandes.edu.co.proyecto.modelo.TipoHabitacion;
 
@@ -10,7 +11,7 @@ public class Habitacion {
     // Atributos de la habitación
     private int id;
     private TipoHabitacion tipo;  // Ejemplo: "Suite", "Doble", "Sencilla"
-
+  
     // Constructor
     public Habitacion(TipoHabitacion tipo, int id) {
         this.tipo = tipo;

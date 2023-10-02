@@ -18,7 +18,7 @@ import org.springframework.ui.Model;
 
 @Controller
 
-@RequestMapping("/api/clientes")
+@RequestMapping("/clientes")
 public class ClientesController {
 
     @Autowired
@@ -32,8 +32,8 @@ public class ClientesController {
 
     // Obtener un cliente por ID
     @GetMapping("/{id}")
-    public Cliente getClienteById(@PathVariable Long id) {
-        return clientesRepository.findById(id).orElse(null);
+    public Cliente getClienteById(@PathVariable int id) {
+        return clientesRepository.darCliente(id);
     }
 
     // Registrar un cliente
@@ -42,28 +42,28 @@ public class ClientesController {
         return clientesRepository.save(cliente);
     }
 
-// Formulario de edición para un cliente
-@GetMapping("/clientes/{id}/edit")
-public String clienteEditarForm(@PathVariable("id") String id, Model model) {
-    Cliente cliente = clientesRepository.darCliente(id);
-    if (cliente != null) {
-        model.addAttribute("cliente", cliente);
-        return "clienteEditar";  // Retorna la vista (JSP, Thymeleaf, etc.) correspondiente al formulario de edición
-    } else {
-        return "redirect:/clientes";  // Si no se encuentra el cliente, redirecciona a la lista de clientes
+    // Formulario de edición para un cliente
+    @GetMapping("/clientes/{id}/edit")
+    public String clienteEditarForm(@PathVariable("id") int id, Model model) {
+        Cliente cliente = clientesRepository.darCliente(id);
+        if (cliente != null) {
+            model.addAttribute("cliente", cliente);
+            return "clienteEditar";  // Retorna la vista (JSP, Thymeleaf, etc.) correspondiente al formulario de edición
+        } else {
+            return "redirect:/clientes";  // Si no se encuentra el cliente, redirecciona a la lista de clientes
+        }
     }
-}
 
-// Guardar los cambios del cliente después de editar
-@PostMapping("/clientes/{id}/edit/save")
-public String clienteEditarGuardar(@PathVariable("id") String id, @ModelAttribute Cliente cliente) {
-    clientesRepository.actualizarCliente(id, cliente.getNombre(), cliente.getReservaId());
-    return "redirect:/clientes";  // Redirecciona a la lista de clientes después de guardar los cambios
-}
-
-    // Eliminar un cliente
-    @DeleteMapping("/{id}")
-    public void eliminarCliente(@PathVariable Long id) {
-        clientesRepository.deleteById(id);
+    // Guardar los cambios del cliente después de editar
+    @PostMapping("/clientes/{id}/edit/save")
+    public String clienteEditarGuardar(@PathVariable("id") int id, @ModelAttribute Cliente cliente) {
+        clientesRepository.actualizarCliente(id, cliente.getNombre());
+        return "redirect:/clientes";  // Redirecciona a la lista de clientes después de guardar los cambios
     }
-}
+
+        // Eliminar un cliente
+        @DeleteMapping("/{id}")
+        public void eliminarCliente(@PathVariable int id) {
+            clientesRepository.eliminarCliente(id);
+        }
+    }
