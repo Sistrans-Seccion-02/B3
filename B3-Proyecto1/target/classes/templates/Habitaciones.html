@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Habitaciones</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Habitación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="habitacion : ${habitaciones}">
+                <td th:text="${habitacion.id}"></td>
+                <td th:text="${habitacion.tipo}"></td>
+            <td>
+                <a th:href="@{/habitaciones/{id}/edit(id=${habitacion.id})}" class="btn btn-info">Editar</a>
+                <a th:href="@{/habitaciones/{id}/delete(id=${habitacion.id})}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tbody>
+    </table>
+    <a th:href="@{/}" class="btn btn-secondary mt-3">Volver</a>
+</div>
+</body>
+</html>

@@ -21,7 +21,7 @@ public class Usuario {
     protected String tipoDocumento;
     protected String correoElectronico;
 
-
+    
     public Usuario(){
         ;
     }

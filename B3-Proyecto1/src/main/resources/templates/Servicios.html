@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
-    <link rel="stylesheet" type="text/css" th:href ="@{/css/bootstrap.min.css}"/>
-
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
-    <div>
-        <h1>Lista de Servicios</h1>
-        <table calss = "table table-hover table border"
+<div class="container mt-5">
+    <h2>Servicios</h2>
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Precio</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                <th>ID</th>
+                <th>Nombre del Servicio</th>
+                <th>Descripción</th>
             </tr>
-       
-    </div>
-
+        </thead>
+        <tbody>
+            <tr th:each="servicio : ${servicios}">
+                <td th:text="${servicio.id}"></td>
+                <td th:text="${servicio.nombre}"></td>
+                <td th:text="${servicio.descripcion}"></td>
+                <td> 
+                    <a th:href="@{/servicios/{id}/edit(id=${servicio.id})}" class="btn btn-info">Editar</a>
+                    <a th:href="@{/servicios/{id}/delete(id=${servicio.id})}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}" class="btn btn-secondary mt-3">Volver</a>
+</div>
 </body>
 </html>
