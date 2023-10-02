@@ -17,7 +17,7 @@ public interface ClienteUsuarioRepository extends JpaRepository<Cliente, Integer
     Collection<Cliente> darClientes();
 
     @Query(value = "SELECT * FROM clientes WHERE id= : id", nativeQuery= true)
-    Usuario darClienteID(@Param("id") Integer id);
+    Cliente darClienteID(@Param("id") Integer id);
    
 
     @Modifying

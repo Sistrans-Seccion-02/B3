@@ -15,15 +15,15 @@ public class Cliente extends Usuario{
 
     private Integer numAcompañantes;
 
-    public Cliente()
-    {;}
+
 
     public Cliente(String nombre, Integer numAcompañantes, String tipoDocumento, String correoElectronico){
         super(nombre, tipoDocumento, correoElectronico);
         this.numAcompañantes=numAcompañantes;
     }
 
-
+    public Cliente()
+    {;}
 
     public Integer getNumAcompañantes(){
         return numAcompañantes;

@@ -17,7 +17,7 @@ public interface EmpleadoRepository extends JpaRepository<Empleado, Integer>{
     Collection<Empleado> darEmpleados();
 
     @Query(value = "SELECT * FROM empleados WHERE id= : id", nativeQuery= true)
-    Usuario darEmpleadoID(@Param("id") Integer id);
+    Empleado darEmpleadoID(@Param("id") Integer id);
    
     @Modifying
     @Transactional

@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import uniandes.edu.co.proyecto.modelo.Cliente;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
     @Query(value = "SELECT * FROM clientes WHERE id_cliente = :idCliente", nativeQuery = true)
     Cliente darCliente(@Param("idCliente") int idCliente);
