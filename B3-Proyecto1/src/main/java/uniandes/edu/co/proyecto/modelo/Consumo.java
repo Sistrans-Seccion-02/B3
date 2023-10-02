@@ -6,18 +6,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="consumos")
 public class Consumo {
 
+    @JoinColumn(name="id_consumo", referencedColumnName = "servicios")
     private Servicio consumo;
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private String descripcion;
     private Double costo;
     private Date fecha;
     private int habitacioId;
-    private int id;
 
     // Constructor
     

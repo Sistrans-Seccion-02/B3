@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import uniandes.edu.co.proyecto.modelo.Empleado;
 import uniandes.edu.co.proyecto.modelo.Hotel;
-import uniandes.edu.co.proyecto.modelo.Usuario;
+
 import uniandes.edu.co.proyecto.repositorio.HotelRepository;
-import uniandes.edu.co.proyecto.repositorio.UsuarioRepository;
+
 
 @Controller
 public class HotelController {

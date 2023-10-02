@@ -7,18 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import uniandes.edu.co.proyecto.modelo.Bar;
 import uniandes.edu.co.proyecto.modelo.Cliente;
 import uniandes.edu.co.proyecto.modelo.Usuario;
-import uniandes.edu.co.proyecto.repositorio.ClienteRepository;
-import uniandes.edu.co.proyecto.repositorio.UsuarioRepository;
+import uniandes.edu.co.proyecto.repositorio.ClienteUsuarioRepository;
+
+
 
 @Controller
 public class ClienteController {
     @Autowired
-    private ClienteRepository clienteRepository;
-
+    private ClienteUsuarioRepository clienteRepository;
+    
     @GetMapping("/clientes")
     public String clientes(Model model, Integer id){
         model.addAttribute("clientes", clienteRepository.darClientes());
@@ -33,13 +32,13 @@ public class ClienteController {
 
     @PostMapping("/clientes/new/save")
     public String clienteGuardar(@ModelAttribute Cliente cliente){
-        clienteRepository.insertarCliente(cliente.getNombre());
+        clienteRepository.insertarCliente(cliente.getNumAcompañantes());
         return "redirect:/clientes";
     }
 
     @PostMapping("/clientes/{id}/edit/save")
     public String clienteEditarGuardar(@PathVariable("id") Integer id, @ModelAttribute Cliente cliente){
-        clienteRepository.actualizarCliente(id, cliente.getNombre());
+        clienteRepository.actualizarCliente(id, cliente.getNumAcompañantes());
         return "redirect:/clientes";
     }
 

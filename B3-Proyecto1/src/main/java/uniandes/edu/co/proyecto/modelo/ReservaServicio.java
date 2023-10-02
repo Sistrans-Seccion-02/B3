@@ -20,6 +20,7 @@ public class ReservaServicio {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private int numeroReserva;
     private Date fecha;
     
@@ -29,19 +30,14 @@ public class ReservaServicio {
     private Servicio idServicio;
 
     @ManyToOne
-    @JoinColumn(name="costo", referencedColumnName = "costo")
-    private Servicio costo;
-
-    @ManyToOne
     @JoinColumn(name="habitacion", referencedColumnName = "id")
     private Habitacion habitacion;
 
     
-    public ReservaServicio(int numeroReserva, Date fecha, Servicio idServicio, Servicio costo, Habitacion habitacion) {
+    public ReservaServicio(int numeroReserva, Date fecha, Servicio idServicio, Habitacion habitacion) {
         this.numeroReserva = numeroReserva;
         this.fecha = fecha;
         this.idServicio = idServicio;
-        this.costo = costo;
         this.habitacion = habitacion;
     }
 
@@ -73,13 +69,7 @@ public class ReservaServicio {
         this.idServicio = idServicio;
     }
 
-    public Servicio getCosto() {
-        return costo;
-    }
 
-    public void setCosto(Servicio costo) {
-        this.costo = costo;
-    }
 
     public Habitacion getHabitacion() {
         return habitacion;

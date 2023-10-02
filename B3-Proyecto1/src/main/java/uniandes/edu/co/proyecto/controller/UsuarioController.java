@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import uniandes.edu.co.proyecto.modelo.Bar;
 import uniandes.edu.co.proyecto.modelo.Usuario;
 import uniandes.edu.co.proyecto.repositorio.UsuarioRepository;
 
@@ -31,7 +29,7 @@ public class UsuarioController {
 
     @PostMapping("/usuarios/new/save")
     public String usuarioGuardar(@ModelAttribute Usuario usuario){
-        usuarioRepository.insertarUsuario(usuario.getNombre());
+        usuarioRepository.insertarUsuario(usuario.getNombre(), usuario.getTipoDocumento(), usuario.getCorreoElectronico());
         return "redirect:/usuarios";
     }
 
@@ -51,7 +49,7 @@ public class UsuarioController {
 
     @PostMapping("/usuarios/{id}/edit/save")
     public String usuarioEditarGuardar(@PathVariable("id") Integer id, @ModelAttribute Usuario usuario){
-        usuarioRepository.actualizarUsuario(id, usuario.getNombre());
+        usuarioRepository.actualizarUsuario(id, usuario.getNombre(), usuario.getTipoDocumento(), usuario.getCorreoElectronico());
         return "redirect:/usuarios";
 
     }

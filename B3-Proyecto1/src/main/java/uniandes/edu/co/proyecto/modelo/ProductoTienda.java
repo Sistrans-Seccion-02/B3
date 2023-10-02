@@ -1,6 +1,8 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -11,14 +13,16 @@ import jakarta.persistence.ManyToOne;
 public class ProductoTienda {
     
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private String nombre;
     private int costo;
 
     @ManyToOne
     @JoinColumn(name="idServicio", referencedColumnName = "id")
-    private Servicio idServicio;
+    private Tienda idServicio;
 
-    public ProductoTienda(String nombre, int costo, Servicio idServicio) {
+    public ProductoTienda(String nombre, int costo, Tienda idServicio) {
         this.nombre = nombre;
         this.costo = costo;
         this.idServicio = idServicio;
@@ -43,11 +47,11 @@ public class ProductoTienda {
         this.costo = costo;
     }
 
-    public Servicio getIdServicio() {
+    public Tienda getIdServicio() {
         return idServicio;
     }
 
-    public void setIdServicio(Servicio idServicio) {
+    public void setIdServicio(Tienda idServicio) {
         this.idServicio = idServicio;
     }
 

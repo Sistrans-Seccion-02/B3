@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import uniandes.edu.co.proyecto.modelo.Empleado;
 import uniandes.edu.co.proyecto.modelo.Usuario;
 import uniandes.edu.co.proyecto.repositorio.EmpleadoRepository;
-import uniandes.edu.co.proyecto.repositorio.UsuarioRepository;
+
 
 @Controller
 public class EmpleadoController {
@@ -32,7 +32,7 @@ public class EmpleadoController {
 
     @PostMapping("/empleados/new/save")
     public String empleadoGuardar(@ModelAttribute Empleado empleado){
-        empleadoRepository.insertarEmpleado(empleado.getNombre(), empleado.getCargo());
+        empleadoRepository.insertarEmpleado(empleado.getCargo());
         return "redirect:/empleado";
     }
 
@@ -52,7 +52,7 @@ public class EmpleadoController {
 
     @PostMapping("/empleados/{id}/edit/save")
     public String empleadosEditarGuardar(@PathVariable("id") Integer id, @ModelAttribute Empleado empleado){
-        empleadoRepository.actualizarEmpleado(id, empleado.getNombre(), empleado.getCargo());
+        empleadoRepository.actualizarEmpleado(id, empleado.getCargo());
         return "redirect:/empleados";
 
     }

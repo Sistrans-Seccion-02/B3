@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.ProductoTienda;
 import uniandes.edu.co.proyecto.modelo.Servicio;
+import uniandes.edu.co.proyecto.modelo.Tienda;
 
 public interface ProductoTiendaRepository extends JpaRepository<ProductoTienda, Integer> {
     
@@ -22,13 +23,13 @@ public interface ProductoTiendaRepository extends JpaRepository<ProductoTienda, 
    @Modifying
     @Transactional
     @Query(value = "INSERT INTO productos_tienda (nombre, costo, idServicio) VALUES (B3-Proyecto1_sequence.nextval, :nombre, :costo, :idServicio)", nativeQuery = true)
-    void insertarProducto(@Param("nombre")String nombre, @Param("costo")int costo, @Param("idServicio")Servicio idServicio);
+    void insertarProducto(@Param("nombre")String nombre, @Param("costo")int costo, @Param("idServicio")Tienda idServicio);
 
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE productos_tienda SET nombre=:nombre, costo=:costo, idServicio=:idServicio WHERE id=:id", nativeQuery = true)
-    void actualizarProducto(@Param("id") int id, @Param("nombre")String nombre, @Param("costo")int costo, @Param("idServicio")Servicio idServicio);
+    void actualizarProducto(@Param("id") int id, @Param("nombre")String nombre, @Param("costo")int costo, @Param("idServicio")Tienda idServicio);
 
 
     @Modifying

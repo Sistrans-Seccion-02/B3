@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tipo_habitacion")
+@Table(name="tipo habitacion")
 public class TipoHabitacion {
     
     // Atributos de la clase TipoHabitacion

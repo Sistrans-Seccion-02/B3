@@ -10,19 +10,22 @@ import jakarta.persistence.Table;
 @Entity
 public class Empleado extends Usuario{
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-    private String cargo;
-    private String nombre;
 
-    public Empleado(String cargo, String nombre){
-        this.cargo = cargo;
-        this.nombre=nombre;
+    private String cargo;
+
+
+    public Empleado(){
+        ;
     }
 
-    public Empleado()
-    {;}
+
+
+    public Empleado(String nombre, String cargo, String tipoDocumento, String correoElectronico){
+        super(nombre, tipoDocumento, correoElectronico);
+        this.cargo = cargo;
+    
+    }
+
 
     public String getCargo() {
         return cargo;
@@ -32,11 +35,5 @@ public class Empleado extends Usuario{
         this.cargo = cargo;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 }

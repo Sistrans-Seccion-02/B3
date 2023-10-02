@@ -3,24 +3,32 @@ package uniandes.edu.co.proyecto.modelo;
 import java.sql.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
-@Table(name="Checkins")
 @Entity
+@Table(name="Checkins")
 public class Checkin {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
+
     private Date fechaEntrada;
-    //no deberia esta conectado a la clase del empleado
-    private Empleado responsable_hotel;
+    @JoinColumn(name="id_responsable", referencedColumnName = "id")
+    private Cliente responsable;
+    @JoinColumn(name="id_responsableHotel", referencedColumnName = "id")
+    private Empleado responsableHotel;
+
+    
 
 
-    @JoinColumn(name="responsable", referencedColumnName = "responsable")
-    private Reserva responsable;
-
-
-    public Checkin(Date fechaEntrada, Empleado responsable_hotel, Reserva responsable) {
+    public Checkin(Date fechaEntrada, Cliente responsable, Empleado responsable_hotel) {
         this.fechaEntrada=fechaEntrada;
-        this.responsable_hotel = responsable_hotel;
+        this.responsableHotel = responsableHotel;
         this.responsable = responsable;
     }
 
@@ -37,18 +45,18 @@ public class Checkin {
     }
 
     public Empleado getResponsableHotel() {
-        return responsable_hotel;
+        return responsableHotel;
     }
 
-    public void setResponsableHotel(Empleado responsable_hotel) {
-        this.responsable_hotel = responsable_hotel;
+    public void setResponsableHotel(Empleado responsableHotel) {
+        this.responsableHotel = responsableHotel;
     }
 
-    public Reserva getResponsable() {
+    public Cliente getResponsable() {
         return responsable;
     }
 
-    public void setResponsable(Reserva responsable) {
+    public void setResponsable(Cliente responsable) {
         this.responsable = responsable;
     }
     

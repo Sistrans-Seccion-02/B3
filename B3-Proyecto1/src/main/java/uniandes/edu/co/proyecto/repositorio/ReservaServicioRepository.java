@@ -24,13 +24,13 @@ public interface ReservaServicioRepository extends JpaRepository<ReservaServicio
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO reservas_servicio (fecha, idServicio, costo, habitacion)", nativeQuery = true)
-    void insertarReserva(@Param("fecha")Date fecha, @Param("idServicio")Servicio idServicio, @Param("costo") Servicio costo, @Param("habitacion")Habitacion habitacion);
+    void insertarReserva(@Param("fecha")Date fecha, @Param("idServicio")Servicio idServicio, @Param("habitacion")Habitacion habitacion);
     
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE reservas_servicio SET fecha=: fecha, idServicio=: idServicio, costo:=costo, habitacion:=habitacion  WHERE id=:id", nativeQuery = true)
-    void actualizarReserva(@Param("id") int id, @Param("fecha")Date fecha, @Param("idServicio")Servicio idServicio, @Param("costo")Servicio costo,@Param("habitacion")Habitacion habitacion);
+    void actualizarReserva(@Param("id") int id, @Param("fecha")Date fecha, @Param("idServicio")Servicio idServicio,@Param("habitacion")Habitacion habitacion);
 
 
     @Modifying
