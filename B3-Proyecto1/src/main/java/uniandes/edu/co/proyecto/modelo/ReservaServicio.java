@@ -32,16 +32,22 @@ public class ReservaServicio {
     @JoinColumn(name="costo", referencedColumnName = "costo")
     private Servicio costo;
 
-    //@ManytoOne
-    //@JoinColumn(name="habitacion", referencedColumnName = "id")
-    //private Habitacion habitacion;
+    @ManyToOne
+    @JoinColumn(name="habitacion", referencedColumnName = "id")
+    private Habitacion habitacion;
 
-    public ReservaServicio(int numeroReserva, Date fecha, Servicio idServicio, Servicio costo) {
+    
+    public ReservaServicio(int numeroReserva, Date fecha, Servicio idServicio, Servicio costo, Habitacion habitacion) {
         this.numeroReserva = numeroReserva;
         this.fecha = fecha;
         this.idServicio = idServicio;
         this.costo = costo;
+        this.habitacion = habitacion;
     }
+
+    public ReservaServicio()
+    {;}
+
 
     public int getNumeroReserva() {
         return numeroReserva;
@@ -73,6 +79,15 @@ public class ReservaServicio {
 
     public void setCosto(Servicio costo) {
         this.costo = costo;
+    }
+
+    public Habitacion getHabitacion() {
+        return habitacion;
+    }
+
+
+    public void setHabitacion(Habitacion habitacion) {
+        this.habitacion = habitacion;
     }
 
 
