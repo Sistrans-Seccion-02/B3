@@ -24,6 +24,9 @@ public class ProductoTienda {
         this.idServicio = idServicio;
     }
 
+    public ProductoTienda()
+    {;}
+    
     public String getNombre() {
         return nombre;
     }

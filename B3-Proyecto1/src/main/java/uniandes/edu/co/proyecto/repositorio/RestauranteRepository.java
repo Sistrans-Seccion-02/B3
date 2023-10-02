@@ -16,7 +16,7 @@ public interface RestauranteRepository extends JpaRepository<Restaurante, Intege
     Collection<Restaurante> darRestaurantes();
 
     @Query(value = "SELECT * FROM restaurantes WHERE id= : id", nativeQuery= true)
-    Restaurante darRestaurantes(@Param("id") int id);
+    Restaurante darRestaurante(@Param("id") int id);
 
     @Modifying
     @Transactional

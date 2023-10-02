@@ -16,7 +16,7 @@ public interface SalonReunionesRepository extends JpaRepository<SalonReuniones, 
     Collection<SalonReuniones> darSalonReuniones();
 
     @Query(value = "SELECT * FROM salon_de_reuniones WHERE id= : id", nativeQuery= true)
-    SalonReuniones darSalonReuniones(@Param("id") int id);
+    SalonReuniones darSalonReunion(@Param("id") int id);
 
     @Modifying
     @Transactional
