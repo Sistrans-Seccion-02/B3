@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C6B1F825-3D1B-7244-617A-8857234B8373" name="Bares">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:17:08 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>66F8B554-5ACA-AD14-571D-437FE682C04E</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nombre" id="48D775F0-1A78-3B6B-CC16-DED33E3FBCFA">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:17:15 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estilo" id="63492E35-D73C-CAE2-55C7-22661A2F3D09">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:17:45 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="capacidad" id="E955FAF1-25B2-978A-400F-E6C71BDEE5C0">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:18:18 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

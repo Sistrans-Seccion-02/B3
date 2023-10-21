@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0FF86242-8500-2391-FC8A-D114376FDBDC" name="Servicios">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>66F8B554-5ACA-AD14-571D-437FE682C04E</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_servicio" id="B484F4D8-47AA-B5C3-0BDF-6D55BB7677CE">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>9C7F4B22-63E5-777C-93E7-9E920D7CD826</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="94D0C7B5-BFA2-1106-7F13-95F54B7DB4A9">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>C5529B6F-DF1D-673F-15B5-FA702A978AD8</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="158B141C-F118-7ECC-2148-9CA9945D3737" name="Servicios_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>C5A6B612-8E43-C4A3-263B-196C26D3F2F6</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B484F4D8-47AA-B5C3-0BDF-6D55BB7677CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

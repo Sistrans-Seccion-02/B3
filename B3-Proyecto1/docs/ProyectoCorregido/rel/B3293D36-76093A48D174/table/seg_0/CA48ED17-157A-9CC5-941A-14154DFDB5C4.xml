@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CA48ED17-157A-9CC5-941A-14154DFDB5C4" name="Spas">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>F0B503B9-226B-413F-8B95-1BD276C7553E</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_servicio" id="9BB46CB9-8E6A-AB03-687B-7FBD5E065DBA">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>9C7F4B22-63E5-777C-93E7-9E920D7CD826</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8ECAC9C-969F-F143-7E57-2DD6A06EE3B3" referredColumn="B484F4D8-47AA-B5C3-0BDF-6D55BB7677CE"/>
+</associations>
+</Column>
+<Column name="nombre" id="A5A94784-003E-F95C-6DB3-C8462E902A3E">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>A11BFABC-230C-DCF5-4784-467935F0BD5B</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="C19509B4-A918-5F8D-EF51-AB0D4DD42F3F">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 21:01:59 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duracion" id="5797F61D-BC34-C897-A710-291F903BCF32">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 21:01:59 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F6DD0E55-3FEE-143B-FDA9-EC0D390639C3" name="Spas_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>C5A6B612-8E43-C4A3-263B-196C26D3F2F6</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BB46CB9-8E6A-AB03-687B-7FBD5E065DBA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E972ACA-410D-26EB-9672-994095479545" name="Spas_Servicios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>CBAD2882-0627-9F27-E14B-010320F1BE10</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BB46CB9-8E6A-AB03-687B-7FBD5E065DBA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

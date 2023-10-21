@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1FBAB177-9F65-3D7E-46AE-CEBE5EE83FF7" name="Salidas">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>5CF70B8E-7D24-6209-7BBE-0EA939AE57FA</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<ordsAlias>salida</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Consumos_Servicios_id_servicio" id="D93343D7-CCE6-4D8D-DBBF-800C1F442864">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>EDE840F1-AFE9-30A2-C00B-89D936E8584B</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PK_Salidas" id="D0E6ED1C-027A-D54F-CDDB-DCEE8A620EE7">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>573A3208-33C9-43D6-BE8D-4E2765BFF798</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Usuarios_id_usuario" id="94B599B3-FE66-9A68-7A02-A99FE0A71676">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>BAD5B406-8BCA-75C1-9188-832215891962</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="02FC47C0-B5B7-6F91-7EB7-0425D3073993" referredColumn="C4E021B5-108B-A3F1-8CFC-FBF709EFA023"/>
+</associations>
+</Column>
+<Column name="Consumos_id" id="D786BEE3-74A9-A623-FD63-7A8A26F57B40">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 15:24:25 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3338ACF1-6C10-F8C9-4802-EB6E695D3919" referredColumn="A6E622C4-ABFE-7803-42F0-30938CF51060"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="21379B88-A450-F897-E162-4B0FD8A88E85" name="Salida_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>ED8DBC72-2850-085C-6DFF-3D9A3F385473</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D0E6ED1C-027A-D54F-CDDB-DCEE8A620EE7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8E435229-C839-17EE-0DC2-5B7FAA5225F6" name="Salida_Consumos_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>04F0CD3B-7E41-72D7-5F7D-2B0EB4022406</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D786BEE3-74A9-A623-FD63-7A8A26F57B40"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C6DB0752-F50F-B711-CD68-49E28E3A94EB" name="Salida_Usuarios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>C5CB3EB1-E00D-3583-AE92-BCB3E4308364</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94B599B3-FE66-9A68-7A02-A99FE0A71676"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

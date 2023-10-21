@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="006CA08B-D522-2EFC-1797-150E42A5D347" name="BebidasBares">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>0257E77A-A051-3FC7-3D02-E0142CD328A8</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="688A64E0-6A6E-F4F5-C7B2-971B3B481E59">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>6DA30221-BE33-236D-6AE4-574850D6F646</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="5947D797-A042-C4D0-6907-4991826200DC">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>8058F210-E2A8-891A-0782-59249F0BD7DD</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="D97C5717-0998-E577-B6DB-BFB5502143F6">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>77190682-9285-06EC-5E84-86A9ACE22711</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bares_id_servicio" id="25A6BD6D-218B-6001-D671-9623F762CB59">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>E61C4DD1-92D8-AFBF-9647-9DEB3686D6B1</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B2C8388-D4B9-9FF6-D9A3-93C405867600" referredColumn="77B6CBDC-340D-C2E1-A3F3-9756B33E0EDD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="892A2847-0CAA-2F11-ADAD-C9B59B5EABF4" name="BebidasBares_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>EE1A1BB9-FB0A-752E-04C7-C4A48A7C2C91</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="688A64E0-6A6E-F4F5-C7B2-971B3B481E59"/>
+<colUsage columnID="25A6BD6D-218B-6001-D671-9623F762CB59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0222598F-3A7A-CD78-D6C9-A9A92000132F" name="BebidasBares_Bares_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>697EDBDC-625C-4FB5-BEB0-A1327F024BD0</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="25A6BD6D-218B-6001-D671-9623F762CB59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4A288669-FAB6-9F34-09B1-7E27842E0443" name="Entradas">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>29C255F4-BFCB-C7DF-7EDB-59231882D1BE</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<ordsAlias>entrada</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Reservas_id_reserva" id="F89A285C-538C-B7D6-EFFE-E398BA08458C">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>7042006A-4538-B890-7925-D618BD815E96</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F91C0B3-4B89-090D-3C64-86258829F6EB" referredColumn="E1B65475-E78D-DAE6-98D8-54B08DF60D5F"/>
+</associations>
+</Column>
+<Column name="Usuarios_id_usuario" id="844FB658-7DAB-E877-5F3B-EE38E341879A">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>E2E6A107-94B3-37CE-781B-5D2B9C1037CF</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3FA9C20C-DDAA-4AD8-F236-6E082552A084" referredColumn="C4E021B5-108B-A3F1-8CFC-FBF709EFA023"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="86C46BE2-E3D7-9CFE-AFE6-253420846C70" name="Entrada_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>4885AB27-D5ED-156A-7C99-BC979564F462</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F89A285C-538C-B7D6-EFFE-E398BA08458C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2A3D7350-D8AA-5BA1-6899-A706B622B614" name="Entrada_Reservas_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>3688AB80-4320-84F8-54CB-01999C849F48</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F89A285C-538C-B7D6-EFFE-E398BA08458C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="888E7A3C-A5F5-E9CA-5F97-9B9301104C5B" name="Entrada_Usuarios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>8776673D-5515-8C5A-1EE9-3E11276FA07B</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="844FB658-7DAB-E877-5F3B-EE38E341879A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

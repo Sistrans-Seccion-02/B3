@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="746A80B7-4AF2-847F-0A6A-928AB94C186B" name="Gimnasios">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>3808DE59-AC20-72F9-5C5E-5ADCB0FE0186</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<ordsAlias>gimnasio</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_servicio" id="893398DE-8CFE-65C4-74BD-B9388E4A5E1E">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>9C7F4B22-63E5-777C-93E7-9E920D7CD826</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ED9EC4E2-BC45-B049-1F31-180CDE6D79B7" referredColumn="B484F4D8-47AA-B5C3-0BDF-6D55BB7677CE"/>
+</associations>
+</Column>
+<Column name="capacidad" id="7EA33791-D5FB-37D0-1EDA-13F28EBDAC9B">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>62BB69A8-C1E3-D662-A4D6-D726CA9498AD</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nMaquinas" id="76EEBFC8-3081-3418-29C1-9ADA598AD29C">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>5564925B-FB5B-6EDD-33E6-3E1050C5ACC0</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horaInicio" id="B355FED2-0DB9-F3EF-D10D-49568BD77B77">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>AC89E72B-F0CD-9841-5D9D-375BC566F71D</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horaFinal" id="DC69BB88-03AD-8A6B-FC2C-FEB3C830B12E">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>A22CADD7-4491-9FE9-6E52-C79E75FFCC1F</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B30DE75D-7B3F-89E8-803D-1CE5070162EE" name="Gimnasio_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>C5A6B612-8E43-C4A3-263B-196C26D3F2F6</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="893398DE-8CFE-65C4-74BD-B9388E4A5E1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A9565E3E-FADA-7772-782E-68895CC0AD64" name="Gimnasio_Servicios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>758F03C8-0BD1-8D21-C79D-DCD1F0CFA01A</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="893398DE-8CFE-65C4-74BD-B9388E4A5E1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
