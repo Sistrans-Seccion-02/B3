@@ -18,26 +18,26 @@ public class BebidasBarController {
     @Autowired
     private BebidaBarRepository bebidaBarRepository;
 
-    @GetMapping("/bebidas_bar")
+    @GetMapping("/bebidas_bares")
     public String bebidas(Model model){
 
-        model.addAttribute("bebidas_bar", bebidaBarRepository.darBebidas());
-        return "bebidas_bar";
+        model.addAttribute("bebidas_bares", bebidaBarRepository.darBebidas());
+        return "bebidas_bares";
     }
 
-    @GetMapping("/bebidas_bar/new")
+    @GetMapping("/bebidas_bares/new")
     public String bebidaFrom(Model model){
         model.addAttribute("bebida_bar", new BebidaBar());
         return "bebidaNueva";
     }
 
-    @PostMapping("/bebidas_bar/new/save")
+    @PostMapping("/bebidas_bares/new/save")
     public String bebidaGuardar(@ModelAttribute BebidaBar bebida){
-        bebidaBarRepository.insertarBebida(bebida.getNombre(), bebida.getCosto(), bebida.getIdServicio(), bebida.getDescripcion());
-        return "redirect:/bebidas_bar";
+        bebidaBarRepository.insertarBebida(bebida.getNombre(), bebida.getCosto(), bebida.getIdServicio());
+        return "redirect:/bebidas_bares";
     }
 
-    @GetMapping("bebidas_bar/{id}/edit")
+    @GetMapping("bebidas_bares/{id}/edit")
     public String bebidaEditarForm(@PathVariable("id") int id, Model model){
         BebidaBar bebidabar = bebidaBarRepository.darBebida(id);
         if (bebidabar!= null){
@@ -45,20 +45,21 @@ public class BebidasBarController {
             return "bebidaEditar";
         }
         else{
-            return "redirect:/bebidas_bar";
+            return "redirect:/bebidas_bares";
         }
     }
-    @PostMapping("/bebida_bar/{id}/edit/save")
+    @PostMapping("/bebidas_bares/{id}/edit/save")
     public String bebidabarEditarGuardar(@PathVariable("id") int id, @ModelAttribute BebidaBar bebidabar){
-        bebidaBarRepository.actualizarBebida(id, bebidabar.getNombre(), bebidabar.getCosto(), bebidabar.getIdServicio(), bebidabar.getDescripcion());
-        return "redirect:/bebidas_bar";
+        bebidaBarRepository.actualizarBebida(id, bebidabar.getNombre(), bebidabar.getCosto(), bebidabar.getIdServicio()
+        );
+        return "redirect:/bebidas_bares";
 
     }
 
-    @GetMapping("/bebidas_bar/{id}/delete")
+    @GetMapping("/bebidas_bares/{id}/delete")
     public String bebidaEliminar(@PathVariable("id") int id){
        bebidaBarRepository.eliminarBebida(id);
-        return "redirect:/bebidas_bar"; 
+        return "redirect:/bebidas_bares"; 
     }
 
 
