@@ -20,7 +20,7 @@ public class Producto {
 
     @Id
     @ManyToOne
-    @JoinColumn(name="idServicio", referencedColumnName = "id")
+    @JoinColumn(name="idServicio", referencedColumnName = "id_servicio")
     private Servicio idServicio;
 
     public Producto(Integer id, String nombre, int costo, Servicio idServicio) {

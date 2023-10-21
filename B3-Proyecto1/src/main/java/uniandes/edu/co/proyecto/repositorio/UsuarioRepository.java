@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-
+import uniandes.edu.co.proyecto.modelo.TipoUsuario;
 import uniandes.edu.co.proyecto.modelo.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
@@ -22,13 +22,13 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO usuarios (nombre, tipoDocumento, correoElectronico) VALUES (B3-Proyecto1_sequence.nextval, :nombre)", nativeQuery = true)
-    void insertarUsuario(@Param("nombre") String nombre, @Param("tipoDocumento") String tipoDocumento, @Param("correoElectronico") String correoElectronico );
+    @Query(value = "INSERT INTO usuarios (nombre, email, usuario, contraseña, tipo) VALUES (B3-Proyecto1_sequence.nextval, :nombre, :email, :usuario, :contraseña, :tipo)", nativeQuery = true)
+    void insertarUsuario(@Param("nombre") String nombre, @Param("email") String email, @Param("usuario") String usuario,  @Param("contraseña") String contraseña, @Param("tipo") TipoUsuario tipo);
    
     @Modifying
     @Transactional
     @Query(value = "UPDATE usuarios SET nombre=:nombre, tipoDocumento=:tipoDocumento, correoElectronico=:correoElectronico WHERE id=:id", nativeQuery = true)
-    void actualizarUsuario(@Param("id") int id,@Param("nombre") String nombre, @Param("tipoDocumento") String tipoDocumento, @Param("correoElectronico") String correoElectronico );
+    void actualizarUsuario(@Param("id") int id,@Param("nombre") String nombre, @Param("email") String email, @Param("usuario") String usuario,  @Param("contraseña") String contraseña, @Param("tipo") TipoUsuario tipo);
 
 
     @Modifying
