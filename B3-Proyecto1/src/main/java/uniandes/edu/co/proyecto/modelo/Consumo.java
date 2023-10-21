@@ -13,68 +13,66 @@ import jakarta.persistence.Table;
 @Table(name="consumos")
 public class Consumo {
 
-    @JoinColumn(name="id_consumo", referencedColumnName = "servicios")
-    private Servicio consumo;
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    private String descripcion;
-    private Double costo;
-    private Date fecha;
-    private int habitacioId;
-
-    // Constructor
     
-    public Consumo(Servicio consumo, String descripcion, Double costo, Date fecha, int habitacioId, int id) {    
-        this.consumo = consumo;
-        this.descripcion = descripcion;
-        this.costo = costo;
-        this.fecha = fecha;
-        this.habitacioId = habitacioId;
-        this.id = id;
-    }
-    public Consumo() 
-    {;}
+    @JoinColumn(name="id_servicio", referencedColumnName = "id_servicio")
+    private Servicio idServicio;
 
-    // Getters y Setters
-    public Servicio getConsumo() {
-        return consumo;
+    @JoinColumn(name="id_reserva", referencedColumnName = "id_reserva")
+    private Entrada idReserva;
+
+    @JoinColumn(name="numHabitacion", referencedColumnName = "nHabitacion")
+    private Habitacion habitacion;
+
+    public Consumo(Integer id, Servicio idServicio, Entrada idReserva, Habitacion habitacion) {
+        this.id = id;
+        this.idServicio = idServicio;
+        this.idReserva = idReserva;
+        this.habitacion = habitacion;
     }
-    public void setConsumo(Servicio consumo) {
-        this.consumo = consumo;
+
+    public Consumo()
+    {
+        ;
     }
-    public String getDescripcion() {
-        return descripcion;
-    }
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;    
-    }
-    public Double getCosto() {
-        return costo;
-    }
-    public void setCosto(Double costo) {
-        this.costo = costo;
-    }
-    public Date getFecha() {
-        return fecha;
-    }
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;    
-    }
-    public int getHabitacioId() {
-        return habitacioId;
-    }
-    public void setHabitacioId(int habitacioId) {
-        this.habitacioId = habitacioId;
-    }
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;    
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
+    public Servicio getIdServicio() {
+        return idServicio;
+    }
 
+    public void setIdServicio(Servicio idServicio) {
+        this.idServicio = idServicio;
+    }
+
+    public Entrada getIdReserva() {
+        return idReserva;
+    }
+
+    public void setIdReserva(Entrada idReserva) {
+        this.idReserva = idReserva;
+    }
+
+    public Habitacion getHabitacion() {
+        return habitacion;
+    }
+
+    public void setHabitacion(Habitacion habitacion) {
+        this.habitacion = habitacion;
+    }
+
+    
+
+    
 
 }
