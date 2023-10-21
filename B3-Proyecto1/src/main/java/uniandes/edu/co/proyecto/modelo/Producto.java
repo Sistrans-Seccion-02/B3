@@ -30,6 +30,9 @@ public class Producto {
         this.idServicio = idServicio;
     }
 
+    public Producto()
+    {;}
+    
     public Integer getId() {
         return id;
     }

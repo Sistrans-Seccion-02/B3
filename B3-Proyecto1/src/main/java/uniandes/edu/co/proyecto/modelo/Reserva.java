@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,76 +14,92 @@ public class Reserva {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-
-
-    @JoinColumn(name="fechaEntrada", referencedColumnName = "fechaEntrada")
-    private Checkin fechaEntrada;
-
-    @JoinColumn(name="fechaSalida", referencedColumnName = "fechaSalida")
-    private Checkout fechaSalida;
-
-
+    private Integer id_reserva;
     
-    @JoinColumn(name="idCliente", referencedColumnName = "responsable")
-    private Cliente responsable;
-    
-    @JoinColumn(name="tipoPlan", referencedColumnName = "plan")
+    private int numPersonas;
+    private String fechaEntrada;
+    private String fechaSalida;
+
+    @JoinColumn(name="idCliente", referencedColumnName = "idCliente")
+    private Usuario cliente;
+
+    @JoinColumn(name="habitacion", referencedColumnName = "nHabitacion")
+    private Habitacion habitacion;
+
+    @JoinColumn(name="tipoPlan", referencedColumnName = "nombre")
     private Plan tipoPlan;
 
-    private int numPersonas;
-
-    public Reserva(Cliente responsable, Plan tipoPlan, Checkin fechaEntrada, Checkout fechaSalida, int numPersonas){
-        this.responsable = responsable;
-        this.tipoPlan = tipoPlan;
+    public Reserva(Integer id_reserva, int numPersonas, String fechaEntrada, String fechaSalida, Usuario cliente,
+            Habitacion habitacion, Plan tipoPlan) {
+        this.id_reserva = id_reserva;
+        this.numPersonas = numPersonas;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
-        this.numPersonas=numPersonas;
+        this.cliente = cliente;
+        this.habitacion = habitacion;
+        this.tipoPlan = tipoPlan;
     }
 
-    public Reserva(){
-        ;
+    public Reserva()
+    {;}
+
+    public Integer getId_reserva() {
+        return id_reserva;
     }
 
-    public Integer getId(){
-        return id;
-    }
-    public void setId(){
-        this.id=id;
+    public void setId_reserva(Integer id_reserva) {
+        this.id_reserva = id_reserva;
     }
 
-    public Cliente getResponsable(){
-        return responsable;
-    }
-    public void setResponsable(){
-        this.responsable=responsable;
-    }
-    
-    public Plan getTipoPlan(){
-        return tipoPlan;
-    }
-    public void setTipoPlan(){
-        this.tipoPlan=tipoPlan;
-    }
-
-    public Checkin getFechaEntrada(){
-        return fechaEntrada;
-    }
-    public void setfechaEntrada(){
-        this.fechaEntrada=fechaEntrada;
-    }
-     public Checkout getFechaSalida(){
-        return fechaSalida;
-    }
-    public void setfechaSalida(){
-        this.fechaSalida=fechaSalida;
-    }
-
-    public int getNumPersonas(){
+    public int getNumPersonas() {
         return numPersonas;
     }
-    public void setNumPersonas(){
-        this.numPersonas=numPersonas;
+
+    public void setNumPersonas(int numPersonas) {
+        this.numPersonas = numPersonas;
     }
+
+    public String getFechaEntrada() {
+        return fechaEntrada;
+    }
+
+    public void setFechaEntrada(String fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
+    }
+
+    public String getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public void setFechaSalida(String fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
+
+    public Usuario getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Usuario cliente) {
+        this.cliente = cliente;
+    }
+
+    public Habitacion getHabitacion() {
+        return habitacion;
+    }
+
+    public void setHabitacion(Habitacion habitacion) {
+        this.habitacion = habitacion;
+    }
+
+    public Plan getTipoPlan() {
+        return tipoPlan;
+    }
+
+    public void setTipoPlan(Plan tipoPlan) {
+        this.tipoPlan = tipoPlan;
+    }
+
+    
+    
     
 }
