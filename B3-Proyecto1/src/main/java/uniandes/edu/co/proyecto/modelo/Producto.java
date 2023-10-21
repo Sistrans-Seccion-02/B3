@@ -8,9 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Table(name="productos_supermercado")
+@Table(name="productos")
 @Entity
-public class ProductoSupermercado {
+public class Producto {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -18,18 +18,25 @@ public class ProductoSupermercado {
     private String nombre;
     private int costo;
 
+    @Id
     @ManyToOne
     @JoinColumn(name="idServicio", referencedColumnName = "id")
-    private Supermercado idServicio;
+    private Servicio idServicio;
 
-    public ProductoSupermercado(String nombre, int costo, Supermercado idServicio) {
+    public Producto(Integer id, String nombre, int costo, Servicio idServicio) {
+        this.id = id;
         this.nombre = nombre;
         this.costo = costo;
         this.idServicio = idServicio;
     }
 
-    public ProductoSupermercado()
-    {;}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -47,14 +54,14 @@ public class ProductoSupermercado {
         this.costo = costo;
     }
 
-    public Supermercado getIdServicio() {
+    public Servicio getIdServicio() {
         return idServicio;
     }
 
-    public void setIdServicio(Supermercado idServicio) {
+    public void setIdServicio(Servicio idServicio) {
         this.idServicio = idServicio;
     }
 
-    
+
 
 }
