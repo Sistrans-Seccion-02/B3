@@ -12,11 +12,12 @@ import uniandes.edu.co.proyecto.modelo.TipoHabitacion;
 public class Habitacion {
     
     // Atributos de la habitación
-    @JoinColumn(name="tipo Habitacion", referencedColumnName = "tipo habitacion")
-    private TipoHabitacion tipo;  // Ejemplo: "Suite", "Doble", "Sencilla"
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
+
+    @JoinColumn(name="tipo", referencedColumnName = "nombre")
+    private TipoHabitacion tipo;  // Ejemplo: "Suite", "Doble", "Sencilla"
   
     // Constructor
     public Habitacion(TipoHabitacion tipo, int id) {
