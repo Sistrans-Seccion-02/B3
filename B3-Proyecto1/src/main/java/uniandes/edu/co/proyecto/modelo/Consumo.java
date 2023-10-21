@@ -23,7 +23,7 @@ public class Consumo {
     @JoinColumn(name="id_reserva", referencedColumnName = "id_reserva")
     private Entrada idReserva;
 
-    @JoinColumn(name="numHabitacion", referencedColumnName = "nHabitacion")
+    @JoinColumn(name="numHabitacion", referencedColumnName = "numHabitacion")
     private Habitacion habitacion;
 
     public Consumo(Integer id, Servicio idServicio, Entrada idReserva, Habitacion habitacion) {

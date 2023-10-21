@@ -31,7 +31,7 @@ public class HabitacionesController {
 
     @PostMapping("/habitaciones/new/save")
     public String habitacionGuardar(@ModelAttribute Habitacion habitacion) {
-        habitacionRepository.insertarHabitacion(habitacion.getId(), habitacion.getTipo().getId(), habitacion.getTipo().getDotacion(), habitacion.getTipo().getCapacidad());
+        habitacionRepository.insertarHabitacion(habitacion.getNumHabitacion(), habitacion.getTipo());
         return "redirect:/habitaciones";
     }
 
@@ -48,7 +48,7 @@ public class HabitacionesController {
 
     @PostMapping("/habitaciones/{id}/edit/save")
     public String habitacionEditarGuardar(@PathVariable("id") int id, @ModelAttribute Habitacion habitacion) {
-        habitacionRepository.actualizarHabitacion(id, habitacion.getTipo().getId(), habitacion.getTipo().getDotacion(), habitacion.getTipo().getCapacidad());
+        habitacionRepository.actualizarHabitacion(id, habitacion.getTipo());
         return "redirect:/habitaciones";
         }
 

@@ -24,7 +24,7 @@ public class ReservaServicio {
     private Servicio idServicio;
 
     @ManyToOne
-    @JoinColumn(name="habitacion", referencedColumnName = "id")
+    @JoinColumn(name="habitacion", referencedColumnName = "numHabitacion")
     private Habitacion habitacion;
 
     public ReservaServicio(Integer id, String fecha, String hora, Servicio idServicio, Habitacion habitacion) {

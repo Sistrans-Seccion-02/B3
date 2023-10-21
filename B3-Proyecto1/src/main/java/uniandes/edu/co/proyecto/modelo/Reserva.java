@@ -23,7 +23,7 @@ public class Reserva {
     @JoinColumn(name="idCliente", referencedColumnName = "idCliente")
     private Usuario cliente;
 
-    @JoinColumn(name="habitacion", referencedColumnName = "nHabitacion")
+    @JoinColumn(name="habitacion", referencedColumnName = "numHabitacion")
     private Habitacion habitacion;
 
     @JoinColumn(name="tipoPlan", referencedColumnName = "nombre")
