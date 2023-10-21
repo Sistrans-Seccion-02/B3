@@ -16,21 +16,20 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
     @Query(value = "SELECT * FROM habitaciones", nativeQuery = true)
     Collection<Habitacion> darHabitaciones();
 
-    @Query(value = "SELECT * FROM habitaciones WHERE id = :id", nativeQuery = true)
-    Habitacion darHabitacion(@Param("id") int id);
+    @Query(value = "SELECT * FROM habitaciones WHERE numHabitacion = :numHabitacion", nativeQuery = true)
+    Habitacion darHabitacion(@Param("numHabitacion") int numHabitacion);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO habitaciones (id, tipo_id, dotacion, capacidad) VALUES (:id, :tipoId, :dotacion, :capacidad)", nativeQuery = true)
-    void insertarHabitacion(@Param("id") int id, @Param("tipoId") int tipoId, @Param("dotacion") String dotacion, @Param("capacidad") int capacidad);
+    @Query(value = "INSERT INTO habitaciones (numHabitacion, tipo) VALUES (:tipo)", nativeQuery = true)
+    void insertarHabitacion(@Param("numHabitacion") int numHabitacion, @Param("tipo") TipoHabitacion tipo);
     
     @Modifying
     @Transactional
-    @Query(value = "UPDATE habitaciones SET tipo_id = :tipoId, dotacion = :dotacion, capacidad = :capacidad WHERE id = :id", nativeQuery = true)
-    void actualizarHabitacion(@Param("id") int id, @Param("tipoId") int tipoId, @Param("dotacion") String dotacion, @Param("capacidad") int capacidad);
-
+    @Query(value = "UPDATE habitaciones SET tipo = :tipo WHERE numHabitacion = :numHabitacion", nativeQuery = true)
+    void actualizarHabitacion(@Param("numHabitacion") int numHabitacion, @Param("tipoId") TipoHabitacion tipo);
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM habitaciones WHERE id = :id", nativeQuery = true)
-    void eliminarHabitacion(@Param("id") int id);
+    void eliminarHabitacion(@Param("numHabitacion") int numHabitacion);
 }

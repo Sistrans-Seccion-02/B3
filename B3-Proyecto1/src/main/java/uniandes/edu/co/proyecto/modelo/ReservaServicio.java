@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.Date;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Entity;
@@ -13,30 +12,25 @@ import jakarta.persistence.Table;
 @Entity
 public class ReservaServicio {
 
-    //CRUD de la reservación de un servicio por parte de un cliente. Un servicio se puede reservar siempre y
-//cuando haya disponibilidad. Estas operaciones son realizadas por un cliente. Cada servicio registrado está
-//asociado a una habitación y tiene descripción y costo (que ya están establecidos al escoger el servicio a
-//registrar) y una fecha (que es escogida por el usuario).
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    private int numeroReserva;
-    private Date fecha;
-    
+    private String fecha;
+    private String hora;
 
     @ManyToOne
-    @JoinColumn(name="idServicio", referencedColumnName = "id")
+    @JoinColumn(name="idServicio", referencedColumnName = "id_servicio")
     private Servicio idServicio;
 
     @ManyToOne
-    @JoinColumn(name="habitacion", referencedColumnName = "id")
+    @JoinColumn(name="habitacion", referencedColumnName = "numHabitacion")
     private Habitacion habitacion;
 
-    
-    public ReservaServicio(int numeroReserva, Date fecha, Servicio idServicio, Habitacion habitacion) {
-        this.numeroReserva = numeroReserva;
+    public ReservaServicio(Integer id, String fecha, String hora, Servicio idServicio, Habitacion habitacion) {
+        this.id = id;
         this.fecha = fecha;
+        this.hora = hora;
         this.idServicio = idServicio;
         this.habitacion = habitacion;
     }
@@ -44,21 +38,28 @@ public class ReservaServicio {
     public ReservaServicio()
     {;}
 
-
-    public int getNumeroReserva() {
-        return numeroReserva;
+    public Integer getId() {
+        return id;
     }
 
-    public void setNumeroReserva(int numeroReserva) {
-        this.numeroReserva = numeroReserva;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
     public Servicio getIdServicio() {
@@ -69,17 +70,14 @@ public class ReservaServicio {
         this.idServicio = idServicio;
     }
 
-
-
     public Habitacion getHabitacion() {
         return habitacion;
     }
-
 
     public void setHabitacion(Habitacion habitacion) {
         this.habitacion = habitacion;
     }
 
-
+    
     
 }

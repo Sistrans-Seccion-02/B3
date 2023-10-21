@@ -25,13 +25,13 @@ public class SpaController {
 
     @GetMapping("/spas/new")
     public String spaFrom(Model model){
-        model.addAttribute("salon_reunion", new Spa());
+        model.addAttribute("spa", new Spa());
         return "spaNuevo";
     }
 
     @PostMapping("/spas/new/save")
     public String spaGuardar(@ModelAttribute Spa spa){
-       spaRepository.insertarSpa(spa.getCosto(), spa.getDuracion());
+       spaRepository.insertarSpa(spa.getNombre(), spa.getCosto(), spa.getDuracion());
         return "redirect:/spas";
     }
 
@@ -48,7 +48,7 @@ public class SpaController {
     }
     @PostMapping("/spas/{id}/edit/save")
     public String salonEditarGuardar(@PathVariable("id") int id, @ModelAttribute Spa spa){
-        spaRepository.actualizarSpa(id, spa.getCosto(), spa.getDuracion());
+        spaRepository.actualizarSpa(id,spa.getNombre(), spa.getCosto(), spa.getDuracion());
         return "redirect:/spas";
 
     }

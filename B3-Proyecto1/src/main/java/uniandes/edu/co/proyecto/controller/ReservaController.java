@@ -28,14 +28,14 @@ public class ReservaController {
 
     @PostMapping("/reservas/new/save")
     public String reservaGuardar(@ModelAttribute Reserva reserva) {
-        reservaRepository.insertarReserva(reserva.getResponsable(), reserva.getTipoPlan(), reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getNumPersonas());
+        reservaRepository.insertarReserva(reserva.getNumPersonas(), reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCliente(), reserva.getHabitacion(), reserva.getTipoPlan());
         return "redirect:/reservas";
     }
     
 
     @PostMapping("/reservas/{id}/edit/save")
     public String reservaEditarGuardar(@PathVariable("id") Integer id, @ModelAttribute Reserva reserva) {
-        reservaRepository.actualizarReserva(id, reserva.getResponsable(), reserva.getTipoPlan(), reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getNumPersonas());
+        reservaRepository.actualizarReserva(id, reserva.getNumPersonas(), reserva.getFechaEntrada(), reserva.getFechaSalida(), reserva.getCliente(), reserva.getHabitacion(), reserva.getTipoPlan());
         return "redirect:/reservas";
     }
 

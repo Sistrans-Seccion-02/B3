@@ -1,36 +1,44 @@
 package uniandes.edu.co.proyecto.repositorio;
 
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
+
+
 import uniandes.edu.co.proyecto.modelo.Consumo;
+import uniandes.edu.co.proyecto.modelo.Entrada;
+import uniandes.edu.co.proyecto.modelo.Habitacion;
+import uniandes.edu.co.proyecto.modelo.Servicio;
 
-public interface ConsumoRepository extends JpaRepository<Consumo, Integer[]> {
+public interface ConsumoRepository extends JpaRepository<Consumo, Integer> {
 
+    @Query(value="SELECT * FROM consumos", nativeQuery = true)
+    Collection<Consumo> darConsumos();
+    
     @Query(value = "SELECT * FROM consumos WHERE id = :id", nativeQuery = true)
-    Consumo darConsumoPorId(@Param("id") int id);
+    Consumo darConsumo(@Param("id") int id);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO consumos (descripcion, costo, fecha, habitacion_id) VALUES (:descripcion, :costo, :fecha, :habitacionId)", nativeQuery = true)
-    void registrarConsumo(
-        @Param("descripcion") String descripcion,
-        @Param("costo") Double costo,
-        @Param("fecha") String fecha,
-        @Param("habitacionId") Long habitacionId
+    @Query(value = "INSERT INTO consumos (idServicio, idReserva, numHabitacion) VALUES (:idServicio, :idReserva, :numHbitacion)", nativeQuery = true)
+    void insertarConsumo(
+        @Param("idServicio") Servicio id_servicio,
+        @Param("idReserva") Entrada id_reserva,
+        @Param("numHabitacion") Habitacion numHabitacion
     );
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE consumos SET descripcion=:descripcion, costo=:costo, fecha=:fecha, habitacion_id=:habitacionId WHERE id=:id", nativeQuery = true)
+    @Query(value = "UPDATE consumos SET idServicio=:idServicio, idReserva=:idReserva, numHabitacion=:numHabitacion WHERE id=:id", nativeQuery = true)
     void actualizarConsumo(
-        @Param("id") Long id,
-        @Param("descripcion") String descripcion,
-        @Param("costo") Double costo,
-        @Param("fecha") String fecha,
-        @Param("habitacionId") int habitacionId
+        @Param("id") int id,
+        @Param("idServicio") Servicio id_servicio,
+        @Param("idReserva") Entrada id_reserva,
+        @Param("numHabitacion") Habitacion numHabitacion
     );
 
     @Modifying

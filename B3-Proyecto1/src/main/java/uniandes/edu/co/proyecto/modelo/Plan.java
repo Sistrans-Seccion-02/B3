@@ -6,34 +6,57 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Table(name="Planes")
+@Table(name="planes")
 @Entity
 public class Plan {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Integer id_plan;
+    private String nombre;
+    private String descripcion;
+    private Double descuento;
+    
+    
+    public Plan(Integer id_plan, String nombre, String descripcion, Double descuento) {
+        this.id_plan = id_plan;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.descuento = descuento;
+    } 
 
-    private String plan;
+    public Plan()
+    {;}
 
-    public Plan(String plan){
-        this.plan=plan;
-    }
-    public Plan(){
-        ;
+    public Integer getId_plan() {
+        return id_plan;
     }
 
-    public Integer getId(){
-        return id;
-    }
-    public void setId(){
-        this.id=id;
-    }
-    public String getPlan() {
-        return plan;
+    public void setId_plan(Integer id_plan) {
+        this.id_plan = id_plan;
     }
 
-    public void setPlan(String plan) {
-        this.plan = plan;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Double getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(Double descuento) {
+        this.descuento = descuento;
     }
 
 

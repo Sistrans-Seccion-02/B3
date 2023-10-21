@@ -20,14 +20,14 @@ public interface BarRepository extends JpaRepository<Bar, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO bares (capacidad, estilo) VALUES (B3-Proyecto1_sequence.nextval, :capacidad, :estilo)", nativeQuery = true)
-    void insertarBar(@Param("capacidad")int capacidad, @Param("estilo")String estilo);
+    @Query(value = "INSERT INTO bares (nombre, capacidad, estilo) VALUES (B3-Proyecto1_sequence.nextval, :nombre, :capacidad, :estilo)", nativeQuery = true)
+    void insertarBar(@Param("nombre")String nombre, @Param("capacidad")int capacidad, @Param("estilo")String estilo);
 
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE bares SET capacidad=:capacidad, estilo=:estilo WHERE id=:id", nativeQuery = true)
-    void actualizarrBar(@Param("id") int id, @Param("capacidad")int capacidad, @Param("estilo")String estilo);
+    @Query(value = "UPDATE bares SET nombre=:nombre, capacidad=:capacidad, estilo=:estilo WHERE id=:id", nativeQuery = true)
+    void actualizarrBar(@Param("id") int id, @Param("nombre") String nombre, @Param("capacidad")int capacidad, @Param("estilo")String estilo);
 
 
     @Modifying

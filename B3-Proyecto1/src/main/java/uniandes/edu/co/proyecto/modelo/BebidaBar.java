@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Table(name="bebidas_bar")
+@Table(name="bebidas_bares")
 @Entity
 public class BebidaBar {
     
@@ -19,13 +19,14 @@ public class BebidaBar {
     private String nombre;
     private int costo;
 
+    @Id
     @ManyToOne
-    @JoinColumn(name="idServicio", referencedColumnName = "id")
-    private Bar idServicio;
+    @JoinColumn(name="idServicio", referencedColumnName = "id_servicio")
+    private Servicio idServicio;
 
     private String descripcion;
 
-    public BebidaBar(String nombre, int costo, Bar idServicio, String descripcion) {
+    public BebidaBar(String nombre, int costo, Servicio idServicio, String descripcion) {
         this.nombre = nombre;
         this.costo = costo;
         this.idServicio = idServicio;
@@ -34,6 +35,14 @@ public class BebidaBar {
 
     public BebidaBar()
     {;}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -51,11 +60,11 @@ public class BebidaBar {
         this.costo = costo;
     }
 
-    public Bar getIdServicio() {
+    public Servicio getIdServicio() {
         return idServicio;
     }
 
-    public void setIdServicio(Bar idServicio) {
+    public void setIdServicio(Servicio idServicio) {
         this.idServicio = idServicio;
     }
 
@@ -66,10 +75,6 @@ public class BebidaBar {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-    
-
-    
 
 }
 

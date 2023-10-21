@@ -21,10 +21,10 @@ public class Plato {
     private int costo;
 
     @ManyToOne
-    @JoinColumn(name="idRestaurante", referencedColumnName = "id")
-    private Restaurante idRestaurante;
+    @JoinColumn(name="idRestaurante", referencedColumnName = "id_servicio")
+    private Servicio idRestaurante;
 
-    public Plato(String nombre, int costo, Restaurante idRestaurante) {
+    public Plato(String nombre, int costo, Servicio idRestaurante) {
         this.nombre = nombre;
         this.costo = costo;
         this.idRestaurante = idRestaurante;
@@ -55,7 +55,7 @@ public class Plato {
         return idRestaurante;
     }
 
-    public void setIdRestaurante(Restaurante idRestaurante) {
+    public void setIdRestaurante(Servicio idRestaurante) {
         this.idRestaurante = idRestaurante;
     }
 

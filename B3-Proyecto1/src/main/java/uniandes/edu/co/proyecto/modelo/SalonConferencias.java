@@ -2,14 +2,14 @@ package uniandes.edu.co.proyecto.modelo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-@Table(name="salon_conferencias")
+@Table(name="salones")
 @Entity
 public class SalonConferencias extends Servicio{
     private int costo;
     private int capacidad;
     //clase de reserva servicio
     
-    public SalonConferencias(int id, int costo, int capacidad) {
+    public SalonConferencias(int costo, int capacidad) {
         this.costo = costo;
         this.capacidad = capacidad;
     }
