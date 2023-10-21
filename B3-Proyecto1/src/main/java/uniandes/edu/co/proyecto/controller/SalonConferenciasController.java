@@ -17,46 +17,46 @@ public class SalonConferenciasController {
     @Autowired
     private SalonConferenciasRepository salonConferenciasRepository;
 
-    @GetMapping("/salones_de_conferencia")
+    @GetMapping("/salones")
     public String salonconf(Model model){
-        model.addAttribute("salones_de_conferencia", salonConferenciasRepository.darSalonConferencias());
-        return "salones_de_conferencia";
+        model.addAttribute("salones", salonConferenciasRepository.darSalonConferencias());
+        return "salones";
     }
 
-    @GetMapping("/salones_de_conferencia/new")
+    @GetMapping("/salones/new")
     public String salonFrom(Model model){
-        model.addAttribute("salon_conferencia", new SalonConferencias());
+        model.addAttribute("salon", new SalonConferencias());
         return "salonNuevo";
     }
 
-    @PostMapping("/salones_de_conferencia/new/save")
+    @PostMapping("/salones/new/save")
     public String salonGuardar(@ModelAttribute SalonConferencias salonConferencias){
        salonConferenciasRepository.insertarSalonConferencias(salonConferencias.getCosto(), salonConferencias.getCapacidad());
-        return "redirect:/salones_de_conferencia";
+        return "redirect:/salones";
     }
 
-    @GetMapping("salones_de_conferencia/{id}/edit")
+    @GetMapping("salones/{id}/edit")
     public String salonEditarForm(@PathVariable("id") int id, Model model){
         SalonConferencias salon = salonConferenciasRepository.darSalonConferencia(id);
         if (salon!= null){
-            model.addAttribute("salon_conferencia", salon);
+            model.addAttribute("salones", salon);
             return "salonEditar";
         }
         else{
-            return "redirect:/salones_de_conferencia";
+            return "redirect:/salones";
         }
     }
-    @PostMapping("/salones_de_conferencia/{id}/edit/save")
+    @PostMapping("/salones/{id}/edit/save")
     public String salonEditarGuardar(@PathVariable("id") int id, @ModelAttribute SalonConferencias salonConferencias){
         salonConferenciasRepository.actualizarSalonConferencias(id, salonConferencias.getCosto(), salonConferencias.getId());
-        return "redirect:/salones_de_conferencia";
+        return "redirect:/salones";
 
     }
 
-    @GetMapping("/salones_de_conferencia/{id}/delete")
+    @GetMapping("/salones/{id}/delete")
     public String salonEliminar(@PathVariable("id") int id){
         salonConferenciasRepository.eliminarSalonConferencias(id);
-        return "redirect:/salones_de_conferencia"; 
+        return "redirect:/salones"; 
     }
     
     

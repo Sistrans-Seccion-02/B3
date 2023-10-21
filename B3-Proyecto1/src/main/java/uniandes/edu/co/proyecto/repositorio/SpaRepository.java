@@ -12,28 +12,29 @@ import uniandes.edu.co.proyecto.modelo.Spa;
 
 public interface SpaRepository extends JpaRepository<Spa, Integer> {
     
-    @Query(value="SELECT * FROM spa", nativeQuery = true)
+    @Query(value="SELECT * FROM spas", nativeQuery = true)
     Collection<Spa> darSpas();
 
-    @Query(value = "SELECT * FROM spa WHERE id= : id", nativeQuery= true)
+    @Query(value = "SELECT * FROM spas WHERE id= : id", nativeQuery= true)
     Spa darSpa(@Param("id") int id);
 
     @Modifying
     @Transactional
     //MIRAR EL NEXT VAL
-    @Query(value = "INSERT INTO spa (costo, duracion) VALUES (B3-Proyecto1_sequence.nextval, :costo, :duracion)", nativeQuery = true)
-    void insertarSpa(@Param("costo")int costo,@Param("duracion")int duracion);
+    @Query(value = "INSERT INTO spas (nombre, costo, duracion) VALUES (B3-Proyecto1_sequence.nextval, :nombre, :costo, :duracion)", nativeQuery = true)
+    void insertarSpa(@Param("nombre")String nombre, @Param("costo")int costo,@Param("duracion")int duracion);
 
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE spa SET costo=:costo, duracion=:duracion WHERE id=:id", nativeQuery = true)
-    void actualizarSpa(@Param("id") int id, @Param("costo")int costo,@Param("duracion")int duracion);
+    @Query(value = "UPDATE spas SET costo=:costo, duracion=:duracion WHERE id=:id", nativeQuery = true)
+    void actualizarSpa(@Param("id") int id, @Param("nombre")String nombre, @Param("costo")int costo,@Param("duracion")int duracion);
+
 
 
     @Modifying
     @Transactional
-    @Query(value="DELETE FROM spa WHERE id=:id", nativeQuery = true)
+    @Query(value="DELETE FROM spas WHERE id=:id", nativeQuery = true)
     void eliminarSpa(@Param("id") int id); 
     
 }

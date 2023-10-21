@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
 
 
 @Entity
@@ -15,47 +16,15 @@ import jakarta.persistence.InheritanceType;
 public class Usuario {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    protected Integer id;
+    private int id_usuario;
+    private String nombre; 
+    private String email;
+    private String usuario;
+    private String contraseña;
     
-    protected String nombre;
-    protected String tipoDocumento;
-    protected String correoElectronico;
+    @JoinColumn(name = "tipoUsuario", )
 
     
-    public Usuario(){
-        ;
-    }
-
-    public Usuario(String nombre, String tipoDocumento, String correoElectronico){
-        this.nombre=nombre;
-        this.tipoDocumento=tipoDocumento;
-        this.correoElectronico=correoElectronico;
-    }
-  
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getTipoDocumento(){
-        return tipoDocumento;
-    }
-    public void setTipoDocumento(String tipoDocumento){
-        this.tipoDocumento=tipoDocumento;
-
-    }
-
-    public String getCorreoElectronico(){
-        return correoElectronico;
-    }
-    public void setCorreoElectronico(String correoElectronico){
-        this.correoElectronico=correoElectronico;
-    }
-
-
    
 
 }

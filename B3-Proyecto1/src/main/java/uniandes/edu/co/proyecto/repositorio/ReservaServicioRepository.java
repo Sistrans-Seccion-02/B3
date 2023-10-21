@@ -23,15 +23,14 @@ public interface ReservaServicioRepository extends JpaRepository<ReservaServicio
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO reservas_servicio (fecha, idServicio, costo, habitacion)", nativeQuery = true)
-    void insertarReserva(@Param("fecha")Date fecha, @Param("idServicio")Servicio idServicio, @Param("habitacion")Habitacion habitacion);
+    @Query(value = "INSERT INTO reservas_servicio (fecha, hora, idServicio, habitacion) VALUES (B3-Proyecto1_sequence.nextval, :fecha, :hora, :idServicio, :habitacion)", nativeQuery = true)
+    void insertarReserva(@Param("fecha")String fecha, @Param("hora")String hora, @Param("idServicio")Servicio idServicio, @Param("habitacion")Habitacion habitacion);
     
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE reservas_servicio SET fecha=: fecha, idServicio=: idServicio, costo:=costo, habitacion:=habitacion  WHERE id=:id", nativeQuery = true)
-    void actualizarReserva(@Param("id") int id, @Param("fecha")Date fecha, @Param("idServicio")Servicio idServicio,@Param("habitacion")Habitacion habitacion);
-
+    @Query(value = "UPDATE reservas_servicio SET fecha=: fecha, hora=:hora idServicio=: idServicio habitacion:=habitacion  WHERE id=:id", nativeQuery = true)
+    void actualizarReserva(@Param("id") int id, @Param("fecha")String fecha, @Param("hora")String hora, @Param("idServicio")Servicio idServicio, @Param("habitacion")Habitacion habitacion);
 
     @Modifying
     @Transactional
