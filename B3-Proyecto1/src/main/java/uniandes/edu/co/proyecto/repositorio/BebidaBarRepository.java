@@ -23,7 +23,7 @@ public interface BebidaBarRepository extends JpaRepository<BebidaBar, Integer> {
     @Modifying
     @Transactional
     //MIRAR EL NEXT VAL
-    @Query(value = "INSERT INTO bebidas_bares (nombre, costo, idServicio) VALUES (B3-Proyecto1_sequence.nextval, :nombre, :costo)", nativeQuery = true)
+    @Query(value = "INSERT INTO bebidas_bares (nombre, costo, idServicio) VALUES (B3-Proyecto1_sequence.nextval, :nombre, :costo, :idServicio)", nativeQuery = true)
     void insertarBebida(@Param("nombre")String nombre, @Param("costo")int costo, @Param("idServicio")Servicio idServicio);
 
     

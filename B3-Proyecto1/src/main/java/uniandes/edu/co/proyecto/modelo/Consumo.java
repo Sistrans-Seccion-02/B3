@@ -18,10 +18,12 @@ public class Consumo {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     
+    @ManyToOne
     @JoinColumn(name="id_servicio", referencedColumnName = "id_servicio")
     private Servicio idServicio;
-
-    @JoinColumn(name="id_reserva", referencedColumnName = "id_reserva")
+    
+    @ManyToOne
+    @JoinColumn(name="id_entrada", referencedColumnName = "id_entrada")
     private Entrada idReserva;
 
     @ManyToOne

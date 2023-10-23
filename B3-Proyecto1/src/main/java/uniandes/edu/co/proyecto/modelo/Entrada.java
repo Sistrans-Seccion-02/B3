@@ -18,7 +18,10 @@ import jakarta.persistence.Table;
 @Table(name="entradas")
 public class Entrada {
 
-    @EmbeddedId
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id_entrada;
+
     @OneToOne
     @JoinColumn(name="idReserva", referencedColumnName = "id_reserva")
     private Reserva idReserva;
@@ -35,11 +38,19 @@ public class Entrada {
     public Entrada()
     {;}
 
-    public Reserva getIdServicio() {
+    public int getId_entrada() {
+        return id_entrada;
+    }
+
+    public void setId_entrada(int id_entrada) {
+        this.id_entrada = id_entrada;
+    }
+
+    public Reserva getIdReserva() {
         return idReserva;
     }
 
-    public void setIdServicio(Reserva idReserva) {
+    public void setIdReserva(Reserva idReserva) {
         this.idReserva = idReserva;
     }
 
@@ -49,8 +60,9 @@ public class Entrada {
 
     public void setIdEncargado(Usuario idEncargado) {
         this.idEncargado = idEncargado;
-    } 
+    }
 
+  
     
 
     

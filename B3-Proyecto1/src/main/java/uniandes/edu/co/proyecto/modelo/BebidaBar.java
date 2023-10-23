@@ -16,10 +16,10 @@ public class BebidaBar {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
+
     private String nombre;
     private int costo;
 
-    @Id
     @ManyToOne
     @JoinColumn(name="idServicio", referencedColumnName = "id_servicio")
     private Servicio idServicio;

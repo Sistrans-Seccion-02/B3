@@ -29,8 +29,14 @@ public interface ReservaServicioRepository extends JpaRepository<ReservaServicio
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE reservas_servicio SET fecha=: fecha, hora=:hora idServicio=: idServicio habitacion:=habitacion  WHERE id=:id", nativeQuery = true)
-    void actualizarReserva(@Param("id") int id, @Param("fecha")String fecha, @Param("hora")String hora, @Param("idServicio")Servicio idServicio, @Param("habitacion")Habitacion habitacion);
+    @Query(value = "UPDATE reservas_servicio SET fecha=:fecha, hora=:hora, idServicio=:idServicio, habitacion=:habitacion WHERE id=:id", nativeQuery = true)
+    void actualizarReserva(
+    @Param("id") int id,
+    @Param("fecha") String fecha,
+    @Param("hora") String hora,
+    @Param("idServicio") Servicio servicio,
+    @Param("habitacion") Habitacion habitacion
+);
 
     @Modifying
     @Transactional

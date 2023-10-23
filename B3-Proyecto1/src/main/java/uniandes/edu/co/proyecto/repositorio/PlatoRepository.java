@@ -25,10 +25,17 @@ public interface PlatoRepository extends JpaRepository<Plato, Integer> {
     void insertarPlato(@Param("nombre")String nombre, @Param("costo")int costo, @Param("idServicio")Servicio idServicio);
 
 
+   
+    
     @Modifying
     @Transactional
-    @Query(value = "UPDATE platos SET nombre=:nombre, costo=:costo, idServicio=: idServicio WHERE id=:id", nativeQuery = true)
-    void actualizarPlato(@Param("id") int id, @Param("nombre")String nombre, @Param("costo")int costo, @Param("idServicio")Servicio idServicio);
+    @Query(value = "UPDATE platos SET nombre =:nombre, costo =:costo, idServicio =:idServicio WHERE id = :id", nativeQuery = true)
+    void actualizarPlato(
+    @Param("id") int id,
+    @Param("nombre") String nombre,
+    @Param("costo") int costo,
+    @Param("idServicio") Servicio servicio
+);
 
 
     @Modifying

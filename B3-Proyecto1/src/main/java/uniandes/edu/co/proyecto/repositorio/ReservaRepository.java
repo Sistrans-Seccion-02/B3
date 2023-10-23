@@ -32,7 +32,7 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE reservas SET numPersonas=:numPersonas, fechaEntrada=:fechaEntrada, fechaSalida=: fechaSalida, cliente=:cliente, habitacion=:habitacion, plan=:plan WHERE id=:id", nativeQuery = true)
+    @Query(value = "UPDATE reservas SET numPersonas=:numPersonas, fechaEntrada=:fechaEntrada, fechaSalida=:fechaSalida, cliente=:cliente, habitacion=:habitacion, plan=:plan WHERE id=:id", nativeQuery = true)
     void actualizarReserva(@Param("id") int id, @Param("numPersonas") int numpersonas, @Param("fechaEntrada") String fechaEntrada, @Param("fechaSalida") String fechaSalida, @Param("cliente") Usuario Cliente, @Param("habitacion") Habitacion habitacion, @Param("plan") Plan plan);
 
 

@@ -18,7 +18,6 @@ public class Producto {
     private String nombre;
     private int costo;
 
-    @Id
     @ManyToOne
     @JoinColumn(name="idServicio", referencedColumnName = "id_servicio")
     private Servicio idServicio;

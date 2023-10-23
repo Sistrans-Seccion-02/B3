@@ -13,7 +13,7 @@ public class Spa extends Servicio{
     
 
     public Spa(Integer id, String tipo, Integer id_reserva, String nombre, int duracion, int costo) {
-        super(id, tipo, id_reserva);
+        super(id, tipo);
         this.nombre = nombre;
         this.duracion = duracion;
         this.costo = costo;

@@ -11,22 +11,21 @@ import jakarta.persistence.InheritanceType;
 
 @Entity
 @Table(name="servicios")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Servicio {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Integer id_servicio;
+
     private String tipo;
-    private Integer id_reserva;
 
 
     
 
-    public Servicio(Integer id_servicio, String tipo, Integer id_reserva) {
+    public Servicio(Integer id_servicio, String tipo) {
         this.id_servicio = id_servicio;
         this.tipo = tipo;
-        this.id_reserva = id_reserva;
+       
     }
 
     public Servicio()
@@ -48,13 +47,6 @@ public class Servicio {
         this.tipo = tipo;
     }
 
-    public Integer getId_reserva() {
-        return id_reserva;
-    }
-
-    public void setId_reserva(Integer id_reserva) {
-        this.id_reserva = id_reserva;
-    }
 
     
 

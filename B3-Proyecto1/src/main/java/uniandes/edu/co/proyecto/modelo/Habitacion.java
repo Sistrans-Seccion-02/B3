@@ -21,10 +21,10 @@ public class Habitacion {
     
     @ManyToOne
     @JoinColumn(name="tipohabitacion", referencedColumnName = "nombre")
-    private String tipo;
+    private TipoHabitacion tipo;
 
 
-    public Habitacion(Integer nHabitacion, String tipo) {
+    public Habitacion(Integer nHabitacion, TipoHabitacion tipo) {
         this.nHabitacion = nHabitacion;
         this.tipo = tipo;
     }
@@ -44,12 +44,12 @@ public class Habitacion {
     }
 
 
-    public String getTipo() {
+    public TipoHabitacion getTipo() {
         return tipo;
     }
 
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoHabitacion tipo) {
         this.tipo = tipo;
     }
 

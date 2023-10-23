@@ -21,15 +21,15 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO habitaciones (numHabitacion, tipo) VALUES (:tipo)", nativeQuery = true)
-    void insertarHabitacion(@Param("numHabitacion") int numHabitacion, @Param("tipo") String tipo);
+    @Query(value = "INSERT INTO habitaciones (numHabitacion, tipo) VALUES (:numHabitacion, :tipo)", nativeQuery = true)
+    void insertarHabitacion(@Param("numHabitacion") int numHabitacion, @Param("tipo") TipoHabitacion tipo);
     
     @Modifying
     @Transactional
     @Query(value = "UPDATE habitaciones SET tipo = :tipo WHERE numHabitacion = :numHabitacion", nativeQuery = true)
-    void actualizarHabitacion(@Param("numHabitacion") int numHabitacion, @Param("tipo") String tipo);
+    void actualizarHabitacion(@Param("numHabitacion") int numHabitacion, @Param("tipo") TipoHabitacion tipo);
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM habitaciones WHERE id = :id", nativeQuery = true)
+    @Query(value = "DELETE FROM habitaciones WHERE numHabitacion = :numHabitacion", nativeQuery = true)
     void eliminarHabitacion(@Param("numHabitacion") int numHabitacion);
 }

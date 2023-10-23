@@ -33,13 +33,13 @@ public class EntradasController {
 
     @PostMapping("/entradas/new/save")
     public String entradaGuardar(@ModelAttribute Entrada entrada){
-        entradaRepository.insertarEntrada(entrada.getIdEncargado());
+        entradaRepository.insertarEntrada(entrada.getIdReserva(), entrada.getIdEncargado());
         return "redirect:/entradas";
     }
 
     @GetMapping("entradas/{id}/edit")
-    public String entradaEditarForm(@PathVariable("id") Reserva idReserva, Model model){
-        Entrada entrada = entradaRepository.darEntrada(idReserva);
+    public String entradaEditarForm(@PathVariable("id") int id_entrada, Model model){
+        Entrada entrada = entradaRepository.darEntrada(id_entrada);
         if (entrada!= null){
             model.addAttribute("entrada", entrada);
             return "entradaEditar";
@@ -49,15 +49,17 @@ public class EntradasController {
         }
     }
     @PostMapping("/entradas/{id}/edit/save")
-    public String entradaEditarGuardar(@PathVariable("id") Reserva idReserva, @ModelAttribute Entrada entrada){
-        entradaRepository.actualizarEntrada(idReserva, entrada.getIdEncargado());
+    public String entradaEditarGuardar(@PathVariable("id") int id_entrada, @ModelAttribute Entrada entrada){
+        entradaRepository.actualizarEntrada(id_entrada, entrada.getIdReserva() , entrada.getIdEncargado());
         return "redirect:/entradas";
 
     }
 
+    
+
     @GetMapping("/entradas/{id}/delete")
-    public String entradaEliminar(@PathVariable("id") Reserva idReserva){
-        entradaRepository.eliminarEntrada(idReserva);
+    public String entradaEliminar(@PathVariable("id") int id_entrada){
+        entradaRepository.eliminarEntrada(id_entrada);
         return "redirect:/entradas"; 
     }
 

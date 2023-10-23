@@ -12,16 +12,16 @@ private Integer capacidad;
 private String estilo;
 //falta plato(relacion)
 
-public Restaurante(String nombre, Integer capacidad, String estilo)
-{   
-    this.nombre = nombre;
-    this.capacidad = capacidad;
-    this.estilo = estilo;
-
-}
 
 public Restaurante()
 {;}
+
+public Restaurante(Integer id_servicio, String tipo, String nombre, Integer capacidad, String estilo) {
+    super(id_servicio, tipo);
+    this.nombre = nombre;
+    this.capacidad = capacidad;
+    this.estilo = estilo;
+}
 
 public String getNombre() {
     return nombre;
