@@ -12,15 +12,12 @@ public class TipoHabitacion {
     
     // Atributos de la clase TipoHabitacion
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
     private String nombre;
     private String dotacion;
     private int capacidad;
 
     // Constructor
     public TipoHabitacion(int id, String nombre, String dotacion, int capacidad) {
-        this.id = id;
         this.nombre = nombre;
         this.dotacion = dotacion;
         this.capacidad = capacidad;
@@ -28,10 +25,6 @@ public class TipoHabitacion {
     public TipoHabitacion()
     {;}
 
-    // Métodos getters y setters
-    public int getId() {
-        return id;
-    }
     public String getNombre() {
         return nombre;
     }
@@ -40,9 +33,6 @@ public class TipoHabitacion {
     }
     public int getCapacidad() {
         return capacidad;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;

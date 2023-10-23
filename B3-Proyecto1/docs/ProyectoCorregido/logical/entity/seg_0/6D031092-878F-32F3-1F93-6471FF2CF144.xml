@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6D031092-878F-32F3-1F93-6471FF2CF144" name="Reservas">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:46:38 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_reserva" id="8037AC35-B087-044D-769C-DCA4FA9D7FBE">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:46:58 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numeroPersonas" id="D0B2BDCC-76A1-1F10-90A1-969E52406881">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:50:22 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_plan" id="F4C9FB7C-5257-33F2-13A7-8CFACBCB8CB4">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:55:22 UTC</createdTime>
+<generatorID>BC649905-7D43-A43D-8B0C-C3D889F15BF7</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>0685330D-FD85-C9E8-CDF0-10B8311BF977</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaEntrada" id="F4708553-351C-9827-E377-B20BA3968C82">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:57:52 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaSalida" id="0F8DD5E5-7E12-F09A-937F-1C9E10F60573">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:58:03 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="70765DBC-2C93-87D7-F676-72A4ECBDC306">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:03:35 UTC</createdTime>
+<generatorID>98337650-8542-6EB0-7A22-24D4A85A07F9</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>0E8426FD-0732-5E75-C27E-0053A22CEDD2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nHabitacion" id="34F57B4A-073A-03F3-5352-76C3FEA3B8C6">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:17:17 UTC</createdTime>
+<generatorID>027F5C0B-381B-F1A1-1BD5-45F3253D10C4</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>F0849FBB-DBD3-47C7-0CDD-6112A0E21694</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6083D0BF-E22D-40EF-15CC-BA83441BBC32" name="Reservas PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:52:33 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>8037AC35-B087-044D-769C-DCA4FA9D7FBE</newElementsIDs>
+<usedAttributes>
+<attributeRef>8037AC35-B087-044D-769C-DCA4FA9D7FBE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

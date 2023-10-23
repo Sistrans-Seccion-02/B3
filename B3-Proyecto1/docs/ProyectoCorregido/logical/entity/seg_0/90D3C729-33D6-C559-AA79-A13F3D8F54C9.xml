@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="90D3C729-33D6-C559-AA79-A13F3D8F54C9" name="ServiciosSpa">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:39:01 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="06C7E37D-1C6A-DB7A-F5AC-FE0586E64FC1">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:39:01 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="904036AE-88CA-88D7-C370-5A799EA0334C">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:39:01 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costo" id="49CBDC69-BAC3-EDA2-606C-6A2528848C28">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:39:01 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_servicio" id="732F7076-CF77-2D83-1799-A602C398CF36">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:34:49 UTC</createdTime>
+<generatorID>E20DA424-5A12-BD2F-9A20-9AA26DDDFD91</generatorID>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>9C7F4B22-63E5-777C-93E7-9E920D7CD826</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4A3B5235-8989-DAF1-E353-47C32F4D98E1" name="ServiciosSpa PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:52:10 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>06C7E37D-1C6A-DB7A-F5AC-FE0586E64FC1</attributeRef>
+<attributeRef>732F7076-CF77-2D83-1799-A602C398CF36</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
