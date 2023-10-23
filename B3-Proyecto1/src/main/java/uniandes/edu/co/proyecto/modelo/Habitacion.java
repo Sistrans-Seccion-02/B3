@@ -15,10 +15,11 @@ public class Habitacion {
 
 
     @JoinColumn(name="tipo", referencedColumnName = "nombre")
-    private TipoHabitacion tipo;
+        private String tipo;
 
 
-    public Habitacion(Integer numHabitacion, TipoHabitacion tipo) {
+
+    public Habitacion(Integer numHabitacion, String tipo) {
         this.numHabitacion = numHabitacion;
         this.tipo = tipo;
     }
@@ -38,12 +39,12 @@ public class Habitacion {
     }
 
 
-    public TipoHabitacion getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
 
-    public void setTipo(TipoHabitacion tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
