@@ -1,38 +1,46 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 
 @Entity
 @Table(name="entradas")
 public class Entrada {
-    @Id
-    @ManyToOne
+
+    @EmbeddedId
+    @OneToOne
     @JoinColumn(name="idReserva", referencedColumnName = "id_reserva")
-    private Servicio idServicio;
+    private Reserva idReserva;
 
     @ManyToOne
     @JoinColumn(name="idEncargado", referencedColumnName = "id_usuario")
     private Usuario idEncargado;
 
-    public Entrada(Servicio idServicio, Usuario idEncargado) {
-        this.idServicio = idServicio;
+    public Entrada(Reserva idReserva, Usuario idEncargado) {
+        this.idReserva = idReserva;
         this.idEncargado = idEncargado;
     }
 
     public Entrada()
     {;}
 
-    public Servicio getIdServicio() {
-        return idServicio;
+    public Reserva getIdServicio() {
+        return idReserva;
     }
 
-    public void setIdServicio(Servicio idServicio) {
-        this.idServicio = idServicio;
+    public void setIdServicio(Reserva idReserva) {
+        this.idReserva = idReserva;
     }
 
     public Usuario getIdEncargado() {

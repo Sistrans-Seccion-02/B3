@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Table(name="Reservas")
@@ -20,12 +22,15 @@ public class Reserva {
     private String fechaEntrada;
     private String fechaSalida;
 
-    @JoinColumn(name="idCliente", referencedColumnName = "idCliente")
+    @OneToOne
+    @JoinColumn(name="idCliente", referencedColumnName = "id_usuario")
     private Usuario cliente;
 
-    @JoinColumn(name="habitacion", referencedColumnName = "numHabitacion")
+    @ManyToOne
+    @JoinColumn(name="habitacion", referencedColumnName = "nHabitacion")
     private Habitacion habitacion;
 
+    @ManyToOne
     @JoinColumn(name="tipoPlan", referencedColumnName = "nombre")
     private Plan tipoPlan;
 

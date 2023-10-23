@@ -31,7 +31,7 @@ public class HabitacionesController {
 
     @PostMapping("/habitaciones/new/save")
     public String habitacionGuardar(@ModelAttribute Habitacion habitacion) {
-        habitacionRepository.insertarHabitacion(habitacion.getNumHabitacion(), habitacion.getTipo());
+        habitacionRepository.insertarHabitacion(habitacion.getIdHabitacion(), habitacion.getTipo());
         return "redirect:/habitaciones";
     }
 

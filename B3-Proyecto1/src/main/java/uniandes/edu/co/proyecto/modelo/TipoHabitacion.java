@@ -7,17 +7,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tipo habitacion")
+@Table(name="tiposhabitacion")
 public class TipoHabitacion {
     
     // Atributos de la clase TipoHabitacion
     @Id
     private String nombre;
-    private String dotacion;
+    private Integer dotacion;
     private int capacidad;
 
     // Constructor
-    public TipoHabitacion(int id, String nombre, String dotacion, int capacidad) {
+    public TipoHabitacion(String nombre, Integer dotacion, int capacidad) {
+
         this.nombre = nombre;
         this.dotacion = dotacion;
         this.capacidad = capacidad;
@@ -25,10 +26,12 @@ public class TipoHabitacion {
     public TipoHabitacion()
     {;}
 
+    // Métodos getters y setters
+
     public String getNombre() {
         return nombre;
     }
-    public String getDotacion() {
+    public Integer getDotacion() {
         return dotacion;
     }
     public int getCapacidad() {
@@ -37,7 +40,7 @@ public class TipoHabitacion {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public void setDotacion(String dotacion) {
+    public void setDotacion(Integer dotacion) {
         this.dotacion = dotacion;
     }
     public void setCapacidad(int capacidad) {

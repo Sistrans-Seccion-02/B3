@@ -1,7 +1,12 @@
 package uniandes.edu.co.proyecto.modelo;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
@@ -9,18 +14,18 @@ import jakarta.persistence.Table;
 @Entity
 public class Habitacion {
     
-    
+
     @Id
-    private Integer numHabitacion;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer nHabitacion;
+    
+    @ManyToOne
+    @JoinColumn(name="tipohabitacion", referencedColumnName = "nombre")
+    private String tipo;
 
 
-    @JoinColumn(name="tipo", referencedColumnName = "nombre")
-        private String tipo;
-
-
-
-    public Habitacion(Integer numHabitacion, String tipo) {
-        this.numHabitacion = numHabitacion;
+    public Habitacion(Integer nHabitacion, String tipo) {
+        this.nHabitacion = nHabitacion;
         this.tipo = tipo;
     }
     
@@ -29,13 +34,13 @@ public class Habitacion {
     {;}
 
 
-    public Integer getNumHabitacion() {
-        return numHabitacion;
+    public Integer getIdHabitacion() {
+        return nHabitacion;
     }
 
 
-    public void setNumHabitacion(Integer numHabitacion) {
-        this.numHabitacion = numHabitacion;
+    public void setIdHabitacion(Integer nHabitacion) {
+        this.nHabitacion = nHabitacion;
     }
 
 

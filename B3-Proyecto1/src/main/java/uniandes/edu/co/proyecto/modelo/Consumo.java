@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,7 +24,8 @@ public class Consumo {
     @JoinColumn(name="id_reserva", referencedColumnName = "id_reserva")
     private Entrada idReserva;
 
-    @JoinColumn(name="numHabitacion", referencedColumnName = "numHabitacion")
+    @ManyToOne
+    @JoinColumn(name="habitacion", referencedColumnName = "nHabitacion")
     private Habitacion habitacion;
 
     public Consumo(Integer id, Servicio idServicio, Entrada idReserva, Habitacion habitacion) {
