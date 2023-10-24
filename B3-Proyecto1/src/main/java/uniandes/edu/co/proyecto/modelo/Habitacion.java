@@ -17,6 +17,7 @@ public class Habitacion {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="nhabitacion")
     private Integer nHabitacion;
     
     @ManyToOne

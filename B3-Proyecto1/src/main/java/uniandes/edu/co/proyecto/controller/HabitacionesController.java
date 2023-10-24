@@ -19,13 +19,13 @@ public class HabitacionesController {
 
     @GetMapping("/habitaciones")
     public String habitaciones(Model model) {
-        model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
+        model.addAttribute("nhabitacion", habitacionRepository.darHabitaciones());
         return "habitaciones";
     }
 
     @GetMapping("/habitaciones/new")
     public String habitacionForm(Model model) {
-        model.addAttribute("habitacion", new Habitacion() );
+        model.addAttribute("nhabitacion", new Habitacion() );
         return "habitacionNuevo";
     }
 
@@ -39,7 +39,7 @@ public class HabitacionesController {
     public String habitacionEditarForm(@PathVariable("id") int id, Model model) {
         Habitacion habitacion = habitacionRepository.darHabitacion(id);
         if (habitacion != null) {
-            model.addAttribute("habitacion", habitacion);
+            model.addAttribute("nhabitacion", habitacion);
             return "habitacionEditar";
         } else {
             return "redirect:/habitaciones";
