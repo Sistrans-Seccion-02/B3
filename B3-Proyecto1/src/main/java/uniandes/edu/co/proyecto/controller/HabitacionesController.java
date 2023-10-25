@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
 import uniandes.edu.co.proyecto.modelo.Habitacion;
+import uniandes.edu.co.proyecto.modelo.TipoHabitacion;
 import uniandes.edu.co.proyecto.repositorio.HabitacionRepository;
+import uniandes.edu.co.proyecto.repositorio.TipoHabitacionRepository;
 
 @Controller
 public class HabitacionesController {
 
     @Autowired
     private HabitacionRepository habitacionRepository;
+    private TipoHabitacionRepository tipo;
 
     @GetMapping("/habitaciones")
     public String habitaciones(Model model) {
@@ -26,7 +29,8 @@ public class HabitacionesController {
     @GetMapping("/habitaciones/new")
     public String habitacionForm(Model model) {
         model.addAttribute("nhabitacion", new Habitacion() );
-        return "habitacionNuevo";
+        model.addAttribute("tipos", tipo.findAll());  
+        return "HabitacionNuevo";
     }
 
     @PostMapping("/habitaciones/new/save")

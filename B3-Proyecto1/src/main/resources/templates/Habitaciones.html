@@ -9,23 +9,31 @@
 <body>
 <div class="container mt-5">
     <h2>Habitaciones</h2>
+    <!-- Botón para agregar nueva habitación -->
+    <a th:href="@{/habitaciones/new}" class="btn btn-primary mb-3">Nueva Habitación</a>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Tipo de Habitación</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
+            <!-- Corregido el nombre del atributo -->
             <tr th:each="habitacion : ${habitaciones}">
                 <td th:text="${habitacion.id}"></td>
                 <td th:text="${habitacion.tipo}"></td>
-            <td>
-                <a th:href="@{/habitaciones/{id}/edit(id=${habitacion.id})}" class="btn btn-info">Editar</a>
-                <a th:href="@{/habitaciones/{id}/delete(id=${habitacion.id})}" class="btn btn-danger">Eliminar</a>
-            </td>
+                <td>
+                    <!-- Botón para editar habitación -->
+                    <a th:href="@{/habitaciones/{id}/edit(id=${habitacion.id})}" class="btn btn-info">Editar</a>
+                    <!-- Botón para eliminar habitación -->
+                    <a th:href="@{/habitaciones/{id}/delete(id=${habitacion.id})}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
         </tbody>
     </table>
+    <!-- Botón para volver -->
     <a th:href="@{/}" class="btn btn-secondary mt-3">Volver</a>
 </div>
 </body>
