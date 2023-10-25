@@ -36,8 +36,8 @@ public class PlanController {
     }
 
     @GetMapping("planes/{id}/edit")
-    public String planEditarForm(@PathVariable("id") int id, Model model){
-        Plan plan = planRepository.darPlan(id);
+    public String planEditarForm(@PathVariable("id") String nombre, Model model){
+        Plan plan = planRepository.darPlan(nombre);
         if (plan!= null){
             model.addAttribute("plan", plan);
             return "planEditar";
@@ -47,15 +47,15 @@ public class PlanController {
         }
     }
     @PostMapping("/planes/{id}/edit/save")
-    public String planEditarGuardar(@PathVariable("id") int id, @ModelAttribute Plan plan){
-        planRepository.actualizarPlan(id, plan.getNombre(), plan.getDescripcion(), plan.getDescuento());
+    public String planEditarGuardar(@PathVariable("id") String nombre, @ModelAttribute Plan plan){
+        planRepository.actualizarPlan(nombre, plan.getDescripcion(), plan.getDescuento());
         return "redirect:/planes";
 
     }
 
-    @GetMapping("/planes/{id}/delete")
-    public String planEliminar(@PathVariable("plan") int id){
-        planRepository.eliminarPlan(id);
+    @GetMapping("/planes/{nombre}/delete")
+    public String planEliminar(@PathVariable("nombre") String nombre){
+        planRepository.eliminarPlan(nombre);
         return "redirect:/planes"; 
     }
 
