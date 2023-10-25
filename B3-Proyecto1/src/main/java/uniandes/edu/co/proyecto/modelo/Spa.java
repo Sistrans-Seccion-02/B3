@@ -12,8 +12,8 @@ public class Spa extends Servicio{
     private int costo;
     
 
-    public Spa(Integer id, String tipo, Integer id_reserva, String nombre, int duracion, int costo) {
-        super(id, tipo);
+
+    public Spa(String nombre, int duracion, int costo) {
         this.nombre = nombre;
         this.duracion = duracion;
         this.costo = costo;
