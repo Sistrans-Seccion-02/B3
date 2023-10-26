@@ -19,7 +19,7 @@ public class Producto {
     private int costo;
 
     @ManyToOne
-    @JoinColumn(name="idServicio", referencedColumnName = "id_servicio")
+    @JoinColumn(name="idservicio", referencedColumnName = "idservicio")
     private Servicio idServicio;
 
     public Producto(Integer id, String nombre, int costo, Servicio idServicio) {

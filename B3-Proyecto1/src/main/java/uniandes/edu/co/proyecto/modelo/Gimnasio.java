@@ -2,16 +2,21 @@ package uniandes.edu.co.proyecto.modelo;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
 
 @Table(name="gimnasios")
 @Entity
 public class Gimnasio extends Servicio{
+
     private int capacidad;
     private int maquinas;
     private Date horaInicio;
     private Date horaFinal;
+
+
     
     public Gimnasio(int id, int capacidad, int maquinas, Date horaInicio, Date horaFinal) {
         this.capacidad = capacidad;

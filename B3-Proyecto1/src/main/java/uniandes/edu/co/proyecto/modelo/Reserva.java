@@ -16,27 +16,27 @@ public class Reserva {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id_reserva;
+    private Integer idreserva;
     
     private int numPersonas;
     private String fechaEntrada;
     private String fechaSalida;
 
     @OneToOne
-    @JoinColumn(name="idCliente", referencedColumnName = "id_usuario")
+    @JoinColumn(name="idusuario", referencedColumnName = "idusuario")
     private Usuario cliente;
 
     @ManyToOne
-    @JoinColumn(name="habitacion", referencedColumnName = "nHabitacion")
+    @JoinColumn(name="nhabitacion", referencedColumnName = "nhabitacion")
     private Habitacion habitacion;
 
     @ManyToOne
-    @JoinColumn(name="tipoPlan", referencedColumnName = "nombre")
+    @JoinColumn(name="tipoplan", referencedColumnName = "nombre")
     private Plan tipoPlan;
 
-    public Reserva(Integer id_reserva, int numPersonas, String fechaEntrada, String fechaSalida, Usuario cliente,
+    public Reserva(Integer idreserva, int numPersonas, String fechaEntrada, String fechaSalida, Usuario cliente,
             Habitacion habitacion, Plan tipoPlan) {
-        this.id_reserva = id_reserva;
+        this.idreserva = idreserva;
         this.numPersonas = numPersonas;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
@@ -49,11 +49,11 @@ public class Reserva {
     {;}
 
     public Integer getId_reserva() {
-        return id_reserva;
+        return idreserva;
     }
 
     public void setId_reserva(Integer id_reserva) {
-        this.id_reserva = id_reserva;
+        this.idreserva = id_reserva;
     }
 
     public int getNumPersonas() {

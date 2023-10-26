@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" th:href ="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
-    <div class = "container mx-auto w-25">
+    <div class = "text-center">
         <h1>Planes</h1>
         <div>
             <h1> Lista de Planes</h1> 
@@ -17,26 +17,29 @@
                         <th>Nombre</th>
                         <th>Descripción</th>
                         <th>Descuento</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
-                <th:block th:each="planes:${plan}">
-                    <td th:text = "${plan.nombre}"></td>
-                    <td th:text = "${plan.descripcion}"></td>
-                    <td th:text = "${plan.descuento}"></td>
-                    
-                    <td><a href="@{planes/{id}/edit(id=${plan.nombre})}" class="btn btn-primary">Editar</a></td>
-                    <td><a href="@{planes/{id}/delete(id=${plan.nombre})}" class="btn btn-primary" onclick="return confirm('¿Estas seguro de borrar este plan')">Eliminar</a></td>
+                
+                <th:block th:each="plan:${planes}">
+                    <tr>
+                        <td th:text = "${plan.nombre}"></td>
+                        <td th:text = "${plan.descripcion}"></td>
+                        <td th:text = "${plan.descuento}"></td>
+                        <td>
+                        <a th:href="@{planes/{id}/edit(id=${plan.nombre})}" class="btn btn-primary">Editar</a>
+                        <a th:href="@{planes/{id}/delete(id=${plan.nombre})}" class="btn btn-primary" onclick="return confirm('¿Estas seguro de borrar este plan')">Eliminar</a>
+                        </td>
+                    </tr>
                 </th:block>
-
             </table> 
             <div>
-                <a href= "/" class="btn btn-primary">Volver a la aplicación</a>
-            </div>        
-
+                <a th:href='@{/}' class="btn btn-primary">Volver a la aplicación</a>
+                <a th:href="@{/planes/new}" class="btn btn-primary">Añadir plan</a>
+            </div>
         
             </div>
 
         </div>
-    </div>
 </body>
 </html>

@@ -24,9 +24,9 @@ public class PlanController {
     }
 
     @GetMapping("/planes/new")
-    public String planFrom(Model model){
+    public String planform(Model model){
         model.addAttribute("plan", new Plan());
-        return "planNuevo";
+        return "plannuevo";
     }
 
     @PostMapping("/planes/new/save")
@@ -40,7 +40,7 @@ public class PlanController {
         Plan plan = planRepository.darPlan(nombre);
         if (plan!= null){
             model.addAttribute("plan", plan);
-            return "planEditar";
+            return "planeditar";
         }
         else{
             return "redirect:/planes";
