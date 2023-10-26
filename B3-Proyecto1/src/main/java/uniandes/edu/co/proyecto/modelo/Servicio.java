@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.Table;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.DiscriminatorColumn;
 
 
 @Entity
@@ -14,16 +18,15 @@ import jakarta.persistence.InheritanceType;
 public class Servicio {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
-    private Integer id_servicio;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="idservicio")
+    private Integer idservicio;
 
+   
     private String tipo;
 
-
-    
-
-    public Servicio(Integer id_servicio, String tipo) {
-        this.id_servicio = id_servicio;
+    public Servicio(Integer idservicio, String tipo) {
+        this.idservicio = idservicio;
         this.tipo = tipo;
        
     }
@@ -32,11 +35,11 @@ public class Servicio {
     {;}
 
     public Integer getId() {
-        return id_servicio;
+        return idservicio;
     }
 
-    public void setId(Integer id_servicio) {
-        this.id_servicio = id_servicio;
+    public void setId(Integer idservicio) {
+        this.idservicio = idservicio;
     }
 
     public String getTipo() {
@@ -48,11 +51,5 @@ public class Servicio {
     }
 
 
-    
-
-    
-
-    
-    
 
 }

@@ -21,7 +21,7 @@ public class BebidaBar {
     private int costo;
 
     @ManyToOne
-    @JoinColumn(name="idServicio", referencedColumnName = "id_servicio")
+    @JoinColumn(name="idservicio", referencedColumnName = "idservicio")
     private Servicio idServicio;
 
     private String descripcion;

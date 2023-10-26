@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
 
@@ -11,11 +13,14 @@ public class Bar extends Servicio{
     private int capacidad;
     private String estilo;
 
-    public Bar(String nombre, int capacidad, String estilo) {
-    this.nombre = nombre;
-    this.capacidad = capacidad;
-    this.estilo = estilo;
-}
+
+
+    public Bar( String nombre, int capacidad, String estilo) {
+        this.nombre = nombre;
+        this.capacidad = capacidad;
+        this.estilo = estilo;
+    }
+
 
     public Bar()
         {;}

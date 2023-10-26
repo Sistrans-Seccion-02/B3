@@ -19,15 +19,15 @@ public class Consumo {
     private Integer id;
     
     @ManyToOne
-    @JoinColumn(name="id_servicio", referencedColumnName = "id_servicio")
+    @JoinColumn(name="idservicio", referencedColumnName = "idservicio")
     private Servicio idServicio;
     
     @ManyToOne
-    @JoinColumn(name="id_entrada", referencedColumnName = "id_entrada")
+    @JoinColumn(name="identrada", referencedColumnName = "identrada")
     private Entrada idReserva;
 
     @ManyToOne
-    @JoinColumn(name="habitacion", referencedColumnName = "nHabitacion")
+    @JoinColumn(name="habitacion", referencedColumnName = "nhabitacion")
     private Habitacion habitacion;
 
     public Consumo(Integer id, Servicio idServicio, Entrada idReserva, Habitacion habitacion) {

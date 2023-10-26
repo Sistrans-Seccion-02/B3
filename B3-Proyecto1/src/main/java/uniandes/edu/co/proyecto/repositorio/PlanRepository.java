@@ -14,23 +14,23 @@ public interface PlanRepository extends JpaRepository<Plan, Integer>{
     @Query(value = "SELECT * FROM planes", nativeQuery = true)
     Collection<Plan> darPlanes();
 
-    @Query(value = "SELECT * FROM planes WHERE id = :id", nativeQuery = true)
-    Plan darPlan(@Param("id") Integer id);
+    @Query(value = "SELECT * FROM planes WHERE nombre = :nombre", nativeQuery = true)
+    Plan darPlan(@Param("nombre") String nombre);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO planes (nombre, descripcion, descuento) VALUES ( hotelandes_sequence.nextval, :nombre, :descripcion, :descuento)", nativeQuery = true)
+    @Query(value = "INSERT INTO planes (nombre, descripcion, descuento) VALUES (:nombre, :descripcion, :descuento)", nativeQuery = true)
     void insertarPlan( @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("descuento") Double descuento) ;
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE planes SET nombre =:nombre, descripcion =:descripcion, descuento =:descuento WHERE id = :id", nativeQuery = true)
-    void actualizarPlan(@Param("id") Integer id, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("descuento") Double descuento);
+    @Query(value = "UPDATE planes SET descripcion =:descripcion, descuento =:descuento WHERE nombre = :nombre", nativeQuery = true)
+    void actualizarPlan( @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("descuento") Double descuento);
 
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM planes WHERE id = :id", nativeQuery = true)
-    void eliminarPlan(@Param("id") Integer id);
+    @Query(value = "DELETE FROM planes WHERE nombre = :nombre", nativeQuery = true)
+    void eliminarPlan(@Param("nombre") String nombre);
 
     
 }

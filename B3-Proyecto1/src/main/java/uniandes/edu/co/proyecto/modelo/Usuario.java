@@ -17,19 +17,19 @@ import jakarta.persistence.ManyToOne;
 public class Usuario {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id_usuario;
+    private int idusuario;
     private String nombre; 
     private String email;
     private String usuario;
     private String contraseña;
     
     @ManyToOne
-    @JoinColumn(name="idTipoUsuario", referencedColumnName = "id")
+    @JoinColumn(name="idtipoUsuario", referencedColumnName = "id")
     private TipoUsuario idTipoUsuario;
 
-    public Usuario(int id_usuario, String nombre, String email, String usuario, String contraseña,
+    public Usuario(int idusuario, String nombre, String email, String usuario, String contraseña,
             TipoUsuario idTipoUsuario) {
-        this.id_usuario = id_usuario;
+        this.idusuario = idusuario;
         this.nombre = nombre;
         this.email = email;
         this.usuario = usuario;
@@ -41,11 +41,11 @@ public class Usuario {
     {;}
 
     public int getId_usuario() {
-        return id_usuario;
+        return idusuario;
     }
 
     public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+        this.idusuario = id_usuario;
     }
 
     public String getNombre() {

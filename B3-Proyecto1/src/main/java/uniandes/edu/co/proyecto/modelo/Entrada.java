@@ -20,14 +20,14 @@ public class Entrada {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id_entrada;
+    private int identrada;
 
     @OneToOne
-    @JoinColumn(name="idReserva", referencedColumnName = "id_reserva")
+    @JoinColumn(name="idreserva", referencedColumnName = "idreserva")
     private Reserva idReserva;
 
     @ManyToOne
-    @JoinColumn(name="idEncargado", referencedColumnName = "id_usuario")
+    @JoinColumn(name="idusuario", referencedColumnName = "idusuario")
     private Usuario idEncargado;
 
     public Entrada(Reserva idReserva, Usuario idEncargado) {
@@ -39,11 +39,11 @@ public class Entrada {
     {;}
 
     public int getId_entrada() {
-        return id_entrada;
+        return identrada;
     }
 
-    public void setId_entrada(int id_entrada) {
-        this.id_entrada = id_entrada;
+    public void setId_entrada(int identrada) {
+        this.identrada = identrada;
     }
 
     public Reserva getIdReserva() {
