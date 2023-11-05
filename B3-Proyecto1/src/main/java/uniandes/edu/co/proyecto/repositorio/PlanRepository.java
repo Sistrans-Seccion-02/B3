@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import jakarta.transaction.Transactional;
 import uniandes.edu.co.proyecto.modelo.Plan;
 
-public interface PlanRepository extends JpaRepository<Plan, Integer>{
+public interface PlanRepository extends JpaRepository<Plan, String>{
     @Query(value = "SELECT * FROM planes", nativeQuery = true)
     Collection<Plan> darPlanes();
 

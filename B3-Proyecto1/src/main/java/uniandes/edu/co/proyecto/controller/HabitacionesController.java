@@ -18,24 +18,31 @@ public class HabitacionesController {
 
     @Autowired
     private HabitacionRepository habitacionRepository;
-    private TipoHabitacionRepository tipo;
 
     @GetMapping("/habitaciones")
-    public String habitaciones(Model model) {
-        model.addAttribute("nhabitacion", habitacionRepository.darHabitaciones());
+    public String habitaciones(Model model, String habitacion) {
+       
+        if((habitacion==null || habitacion.equals(""))){
+             model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
+        }
+       else
+        {
+            model.addAttribute("habitacion", habitacionRepository.consumoporHabitaciones(Integer.parseInt(habitacion)));
+        }
+       
         return "habitaciones";
+
     }
 
     @GetMapping("/habitaciones/new")
     public String habitacionForm(Model model) {
-        model.addAttribute("nhabitacion", new Habitacion() );
-        model.addAttribute("tipos", tipo.findAll());  
-        return "HabitacionNuevo";
+        model.addAttribute("habitacion", new Habitacion() );
+        return "habitacionNuevo";
     }
 
     @PostMapping("/habitaciones/new/save")
     public String habitacionGuardar(@ModelAttribute Habitacion habitacion) {
-        habitacionRepository.insertarHabitacion(habitacion.getIdHabitacion(), habitacion.getTipo());
+        habitacionRepository.insertarHabitacion(habitacion.getnhabitacion(), habitacion.gettipohabitacion());
         return "redirect:/habitaciones";
     }
 
@@ -52,7 +59,7 @@ public class HabitacionesController {
 
     @PostMapping("/habitaciones/{id}/edit/save")
     public String habitacionEditarGuardar(@PathVariable("id") int id, @ModelAttribute Habitacion habitacion) {
-        habitacionRepository.actualizarHabitacion(id, habitacion.getTipo());
+        habitacionRepository.actualizarHabitacion(id, habitacion.gettipohabitacion());
         return "redirect:/habitaciones";
         }
 

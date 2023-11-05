@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import uniandes.edu.co.proyecto.modelo.TipoHabitacion;
 
-public interface TipoHabitacionRepository extends JpaRepository<TipoHabitacion, Long> {
+public interface TipoHabitacionRepository extends JpaRepository<TipoHabitacion, String> {
 
     @Query(value = "SELECT * FROM tipo_habitacion WHERE id = :id", nativeQuery = true)
     TipoHabitacion darTipoHabitacion(@Param("id") int id);
