@@ -27,7 +27,7 @@ public class HabitacionesController {
         }
        else
         {
-            model.addAttribute("habitacion", habitacionRepository.consumoporHabitaciones(Integer.parseInt(habitacion)));
+            model.addAttribute("habitaciones", habitacionRepository.consumoporHabitaciones(Integer.parseInt(habitacion)));
         }
        
         return "habitaciones";
