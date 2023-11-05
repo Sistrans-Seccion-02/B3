@@ -1,12 +1,10 @@
 package uniandes.edu.co.proyecto.modelo;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
@@ -17,17 +15,16 @@ public class Habitacion {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="nhabitacion")
-    private Integer nHabitacion;
+    public Integer nhabitacion;
     
     @ManyToOne
     @JoinColumn(name="tipohabitacion", referencedColumnName = "nombre")
-    private TipoHabitacion tipo;
+    public TipoHabitacion tipohabitacion;
 
 
-    public Habitacion(Integer nHabitacion, TipoHabitacion tipo) {
-        this.nHabitacion = nHabitacion;
-        this.tipo = tipo;
+    public Habitacion(Integer nhabitacion, TipoHabitacion tipohabitacion) {
+        this.nhabitacion = nhabitacion;
+        this.tipohabitacion = tipohabitacion;
     }
     
 
@@ -35,23 +32,23 @@ public class Habitacion {
     {;}
 
 
-    public Integer getIdHabitacion() {
-        return nHabitacion;
+    public Integer getnhabitacion() {
+        return nhabitacion;
     }
 
 
-    public void setIdHabitacion(Integer nHabitacion) {
-        this.nHabitacion = nHabitacion;
+    public void setnhabitacion(Integer nhabitacion) {
+        this.nhabitacion = nhabitacion;
     }
 
 
-    public TipoHabitacion getTipo() {
-        return tipo;
+    public TipoHabitacion gettipohabitacion() {
+        return tipohabitacion;
     }
 
 
-    public void setTipo(TipoHabitacion tipo) {
-        this.tipo = tipo;
+    public void settipohabitacion(TipoHabitacion tipohabitacion) {
+        this.tipohabitacion = tipohabitacion;
     }
 
     

@@ -13,6 +13,8 @@ import uniandes.edu.co.proyecto.modelo.TipoHabitacion;
 
 public interface HabitacionRepository extends JpaRepository<Habitacion, Integer> {
     
+    
+
     @Query(value = "SELECT * FROM habitaciones", nativeQuery = true)
     Collection<Habitacion> darHabitaciones();
 
@@ -28,8 +30,21 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
     @Transactional
     @Query(value = "UPDATE habitaciones SET tipo = :tipo WHERE numHabitacion = :numHabitacion", nativeQuery = true)
     void actualizarHabitacion(@Param("numHabitacion") int numHabitacion, @Param("tipo") TipoHabitacion tipo);
+    
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM habitaciones WHERE numHabitacion = :numHabitacion", nativeQuery = true)
     void eliminarHabitacion(@Param("numHabitacion") int numHabitacion);
+
+   
+   @Query(value = "SELECT h.nHabitacion, sum(s.costo) as COSTO"+//
+                    "FROM habitaciones h"+// 
+                    "INNER JOIN consumos c ON(h.nHabitacion = c.nHabitacion)"+//
+                    "RIGHT JOIN servicios s ON(c.idservicio = s.idservicio)"+//
+                    "WHERE h.nHabitacion = :habitacion"+//
+                    "GROUP BY h.nHabitacion"+//
+                    "ORDER BY h.nHabitacion", nativeQuery=true)
+    Collection<Habitacion> consumoporHabitaciones(@Param("habitacion") Integer nHabitacion);
+
+
 }
