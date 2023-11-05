@@ -13,13 +13,10 @@ public class Restaurante extends Servicio{
 
 
 
-@Column(name= "nombre")
 private String nombre;
 
-@Column(name= "capacidad")
 private Integer capacidad;
 
-@Column(name= "estilo")
 private String estilo;
 //falta plato(relacion)
 

@@ -46,5 +46,4 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
                     "ORDER BY h.nHabitacion", nativeQuery=true)
     Collection<Habitacion> consumoporHabitaciones(@Param("habitacion") Integer nHabitacion);
 
-
 }
