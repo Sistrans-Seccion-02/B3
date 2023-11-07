@@ -25,7 +25,7 @@ public class Usuario {
     
     @ManyToOne
     @JoinColumn(name="tipousuario", referencedColumnName = "id")
-    private TipoUsuario tipousuario;
+    public TipoUsuario tipousuario;
 
     public Usuario(int idusuario, String nombre, String email, String usuario, String contraseña,
             TipoUsuario tipousuario) {
