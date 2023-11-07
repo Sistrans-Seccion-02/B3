@@ -21,7 +21,6 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
     public interface Req4 {
         String getNOMBRE();
         String getDTYPE();
-        int getVECESPEDIDO();
     }
 
     
@@ -70,7 +69,7 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
             "(r.fecha > :fechainf AND r.fecha < :fechasup \n" + //
             ")\n" + //
             "GROUP BY s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion\n", nativeQuery = true)
-    Collection<Servicio> servicioCaracteristica(@Param("nhabitacion") Integer nhabitacion, @Param("fechainf") String fechainf, @Param("fechasup") String fechasup, @Param("costoinf")Integer costoinf, @Param("costosup") Integer costosup );
+    Collection<Req4> servicioCaracteristica(@Param("nhabitacion") Integer nhabitacion, @Param("fechainf") String fechainf, @Param("fechasup") String fechasup, @Param("costoinf")Integer costoinf, @Param("costosup") Integer costosup );
 
     
 }

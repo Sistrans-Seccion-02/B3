@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.util.Collections;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,15 +21,9 @@ public class ServiciosController {
 
     @GetMapping("/servicios")
     public String servicios(Model model, String nhabitacion, String fechainf, String fechasup, String costoinf, String costosup){
-        if((nhabitacion==null || nhabitacion.equals(""))||(fechainf==null || fechainf.equals(""))||(fechasup==null || fechasup.equals(""))||(costoinf==null || costoinf.equals(""))||(costosup==null || costosup.equals("")))
-        {
+    
            model.addAttribute("servicios", servicioRepository.darServicios());
-       }
-      else
-       {
-           model.addAttribute("servicios", servicioRepository.servicioCaracteristica(Integer.parseInt(nhabitacion), fechainf, fechasup, Integer.parseInt(costoinf), Integer.parseInt(costosup)));
-       }   
-
+     
         return "servicios";
     }
 
@@ -36,6 +32,20 @@ public class ServiciosController {
         model.addAttribute("top20servicios", servicioRepository.top20servicios());
         return "req2";
     }
+
+    @GetMapping("/req4")
+    public String req2(Model model, String nhabitacion, String fechain, String fechafin, String costoinf, String costosup ){
+        if((nhabitacion==null || nhabitacion.equals(""))||(fechain==null || fechain.equals(""))||(fechafin==null || fechafin.equals(""))||(costoinf==null || costoinf.equals(""))||(costosup==null || costosup.equals(""))){
+             model.addAttribute("servicioCaracterisitica", Collections.emptyList());
+        
+        }
+        else {
+            model.addAttribute("servicioCaracterisitica", servicioRepository.servicioCaracteristica(Integer.parseInt(nhabitacion), fechain, fechafin, Integer.parseInt(costoinf), Integer.parseInt(costosup)));
+        }
+        return "req4";
+    }
+    
+    
      
 
     @GetMapping("/servicios/new")
