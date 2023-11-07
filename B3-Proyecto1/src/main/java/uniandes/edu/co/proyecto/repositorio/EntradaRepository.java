@@ -14,6 +14,8 @@ import uniandes.edu.co.proyecto.modelo.Usuario;
 
 public interface EntradaRepository extends JpaRepository<Entrada, Integer> {
     
+
+
     @Query(value="SELECT * FROM entradas", nativeQuery = true)
     Collection<Entrada> darEntradas();
 
@@ -41,5 +43,8 @@ public interface EntradaRepository extends JpaRepository<Entrada, Integer> {
     @Query(value="DELETE FROM entradas WHERE id_entrada=:id_entrada", nativeQuery = true)
     void eliminarEntrada(@Param("id_entrada") int id_entrada);
     
+
+
+
 }
 

@@ -8,13 +8,26 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-
+import oracle.sql.DATE;
 import uniandes.edu.co.proyecto.modelo.Consumo;
 import uniandes.edu.co.proyecto.modelo.Entrada;
 import uniandes.edu.co.proyecto.modelo.Habitacion;
 import uniandes.edu.co.proyecto.modelo.Servicio;
 
 public interface ConsumoRepository extends JpaRepository<Consumo, Integer> {
+
+    public interface Req5{
+        int getIDCONSUMO();
+        String getFECHA();
+        int getIDUSUARIO();
+        String getNOMBRE();
+    }
+    public interface Req10{
+        int getIDUSUARIO();
+        String getNOMBRE();
+        String getEMAIL();
+    }
+
 
     @Query(value="SELECT * FROM consumos", nativeQuery = true)
     Collection<Consumo> darConsumos();
@@ -45,4 +58,33 @@ public interface ConsumoRepository extends JpaRepository<Consumo, Integer> {
     @Transactional
     @Query(value = "DELETE FROM consumos WHERE id=:id", nativeQuery = true)
     void eliminarConsumo(@Param("id") int id);
+
+    @Query(value = "SELECT DISTINCT c.idconsumo, rs.fecha, u.idusuario, u.nombre " +
+                    "FROM consumos c " +
+                    "JOIN reservas r ON (r.nhabitacion = c.nHabitacion) " +
+                    "JOIN servicios s ON (s.idservicio = c.idservicio) " +
+                    "JOIN reservasservicio rs ON (rs.idservicio = s.idservicio) " +
+                    "JOIN usuarios u ON (u.idusuario = r.idusuario) " +
+                    "WHERE u.idusuario = :id " +
+                    "AND TO_DATE(rs.fecha, 'MM/DD/YYYY') BETWEEN TO_DATE(:inicio, 'MM/DD/YYYY') AND TO_DATE(:fin, 'MM/DD/YYYY') " +
+                    "ORDER BY rs.fecha",
+    nativeQuery = true)
+    Collection<Req5> filtrarConsumos(@Param("id") int id, @Param("inicio") String inicio, @Param("fin") String fin);
+
+
+
+    @Query(value = "SELECT u.idusuario, u.nombre, u.email " +
+                "FROM usuarios u " +
+                "WHERE u.idusuario NOT IN (" +
+                "SELECT r.idusuario " +
+                "FROM consumos c " +
+                "JOIN reservas r ON r.nHabitacion = c.nHabitacion " +
+                "JOIN servicios s ON s.idservicio = c.idservicio " +
+                "JOIN reservasservicio rs ON rs.idservicio = s.idservicio " +
+                "WHERE s.idservicio = :id AND (rs.fecha > :inicio AND rs.fecha < :fin))",
+        nativeQuery = true)
+    Collection<Req10> findServicioUsuarioNotIn(@Param("id") int id, @Param("inicio") String inicio, @Param("fin") String fin);
+
 }
+
+

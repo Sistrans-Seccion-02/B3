@@ -8,17 +8,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Table(name="reservas_servicio")
+@Table(name="reservasservicio")
 @Entity
 public class ReservaServicio {
 
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Integer idreservaservicio;
     private String fecha;
     private String hora;
-
     @ManyToOne
     @JoinColumn(name="idservicio", referencedColumnName = "idservicio")
     private Servicio idServicio;
@@ -28,7 +27,7 @@ public class ReservaServicio {
     private Habitacion habitacion;
 
     public ReservaServicio(Integer id, String fecha, String hora, Servicio idServicio, Habitacion habitacion) {
-        this.id = id;
+        this.idreservaservicio = id;
         this.fecha = fecha;
         this.hora = hora;
         this.idServicio = idServicio;
@@ -39,11 +38,11 @@ public class ReservaServicio {
     {;}
 
     public Integer getId() {
-        return id;
+        return idreservaservicio;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idreservaservicio = id;
     }
 
     public String getFecha() {
