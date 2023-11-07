@@ -20,6 +20,11 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
 
     }
 
+    public interface RespuestaInformacionHabitacion{
+        String getNUMERO_HABITACION();
+        double getFRACCION_RESERVAS_HAB();
+    }
+
 
     @Query(value = "SELECT * FROM habitaciones", nativeQuery = true)
     Collection<Habitacion> darHabitaciones();
@@ -52,5 +57,12 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
            "GROUP BY h.NHABITACION \n" + //
            "ORDER BY h.NHABITACION\n", nativeQuery = true)
     Collection<Req1> consumoporHabitaciones(@Param("habitacion") Integer nHabitacion);
+
+    @Query(value="SELECT NHABITACION AS NUMERO_HABITACION, COUNT(*)/(SELECT COUNT(*) " +//
+                  "FROM RESERVAS) AS FRACCION_RESERVAS_HAB "+//
+                  "FROM HABITACIONES "+//
+                  "NATURAL JOIN RESERVAS "+//
+                  "GROUP BY NHABITACION ", nativeQuery = true)
+    Collection<RespuestaInformacionHabitacion> darIndiceOcupacion();
 
 }

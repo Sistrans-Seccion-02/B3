@@ -23,6 +23,56 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
         int getNUMERO_DE_ENTRADAS();
     }
 
+    public interface RespuestaInformacionMayorOcupacion {
+        String getFECHA();
+        Integer getOCUPACION();
+        
+    }
+
+    public interface RespuestaInformacionMenorOcupacion {
+        String getFECHA();
+        Integer getOCUPACION();
+        
+    }
+
+    public interface RespuestaInformacionMayoresIngresos {
+        String getFECHA();
+        Integer getINGRESOS();
+        
+    }
+    
+    public interface RespuestaInformacionServiciosMasSolicitados {
+        Integer getSEMANA();
+        Integer getIDSERVICIO();
+        Integer getSOLICITUDES_SERVICIO();
+        Integer getCONSUMO();
+
+        
+    }
+
+
+    public interface RespuestaInformacionServiciosMenosSolicitados {
+        Integer getSEMANA();
+        Integer getIDSERVICIO();
+        Integer getSOLICITUDES_SERVICIO();
+        Integer getCONSUMO();
+        
+    }
+
+    public interface RespuestaInformacionHabitacionesMasSolicitadas {
+        Integer getSEMANA();
+        Integer getNHABITACION();
+        Integer getCANTIDAD_HABITACION();
+        
+    }
+
+    public interface RespuestaInformacionHabitacionesMenosSolicitadas {
+        Integer getSEMANA();
+        Integer getNHABITACION();
+        Integer getCANTIDAD_HABITACION();
+        
+    }
+
     @Query(value="SELECT * FROM reservas", nativeQuery = true)
     Collection<Reserva> darReservas();
 
@@ -58,6 +108,79 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
     "ORDER BY id_cliente, year",
 nativeQuery = true)
 Collection<Req12> findClienteEcelenteEntradas();
+
+
+@Query(value="SELECT FECHAENTRADA AS FECHA, COUNT (*) AS OCUPACION " +//
+                  "FROM RESERVAS "+//
+                  "GROUP BY FECHAENTRADA "+//
+                  "ORDER BY OCUPACION DESC "+//
+                  "FETCH FIRST 5 ROW ONLY ", nativeQuery = true)
+    Collection<RespuestaInformacionMayorOcupacion> darMayorOcupacion();
+
+@Query(value="SELECT FECHAENTRADA AS FECHA, COUNT (*) AS OCUPACION " +//
+                  "FROM RESERVAS "+//
+                  "GROUP BY FECHAENTRADA "+//
+                  "ORDER BY OCUPACION ASC "+//
+                  "FETCH FIRST 5 ROW ONLY ", nativeQuery = true)
+    Collection<RespuestaInformacionMenorOcupacion> darMenorOcupacion();
+
+@Query(value="SELECT FECHAENTRADA AS FECHA, SUM(COSTOSERVICIO) AS INGRESOS " +//
+                  "FROM CONSUMOS "+//
+                  "INNER JOIN SERVICIOS ON CONSUMOS.IDSERVICIO=SERVICIOS.IDSERVICIO "+//
+                  "INNER JOIN ENTRADAS ON ENTRADAS.IDENTRADA=CONSUMOS.IDENTRADA "+//
+                  "INNER JOIN RESERVAS ON RESERVAS.IDRESERVA=ENTRADAS.IDRESERVA "+//
+                  "GROUP BY FECHAENTRADA "+//
+                  "ORDER BY INGRESOS DESC "+//
+                  "FETCH FIRST 5 ROW ONLY ", nativeQuery = true)
+    Collection<RespuestaInformacionMayoresIngresos> darMayoresIngresos();
+
+
+@Query(value="SELECT TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW') AS SEMANA, S.IDSERVICIO AS IDSERVICIO , COUNT(S.IDSERVICIO) AS SOLICITUDES_SERVICIO, SUM(COSTOSERVICIO) AS CONSUMO " +//
+                  "FROM RESERVAS R "+//
+                  "INNER JOIN ENTRADAS E ON R.IDRESERVA=E.IDRESERVA "+//
+                  "INNER JOIN CONSUMOS C ON C.IDENTRADA=E.IDENTRADA "+//
+                  "INNER JOIN SERVICIOS S ON S.IDSERVICIO=C.IDSERVICIO "+//
+                  "WHERE TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW')= :semana "+//
+                  "GROUP BY TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW'), S.IDSERVICIO "+//
+                  "ORDER BY COUNT(S.IDSERVICIO) DESC "+//
+                  "FETCH FIRST 1 ROW ONLY", nativeQuery = true)
+    Collection<RespuestaInformacionServiciosMasSolicitados> darServiciosMasSolicitados(@Param("semana") int id);
+
+@Query(value="SELECT TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW') AS SEMANA, S.IDSERVICIO AS IDSERVICIO , COUNT(S.IDSERVICIO) AS SOLICITUDES_SERVICIO, SUM(COSTOSERVICIO) AS CONSUMO " +//
+                  "FROM RESERVAS R "+//
+                  "INNER JOIN ENTRADAS E ON R.IDRESERVA=E.IDRESERVA "+//
+                  "INNER JOIN CONSUMOS C ON C.IDENTRADA=E.IDENTRADA "+//
+                  "INNER JOIN SERVICIOS S ON S.IDSERVICIO=C.IDSERVICIO "+//
+                  "WHERE TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW')= :semana "+//
+                  "GROUP BY TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW'), S.IDSERVICIO "+//
+                  "ORDER BY COUNT(S.IDSERVICIO) ASC "+//
+                  "FETCH FIRST 1 ROW ONLY", nativeQuery = true)
+    Collection<RespuestaInformacionServiciosMenosSolicitados> darServiciosMenosSolicitados(@Param("semana") int id);
+
+
+
+
+
+
+
+@Query(value="SELECT TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW') AS SEMANA, R.NHABITACION, COUNT(R.NHABITACION) AS CANTIDAD_HABITACION " +//
+                  "FROM RESERVAS R "+//
+                  "WHERE TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW')= :semana "+//
+                  "GROUP BY TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW'), R.NHABITACION "+//
+                  "ORDER BY COUNT(R.NHABITACION) DESC "+//
+                  "FETCH FIRST 1 ROW ONLY", nativeQuery = true)
+    Collection<RespuestaInformacionHabitacionesMasSolicitadas> darHabitacionesMasSolicitadas(@Param("semana") int id);
+
+
+
+
+@Query(value="SELECT TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW') AS SEMANA, R.NHABITACION, COUNT(R.NHABITACION) AS CANTIDAD_HABITACION " +//
+                  "FROM RESERVAS R "+//
+                  "WHERE TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW')= :semana "+//
+                  "GROUP BY TO_CHAR(TO_DATE(FECHAENTRADA, 'MM/DD/YYYY'), 'WW'), R.NHABITACION "+//
+                  "ORDER BY COUNT(R.NHABITACION) ASC "+//
+                  "FETCH FIRST 1 ROW ONLY", nativeQuery = true)
+    Collection<RespuestaInformacionHabitacionesMenosSolicitadas> darHabitacionesMenosSolicitadas(@Param("semana") int id);
     
 
 }

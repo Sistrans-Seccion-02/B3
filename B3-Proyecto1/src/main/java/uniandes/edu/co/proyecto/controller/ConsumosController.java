@@ -96,6 +96,12 @@ public class ConsumosController {
         return "noconsumos";
     }
 
-    
-    
+    @GetMapping("/RQ7")
+    public String fechas(Model model) {
+        model.addAttribute("buenosclientes", consumoRepository.darBuenosClientes());
+        return "RQ7";
+
+    }
+
+
 }

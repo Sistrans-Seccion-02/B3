@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mayor Ocupacion</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Mayor Ocupacion</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Ocupacion</th>
+                    
+                </tr>
+            </thead>
+            <a href="/hotelandes" class="btn btn-secondary">Volver al Menú Principal</a> <!-- Ajusta la ruta según sea necesario -->
+
+            <tbody>
+                <!-- Itera sobre la colección de clientes excelentes -->
+                <tr th:each="mayorOcupacion : ${mayorOcupacion}">
+                    <td th:text="${mayorOcupacion.getFECHA}">Fecha</td>
+                    <td th:text="${mayorOcupacion.getOCUPACION}">Ocupacion</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Menor Ocupacion</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Ocupacion</th>
+                    
+                </tr>
+            </thead>
+        
+
+            <tbody>
+               
+                <tr th:each="menorOcupacion : ${menorOcupacion}">
+                    <td th:text="${menorOcupacion.getFECHA}">Fecha</td>
+                    <td th:text="${menorOcupacion.getOCUPACION}">Ocupacion</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Mayores Ingresos</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Ingresos</th>
+                    
+                </tr>
+            </thead>
+        
+
+            <tbody>
+               
+                <tr th:each="mayorIngresos : ${mayorIngresos}">
+                    <td th:text="${mayorIngresos.getFECHA}">Fecha</td>
+                    <td th:text="${mayorIngresos.getINGRESOS}">Ingresos</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+</body>
+</html>

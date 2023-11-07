@@ -28,6 +28,12 @@ public interface ConsumoRepository extends JpaRepository<Consumo, Integer> {
         String getEMAIL();
     }
 
+    public interface RespuestaInformaciondeBuenosClientes {
+        Integer getIDUSUARIO();
+        Integer getCOSTO_CONSUMO();
+        Integer getDIAS();
+        
+    }
 
     @Query(value="SELECT * FROM consumos", nativeQuery = true)
     Collection<Consumo> darConsumos();
@@ -85,6 +91,18 @@ public interface ConsumoRepository extends JpaRepository<Consumo, Integer> {
         nativeQuery = true)
     Collection<Req10> findServicioUsuarioNotIn(@Param("id") int id, @Param("inicio") String inicio, @Param("fin") String fin);
 
+
+@Query(value="SELECT DISTINCT RESERVAS.IDUSUARIO,SUM(SERVICIOS.COSTOSERVICIO) AS COSTO_CONSUMO, SUM(TO_DATE(FECHASALIDA, 'MM/DD/YYYY')-TO_DATE(FECHAENTRADA, 'MM/DD/YYYY')+2) AS DIAS " +//
+                  "FROM CONSUMOS "+//
+                  "NATURAL JOIN SERVICIOS "+//
+                  "NATURAL JOIN ENTRADAS "+//
+                  "INNER JOIN RESERVAS ON ENTRADAS.IDRESERVA=RESERVAS.IDRESERVA "+//
+                  "GROUP BY RESERVAS.IDUSUARIO "+//
+                  "HAVING SUM(SERVICIOS.COSTOSERVICIO)>15000 OR SUM(TO_DATE(FECHASALIDA, 'MM/DD/YYYY')-TO_DATE(FECHAENTRADA, 'MM/DD/YYYY')+2) >14 ",  nativeQuery = true)
+    Collection<RespuestaInformaciondeBuenosClientes> darBuenosClientes();
+
 }
+
+
 
 

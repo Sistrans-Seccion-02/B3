@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraccion Habitacion</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Fraccion Habitacion</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Habitacion</th>
+                    <th>Fraccion de tiempo ocupada</th>
+                    
+                </tr>
+            </thead>
+            <a href="/hotelandes" class="btn btn-secondary">Volver al Menú Principal</a> <!-- Ajusta la ruta según sea necesario -->
+
+            <tbody>
+                <!-- Itera sobre la colección de clientes excelentes -->
+                <tr th:each="fraccionhabitaciones : ${fraccionhabitaciones}">
+                    <td th:text="${fraccionhabitaciones.getNUMERO_HABITACION}">Habitacion</td>
+                    <td th:text="${fraccionhabitaciones.getFRACCION_RESERVAS_HAB}">Fraccion de tiempo ocupada</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
