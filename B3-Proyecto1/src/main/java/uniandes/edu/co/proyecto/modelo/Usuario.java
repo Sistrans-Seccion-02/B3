@@ -13,28 +13,28 @@ import jakarta.persistence.ManyToOne;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int idusuario;
-    private String nombre; 
-    private String email;
-    private String usuario;
-    private String contraseña;
+    public int idusuario;
+    public String nombre; 
+    public String email;
+    public String usuario;
+    public String contraseña;
     
     @ManyToOne
-    @JoinColumn(name="idtipoUsuario", referencedColumnName = "id")
-    private TipoUsuario idTipoUsuario;
+    @JoinColumn(name="tipousuario", referencedColumnName = "id")
+    private TipoUsuario tipousuario;
 
     public Usuario(int idusuario, String nombre, String email, String usuario, String contraseña,
-            TipoUsuario idTipoUsuario) {
+            TipoUsuario tipousuario) {
         this.idusuario = idusuario;
         this.nombre = nombre;
         this.email = email;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.idTipoUsuario = idTipoUsuario;
+        this.tipousuario = tipousuario;
     }
 
     public Usuario()
@@ -80,12 +80,12 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public TipoUsuario getIdTipoUsuario() {
-        return idTipoUsuario;
+    public TipoUsuario gettipousuario() {
+        return tipousuario;
     }
 
-    public void setIdTipoUsuario(TipoUsuario idTipoUsuario) {
-        this.idTipoUsuario = idTipoUsuario;
+    public void settipousuario(TipoUsuario tipousuario) {
+        this.tipousuario = tipousuario;
     }
 
     

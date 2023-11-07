@@ -28,7 +28,7 @@ public class TipoHabitacion {
 
     // Métodos getters y setters
 
-    public String getNombre() {
+    public String getnombre() {
         return nombre;
     }
     public Integer getDotacion() {
@@ -37,7 +37,7 @@ public class TipoHabitacion {
     public int getCapacidad() {
         return capacidad;
     }
-    public void setNombre(String nombre) {
+    public void setnombre(String nombre) {
         this.nombre = nombre;
     }
     public void setDotacion(Integer dotacion) {

@@ -37,5 +37,23 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     void eliminarUsuario(@Param("id") Integer id);
 
 
+    @Query(value="SELECT u.idusuario, u.nombre, u.email, u.usuario, u.contraseña, u.tipousuario \n" + //
+            "FROM consumos c\n" + //
+            "JOIN reservas r ON (r.nHabitacion = c.nHabitacion)\n" + //
+            "JOIN servicios s ON (s.idservicio = c.idservicio)\n" + //
+            "JOIN reservasservicio rs ON(rs.idservicio = s.idservicio)\n" + //
+            "JOIN usuarios u ON (u.idusuario = r.idusuario)\n" + //
+            "WHERE (s.costoservicio < :costosup\n" + //
+            "AND s.costoservicio > :costoinf)\n" + //
+            "AND\n" + //
+            "(rs.fecha > :fechainf AND rs.fecha < :fechasup\n" + //
+            ")\n" + //
+            "GROUP BY  u.idusuario, u.nombre, u.usuario, u.email, u.contraseña, u.tipousuario\n" + //
+            "ORDER BY count(u.idusuario)\n", nativeQuery = true
+            )
+    Collection<Usuario> usuariosServicios(@Param("fechainf") String fechainf, @Param("fechasup") String fechasup, @Param("costoinf")Integer costoinf, @Param("costosup") Integer costosup);
+    
+
+
 
 }

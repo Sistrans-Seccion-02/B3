@@ -22,10 +22,14 @@ public class TipoUsuario {
         this.tipo = tipo;
         this.funciones = funciones;
     }
+
+    public TipoUsuario()
+    {;}
+
     public int getId_usuario() {
         return id;
     }
-    public void setId_usuario(int id_usuario) {
+    public void setId_usuario(int id) {
         this.id = id;
     }
     public String getTipo() {

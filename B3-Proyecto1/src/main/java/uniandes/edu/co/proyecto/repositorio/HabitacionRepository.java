@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import oracle.net.aso.c;
+import oracle.net.aso.h;
 import uniandes.edu.co.proyecto.modelo.Habitacion;
 import uniandes.edu.co.proyecto.modelo.TipoHabitacion;
 
@@ -37,13 +39,14 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
     void eliminarHabitacion(@Param("numHabitacion") int numHabitacion);
 
    
-   @Query(value = "SELECT h.nHabitacion, sum(s.costo) as COSTO"+//
-                    "FROM habitaciones h"+// 
-                    "INNER JOIN consumos c ON(h.nHabitacion = c.nHabitacion)"+//
-                    "RIGHT JOIN servicios s ON(c.idservicio = s.idservicio)"+//
-                    "WHERE h.nHabitacion = :habitacion"+//
-                    "GROUP BY h.nHabitacion"+//
-                    "ORDER BY h.nHabitacion", nativeQuery=true)
+   @Query(value = "SELECT h.nHabitacion, h.tipohabitacion, sum(s.costoservicio) as costo, h.costohabitacion \n" + //
+           "" + //
+           "FROM habitaciones h \n" + //
+           "INNER JOIN consumos c ON(h.nHabitacion = c.nHabitacion)\n" + //
+           "RIGHT JOIN servicios s ON(c.idservicio = s.idservicio)\n" + //
+           "WHERE h.nHabitacion = :habitacion\n" + //
+           "GROUP BY h.nHabitacion, h.tipohabitacion, h.costohabitacion \n" + //
+           "ORDER BY h.nHabitacion\n", nativeQuery = true)
     Collection<Habitacion> consumoporHabitaciones(@Param("habitacion") Integer nHabitacion);
 
 }

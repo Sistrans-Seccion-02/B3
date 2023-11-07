@@ -20,7 +20,7 @@ public class Consumo {
     
     @ManyToOne
     @JoinColumn(name="idservicio", referencedColumnName = "idservicio")
-    private Servicio idServicio;
+    private Servicio idservicio;
     
     @ManyToOne
     @JoinColumn(name="identrada", referencedColumnName = "identrada")
@@ -30,9 +30,9 @@ public class Consumo {
     @JoinColumn(name="habitacion", referencedColumnName = "nhabitacion")
     private Habitacion habitacion;
 
-    public Consumo(Integer id, Servicio idServicio, Entrada idReserva, Habitacion habitacion) {
+    public Consumo(Integer id, Servicio idservicio, Entrada idReserva, Habitacion habitacion) {
         this.id = id;
-        this.idServicio = idServicio;
+        this.idservicio = idservicio;
         this.idReserva = idReserva;
         this.habitacion = habitacion;
     }
@@ -50,12 +50,12 @@ public class Consumo {
         this.id = id;
     }
 
-    public Servicio getIdServicio() {
-        return idServicio;
+    public Servicio getidservicio() {
+        return idservicio;
     }
 
-    public void setIdServicio(Servicio idServicio) {
-        this.idServicio = idServicio;
+    public void setidservicio(Servicio idServicio) {
+        this.idservicio = idServicio;
     }
 
     public Entrada getIdReserva() {
