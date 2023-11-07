@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
 import uniandes.edu.co.proyecto.modelo.Habitacion;
@@ -22,14 +23,8 @@ public class HabitacionesController {
     @GetMapping("/habitaciones")
     public String habitaciones(Model model, String habitacion) {
        
-        if((habitacion==null || habitacion.equals(""))){
+        if((habitacion==null || habitacion.equals("")))
              model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
-        }
-       else
-        {
-            model.addAttribute("habitaciones", habitacionRepository.consumoporHabitaciones(Integer.parseInt(habitacion)));
-        }
-       
         return "habitaciones";
 
     }
@@ -69,5 +64,20 @@ public class HabitacionesController {
     public String habitacionEliminar(@PathVariable("id") int id) {
         habitacionRepository.eliminarHabitacion(id);
         return "redirect:/habitaciones";
+    }
+
+    @GetMapping("/req1")
+    public String getConsumoPorHabitacion(Integer nHabitacion, Model model) {
+
+        if((nHabitacion==null || nHabitacion.equals(""))){
+             model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
+        }
+       else
+        {
+             model.addAttribute("habitaciones", habitacionRepository.consumoporHabitaciones(nHabitacion));
+        }
+       
+
+        return "req1";
     }
 }

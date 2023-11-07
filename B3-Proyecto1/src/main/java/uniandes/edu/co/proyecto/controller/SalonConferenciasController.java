@@ -48,7 +48,7 @@ public class SalonConferenciasController {
     }
     @PostMapping("/salones/{id}/edit/save")
     public String salonEditarGuardar(@PathVariable("id") int id, @ModelAttribute SalonConferencias salonConferencias){
-        salonConferenciasRepository.actualizarSalonConferencias(id, salonConferencias.getCosto(), salonConferencias.getId());
+        salonConferenciasRepository.actualizarSalonConferencias(id, salonConferencias.getCosto(), salonConferencias.getCapacidad());
         return "redirect:/salones";
 
     }

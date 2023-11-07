@@ -18,10 +18,25 @@ public class ServiciosController {
     private ServicioRepository servicioRepository;
 
     @GetMapping("/servicios")
-    public String servicios(Model model){
-        model.addAttribute("servicio", servicioRepository.darServicios());
+    public String servicios(Model model, String nhabitacion, String fechainf, String fechasup, String costoinf, String costosup){
+        if((nhabitacion==null || nhabitacion.equals(""))||(fechainf==null || fechainf.equals(""))||(fechasup==null || fechasup.equals(""))||(costoinf==null || costoinf.equals(""))||(costosup==null || costosup.equals("")))
+        {
+           model.addAttribute("servicios", servicioRepository.darServicios());
+       }
+      else
+       {
+           model.addAttribute("servicios", servicioRepository.servicioCaracteristica(Integer.parseInt(nhabitacion), fechainf, fechasup, Integer.parseInt(costoinf), Integer.parseInt(costosup)));
+       }   
+
         return "servicios";
     }
+
+    @GetMapping("/req2")
+    public String req2(Model model){
+        model.addAttribute("servicios", servicioRepository.top20servicios());
+        return "req2";
+    }
+     
 
     @GetMapping("/servicios/new")
     public String servicioFrom(Model model){
@@ -31,7 +46,7 @@ public class ServiciosController {
 
     @PostMapping("/servicios/new/save")
     public String servicioGuardar(@ModelAttribute Servicio servicio){
-       servicioRepository.insertarServicio(servicio.getTipo());
+       servicioRepository.insertarServicio(servicio.getdtype(), servicio.getNombre(), servicio.getCostoservicio());
         return "redirect:/servicios";
     }
 
@@ -48,7 +63,7 @@ public class ServiciosController {
     }
     @PostMapping("/servicios/{id}/edit/save")
     public String servicioEditarGuardar(@PathVariable("id") int id, @ModelAttribute Servicio servicio){
-        servicioRepository.actualizarServicio(id, servicio.getTipo());
+        servicioRepository.actualizarServicio(id, servicio.getdtype());
         return "redirect:/servicios";
 
     }
@@ -58,6 +73,8 @@ public class ServiciosController {
         servicioRepository.eliminarServicio(id);
         return "redirect:/servicios"; 
     }
+
+  
     
     
 }

@@ -20,7 +20,7 @@ public class ReservaServicio {
     private String hora;
     @ManyToOne
     @JoinColumn(name="idservicio", referencedColumnName = "idservicio")
-    private Servicio idServicio;
+    private Servicio idservicio;
 
     @ManyToOne
     @JoinColumn(name="habitacion", referencedColumnName = "nhabitacion")
@@ -30,7 +30,7 @@ public class ReservaServicio {
         this.idreservaservicio = id;
         this.fecha = fecha;
         this.hora = hora;
-        this.idServicio = idServicio;
+        this.idservicio = idservicio;
         this.habitacion = habitacion;
     }
 
@@ -61,12 +61,12 @@ public class ReservaServicio {
         this.hora = hora;
     }
 
-    public Servicio getIdServicio() {
-        return idServicio;
+    public Servicio getidservicio() {
+        return idservicio;
     }
 
-    public void setIdServicio(Servicio idServicio) {
-        this.idServicio = idServicio;
+    public void setidservicio(Servicio idServicio) {
+        this.idservicio = idServicio;
     }
 
     public Habitacion getHabitacion() {

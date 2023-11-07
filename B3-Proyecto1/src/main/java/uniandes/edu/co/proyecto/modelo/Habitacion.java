@@ -21,12 +21,18 @@ public class Habitacion {
     @JoinColumn(name="tipohabitacion", referencedColumnName = "nombre")
     public TipoHabitacion tipohabitacion;
 
+     public Integer costohabitacion;
 
-    public Habitacion(Integer nhabitacion, TipoHabitacion tipohabitacion) {
+
+    
+    
+
+    public Habitacion(Integer nhabitacion, TipoHabitacion tipohabitacion, Integer costohabitacion) {
         this.nhabitacion = nhabitacion;
         this.tipohabitacion = tipohabitacion;
+        this.costohabitacion = costohabitacion;
     }
-    
+
 
     public Habitacion()
     {;}
@@ -50,6 +56,18 @@ public class Habitacion {
     public void settipohabitacion(TipoHabitacion tipohabitacion) {
         this.tipohabitacion = tipohabitacion;
     }
+
+
+    public Integer getcostohabitacion() {
+        return costohabitacion;
+    }
+
+
+    public void setcostohabitacion(Integer costohabitacion) {
+        this.costohabitacion = costohabitacion;
+    }
+
+    
 
     
     

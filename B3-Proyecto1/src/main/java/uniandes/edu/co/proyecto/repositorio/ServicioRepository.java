@@ -21,8 +21,8 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
     @Modifying
     @Transactional
     //MIRAR EL NEXT VAL
-    @Query(value = "INSERT INTO servicios (tipo) VALUES (B3-Proyecto1_sequence.nextval, :tipo)", nativeQuery = true)
-    void insertarServicio(@Param("tipo")String tipo);
+    @Query(value = "INSERT INTO servicios (tipo) VALUES (B3-Proyecto1_sequence.nextval, :dtype, :nombre, :costoservicio)", nativeQuery = true)
+    void insertarServicio(@Param("dtype")String tipo, @Param("nombre")String nombre, @Param("costoservicio")int costoservicio);
 
 
     @Modifying
@@ -36,7 +36,28 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
     @Query(value="DELETE FROM servicios WHERE id=:id", nativeQuery = true)
     void eliminarServicio(@Param("id") int id_servicio); 
 
+    @Query(value= "SELECT s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion "+//
+                "FROM servicios s "+//
+                "RIGHT JOIN consumos c ON(s.idservicio = c.idservicio) "+//
+                "GROUP BY s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion "+//
+                "ORDER BY count(c.idconsumo) DESC "+//
+                "FETCH FIRST 20 ROWS ONLY",
+                nativeQuery=true)
+    Collection<Servicio> top20servicios();
 
-    
+    @Query(value="SELECT s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion\n" + //
+            "FROM servicios s \n" + //
+            "JOIN consumos c ON(s.idservicio = c.idservicio)\n" + //
+            "JOIN reservasservicio r ON(r.idservicio = s.idservicio)\n" + //
+            "WHERE (s.costoservicio < :costosup\n" + //
+            "AND s.costoservicio > :costoinf)\n" + //
+            "AND\n" + //
+            "(c.nHabitacion = :nhabitacion)\n" + //
+            "AND\n" + //
+            "(r.fecha > :fechainf AND r.fecha < :fechasup \n" + //
+            ")\n" + //
+            "GROUP BY s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion\n", nativeQuery = true)
+    Collection<Servicio> servicioCaracteristica(@Param("nhabitacion") Integer nhabitacion, @Param("fechainf") String fechainf, @Param("fechasup") String fechasup, @Param("costoinf")Integer costoinf, @Param("costosup") Integer costosup );
+
     
 }

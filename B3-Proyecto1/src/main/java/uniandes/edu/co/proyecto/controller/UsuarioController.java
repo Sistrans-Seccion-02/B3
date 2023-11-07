@@ -16,8 +16,15 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     @GetMapping("/usuarios")
-    public String usuarios(Model model, Integer id){
-        model.addAttribute("usuarios", usuarioRepository.darUsuarios());
+    public String usuarios(Model model, String fechainf, String fechasup, String costoinf, String costosup){
+        if((fechainf==null || fechainf.equals(""))||(fechasup==null || fechasup.equals(""))||(costoinf==null || costoinf.equals(""))||(costosup==null || costosup.equals("")))
+        {
+           model.addAttribute("usuarios", usuarioRepository.darUsuarios());
+       }
+      else
+       {
+           model.addAttribute("usuarios", usuarioRepository.usuariosServicios(fechainf, fechasup, Integer.parseInt(costoinf), Integer.parseInt(costosup)));
+       }   
         return "usuarios";
     }
 
@@ -29,7 +36,7 @@ public class UsuarioController {
 
     @PostMapping("/usuarios/new/save")
     public String usuarioGuardar(@ModelAttribute Usuario usuario){
-        usuarioRepository.insertarUsuario(usuario.getNombre(), usuario.getEmail(), usuario.getUsuario(), usuario.getContraseña(), usuario.getIdTipoUsuario());
+        usuarioRepository.insertarUsuario(usuario.getNombre(), usuario.getEmail(), usuario.getUsuario(), usuario.getContraseña(), usuario.gettipousuario());
         return "redirect:/usuarios";
     }
 
@@ -49,12 +56,13 @@ public class UsuarioController {
 
     @PostMapping("/usuarios/{id}/edit/save")
     public String usuarioEditarGuardar(@PathVariable("id") Integer id, @ModelAttribute Usuario usuario){
-        usuarioRepository.actualizarUsuario(id, usuario.getNombre(), usuario.getEmail(), usuario.getUsuario(), usuario.getContraseña(), usuario.getIdTipoUsuario());
+        usuarioRepository.actualizarUsuario(id, usuario.getNombre(), usuario.getEmail(), usuario.getUsuario(), usuario.getContraseña(), usuario.gettipousuario());
         return "redirect:/usuarios";
 
     }
 
     
+
 
    
 }

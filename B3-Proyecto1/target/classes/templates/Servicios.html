@@ -5,37 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
     <link rel="stylesheet" type="text/css" th:href ="@{/css/bootstrap.min.css}"/>
+    <script th:src = "@{/css/jquery.min.js}"></script>
+    <script th:src = "@{/css/bootstrap.min.js}"></script>
 </head>
 <body>
-    <div class = "container mx-auto w-25">
-        <h1>Hotel</h1>
-        <img th:src = "@{images/logo.png}" width = "250">
         <div>
 
-            <h1> Lista de Servicios</h1> 
+            <div class = "container w-25">
+                <div class = "card border border -2 mx_auto">
+                    <h5 class="card-header" role ="button" id="headingOne">
+                        <a href = "#" class = "collapsed d-block" data-toggle="collapse" data-target = "#busqueda">
+                            Busqueda Avanzada
+                        </a>
+                    </h5>
+                    <div id="busqueda" class="collapse">
+                        <form th:action = "@{servicios}" method = "get">
+                            <label class ="col-form-label">Numero Habitacion</label>
+                            <input class = "form-control" type = "text" id="nhabitacion" name = "nhabitacion"/>
+                            <label class ="col-form-label">Fecha Inicial</label>
+                            <input class = "form-control" type = "text" id="fechainf" name = "fechainf"/>
+                            <label class ="col-form-label">Fecha Final</label>
+                            <input class = "form-control" type = "text" id="fechasup" name = "fechasup"/>
+                            <label class ="col-form-label">Costo Inferior</label>
+                            <input class = "form-control" type = "text" id="costoinf" name = "costoinf"/>
+                            <label class ="col-form-label">Costo Superior</label>
+                            <input class = "form-control" type = "text" id="costosup" name = "costosup"/>
+                            
+                            <div class = "text-center">
+                                <button type="submit" class = "btn btn-secondary">Busqueda de Servicio por Caracteristica</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+         
+            <h1 class="text-center"> Lista de Servicios</h1> 
             <table class="table table-hover table-border">
                 <thead class="thead-dark">
                     <tr>
                         <th>id_servicio</th>
-                        <th>Acciones</th>
+                        <th>dtype</th>
+                        <th>nombre</th>
+                        <th>costo</th>
                     </tr>
                 </thead>
                 <th:block th:each="servicio:${servicios}">
-                    <td th:text = "${servicio.id_servicio}"></td>
-                    <td><a href="@{servicios/{id}/edit(id=${servicio.id_servicio})}" class="btn btn-primary">Editar</a></td>
-                    <td><a href="@{servicios/{id}/delete(id=${servicio.id_servicio})}" class="btn btn-primary" onclick="return confirm('¿Estas seguro de borrar este servicio')">Eliminar</a></td>
- 
+                    <tr>
+                    <td th:text = "${servicio.idservicio}"></td>
+                    <td th:text = "${servicio.dtype}"></td>
+                    <td th:text = "${servicio.nombre}"></td>
+                    <td th:text = "${servicio.costoservicio}"></td>
+                </tr>
                 </th:block>
 
             </table> 
             <div>
-                <a href="@/" class="btn btn-primary">Volver a la aplicación</a>
+                <a th:href='@{/}' class="btn btn-primary">Volver a la aplicación</a>
             </div>        
 
-        
-            </div>
 
         </div>
-    </div>
 </body>
 </html>

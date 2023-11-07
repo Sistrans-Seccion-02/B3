@@ -32,7 +32,7 @@ public class ConsumosController {
 
     @PostMapping("/consumos/new/save")
     public String consumoGuardar(@ModelAttribute Consumo consumo){
-        consumoRepository.insertarConsumo(consumo.getIdServicio(), consumo.getIdReserva(), consumo.getHabitacion());
+        consumoRepository.insertarConsumo(consumo.getidservicio(), consumo.getIdReserva(), consumo.getHabitacion());
         return "redirect:/consumos";
     }
 
@@ -49,7 +49,7 @@ public class ConsumosController {
     }
     @PostMapping("/consumos/{id}/edit/save")
     public String consumoEditarGuardar(@PathVariable("id") int id, @ModelAttribute Consumo consumo){
-        consumoRepository.actualizarConsumo(id, consumo.getIdServicio(), consumo.getIdReserva(), consumo.getHabitacion());
+        consumoRepository.actualizarConsumo(id, consumo.getidservicio(), consumo.getIdReserva(), consumo.getHabitacion());
         return "redirect:/consumos";
 
     }

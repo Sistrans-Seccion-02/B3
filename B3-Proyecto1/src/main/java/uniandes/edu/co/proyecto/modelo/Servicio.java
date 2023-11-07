@@ -19,36 +19,62 @@ public class Servicio {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="idservicio")
-    private Integer idservicio;
+    public Integer idservicio;
 
-   
-    private String tipo;
+    @Column(insertable=false, updatable=false)
+    public String dtype;
+    public String nombre;
+    public int costoservicio;
 
-    public Servicio(Integer idservicio, String tipo) {
+    
+
+    
+
+    public Servicio(Integer idservicio, String dtype, String nombre, int costoservicio, String costo) {
         this.idservicio = idservicio;
-        this.tipo = tipo;
-       
+        this.dtype = dtype;
+        this.nombre = nombre;
+        this.costoservicio = costoservicio;
     }
 
     public Servicio()
     {;}
 
-    public Integer getId() {
+    public Integer getidservicio() {
         return idservicio;
     }
 
-    public void setId(Integer idservicio) {
+    public void setidservicio(Integer idservicio) {
         this.idservicio = idservicio;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getdtype() {
+        return dtype;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setdtype(String dtype) {
+        this.dtype = dtype;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCostoservicio() {
+        return costoservicio;
+    }
+
+    public void setCostoservicio(int costoservicio) {
+        this.costoservicio = costoservicio;
+    }
+
+
+    
+    
 
 
 
