@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import uniandes.edu.co.proyecto.modelo.ReservaServicio;
 import uniandes.edu.co.proyecto.repositorio.ReservaServicioRepository;
@@ -16,7 +19,7 @@ public class ReservaServicioController {
 
     @Autowired
     private ReservaServicioRepository reservaServicioRepository;
-
+    
     @GetMapping("/reservas_servicio")
     public String reserva_servicio(Model model){
         model.addAttribute("reservas_servicio", reservaServicioRepository.darReservasServicio());
@@ -58,6 +61,14 @@ public class ReservaServicioController {
         reservaServicioRepository.eliminarReserva(id);
         return "redirect:/reservas_servicio"; 
     }
+
+    @GetMapping("/filtrarreservas")
+    public String filtrarReservasServicio(Model model) {
+        model.addAttribute("serviciosFiltrados", reservaServicioRepository.filtrarReservas());
+        return "filtrarreservas";
+    }
+
+    
     
     
 }

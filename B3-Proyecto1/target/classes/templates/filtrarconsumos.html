@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtrar Consumos</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+
+    <!-- Estilos personalizados -->
+    <style>
+        /* Tus estilos personalizados */
+    </style>
+</head>
+<body>
+    <h1>Consumos Filtrados</h1>
+
+    <!-- Formulario para ingresar parámetros -->
+    <form method="get" class="mb-4">
+        <div class="form-group">
+            <label for="idusuario">ID Usuario:</label>
+            <input type="text" id="idusuario" name="idusuario" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="inicio">Fecha Inicio (formato YYYY-MM-DD):</label>
+            <input type="string" id="inicio" name="inicio" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="fin">Fecha Fin (formato YYYY-MM-DD):</label>
+            <input type="string" id="fin" name="fin" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+    <a href="/hotelandes" class="btn btn-secondary">Volver al Menú Principal</a> <!-- Ajusta la ruta según sea necesario -->
+
+
+    <!-- Tabla para mostrar los consumos filtrados -->
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>ID Consumo</th>
+                <th>Fecha</th>
+                <th>ID Usuario</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Itera sobre la colección de consumos filtrados -->
+            <tr th:each="consumosFiltrados : ${consumosFiltrados}">
+                <td th:text="${consumosFiltrados.getIDCONSUMO}">ID Consumo</td>
+                <td th:text="${consumosFiltrados.getFECHA}">Fecha</td>
+                <td th:text="${consumosFiltrados.getIDUSUARIO}">ID Usuario</td>
+                <td th:text="${consumosFiltrados.getNOMBRE}">Nombre</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

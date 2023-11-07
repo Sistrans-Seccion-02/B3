@@ -1,4 +1,6 @@
 package uniandes.edu.co.proyecto.controller;
+import java.util.Collections;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -58,6 +60,41 @@ public class ConsumosController {
         return "redirect:/consumos"; 
     }
 
+    @GetMapping("/filtrarconsumos")
+    public String filtrarReservasServicio(Model model, 
+                                          @RequestParam(required = false) Integer idusuario, 
+                                          @RequestParam(required = false) String inicio, 
+                                          @RequestParam(required = false) String fin) {
+        System.out.println("idusuario: " + idusuario);
+        System.out.println("inicio: " + inicio);
+        System.out.println("fin: " + fin);
+        if (idusuario != null && inicio != null && fin != null) {
+            model.addAttribute("consumosFiltrados", consumoRepository.filtrarConsumos(idusuario, inicio, fin));
+        } else {
+            // Manejar el caso cuando uno o más parámetros son null
+            // Por ejemplo, puedes añadir una lista vacía o mostrar un mensaje de error
+            model.addAttribute("consumosFiltrados", Collections.emptyList());
+        }
+        return "filtrarconsumos";
+    }
+
+    @GetMapping("/noconsumos")
+    public String filtrarNoConsumo(Model model, 
+                                          @RequestParam(required = false) Integer idservicio, 
+                                          @RequestParam(required = false) String inicio, 
+                                          @RequestParam(required = false) String fin) {
+        System.out.println("idusuario: " + idservicio);
+        System.out.println("inicio: " + inicio);
+        System.out.println("fin: " + fin);
+        if (idservicio != null && inicio != null && fin != null) {
+            model.addAttribute("noConsumos", consumoRepository.findServicioUsuarioNotIn(idservicio, inicio, fin));
+        } else {
+            // Manejar el caso cuando uno o más parámetros son null
+            // Por ejemplo, puedes añadir una lista vacía o mostrar un mensaje de error
+            model.addAttribute("noConsumos", Collections.emptyList());
+        }
+        return "noconsumos";
+    }
 
     
     

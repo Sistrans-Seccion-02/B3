@@ -16,6 +16,13 @@ import uniandes.edu.co.proyecto.modelo.Usuario;
 
 public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
     
+    public interface Req12{
+        int getID_CLIENTE();
+        int getYEAR();
+        int getDISTINTOS_TRIMESTRES();
+        int getNUMERO_DE_ENTRADAS();
+    }
+
     @Query(value="SELECT * FROM reservas", nativeQuery = true)
     Collection<Reserva> darReservas();
 
@@ -40,5 +47,17 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
     @Transactional
     @Query(value="DELETE FROM reservas WHERE id=:id", nativeQuery = true)
     void eliminarReserva(@Param("id") int id);
+
+    @Query(value = "SELECT r.IDUSUARIO AS id_cliente, " +
+    "TO_CHAR(TO_DATE(r.FECHAENTRADA, 'MM/DD/YYYY'), 'YYYY') AS year, " +
+    "COUNT(DISTINCT TO_CHAR(TO_DATE(r.FECHAENTRADA, 'MM/DD/YYYY'), 'Q')) AS distintos_trimestres, " +
+    "COUNT(*) AS numero_de_entradas " +
+    "FROM RESERVAS r JOIN ENTRADAS e ON r.IDRESERVA = e.IDRESERVA " +
+    "GROUP BY r.IDUSUARIO, TO_CHAR(TO_DATE(r.FECHAENTRADA, 'MM/DD/YYYY'), 'YYYY') " +
+    "HAVING COUNT(DISTINCT TO_CHAR(TO_DATE(r.FECHAENTRADA, 'MM/DD/YYYY'), 'Q')) = 4 " +
+    "ORDER BY id_cliente, year",
+nativeQuery = true)
+Collection<Req12> findClienteEcelenteEntradas();
+    
 
 }

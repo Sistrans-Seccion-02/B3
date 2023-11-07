@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtrar Reservas</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            padding: 20px;
+        }
+        h1 {
+            color: #007bff; /* Color azul Bootstrap */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead {
+            background-color: #007bff;
+            color: white;
+        }
+        th, td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd; /* Bordes sutiles para las celdas */
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reservas Filtradas</h1>
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>ID Servicio</th>
+                <th>Semana</th>
+                <th>Año</th>
+                <th>Número de Reservas</th>
+            </tr>
+        </thead>
+        <a href="/hotelandes" class="btn btn-secondary">Volver al Menú Principal</a> <!-- Ajusta la ruta según sea necesario -->
+
+        <tbody>
+            <!-- Itera sobre la colección de servicios filtrados -->
+            <tr th:each="serviciosFiltrados : ${serviciosFiltrados}">
+                <td th:text="${serviciosFiltrados.getIDSERVICIO}">ID Servicio</td>
+                <td th:text="${serviciosFiltrados.getSEMANA}">Semana</td>
+                <td th:text="${serviciosFiltrados.getANIO}">Año</td>
+                <td th:text="${serviciosFiltrados.getNUMERODERESERVAS}">Número de Reservas</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</body>
+</html>
