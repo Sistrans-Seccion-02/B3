@@ -24,7 +24,7 @@
 <body>
         <div>
 
-            <div class = "container w-25">
+            <div class = "container w-100">
                 <div class = "card border border -2 mx_auto">
                     <h5 class="card-header" role ="button" id="headingOne">
                         <a href = "#" class = "collapsed d-block" data-toggle="collapse" data-target = "#busqueda">
@@ -43,7 +43,7 @@
                             <input class = "form-control" type = "text" id="costosup" name = "costosup"/>
                             
                             <div class = "text-center">
-                                <button type="submit" class = "btn btn-secondary">Busqueda de Servicio por Caracteristica</button>
+                                <button type="submit" class = "btn btn-secondary">Busqueda Usuario por Servicio</button>
                             </div>
                         </form>
                     </div>
@@ -56,12 +56,18 @@
                     <tr>
                         <th><input type="checkbox" class="toggle-column" data-column="0" checked> idusuario</th>
                         <th><input type="checkbox" class="toggle-column" data-column="1" checked> nombre</th>
+                        <th><input type="checkbox" class="toggle-column" data-column="2" checked> email</th>
+                        <th><input type="checkbox" class="toggle-column" data-column="3" checked> usuario</th>
+                        <th><input type="checkbox" class="toggle-column" data-column="4" checked> tipousuario</th>
                     </tr>
                 </thead>
                 <th:block th:each="usuario:${usuarios}">
                     <tr>
                         <td class="column-0" th:text="${usuario.idusuario}"></td>
                         <td class="column-1" th:text="${usuario.nombre}"></td>
+                        <td class="column-2" th:text="${usuario.email}"></td>
+                        <td class="column-3" th:text="${usuario.usuario}"></td>
+                        <td class="column-5" th:text="${usuario.tipousuario}"></td>
                     </tr>
                 </th:block>
             </table>
