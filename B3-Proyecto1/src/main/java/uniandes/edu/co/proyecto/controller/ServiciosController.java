@@ -33,7 +33,7 @@ public class ServiciosController {
 
     @GetMapping("/req2")
     public String req2(Model model){
-        model.addAttribute("servicios", servicioRepository.top20servicios());
+        model.addAttribute("top20servicios", servicioRepository.top20servicios());
         return "req2";
     }
      

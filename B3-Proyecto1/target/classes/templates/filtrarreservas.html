@@ -48,10 +48,10 @@
                 <th>Número de Reservas</th>
             </tr>
         </thead>
-        <a href="/hotelandes" class="btn btn-secondary">Volver al Menú Principal</a> <!-- Ajusta la ruta según sea necesario -->
+        <a href="/hotelandes" class="btn btn-secondary">Volver al Menú Principal</a> 
 
         <tbody>
-            <!-- Itera sobre la colección de servicios filtrados -->
+            
             <tr th:each="serviciosFiltrados : ${serviciosFiltrados}">
                 <td th:text="${serviciosFiltrados.getIDSERVICIO}">ID Servicio</td>
                 <td th:text="${serviciosFiltrados.getSEMANA}">Semana</td>

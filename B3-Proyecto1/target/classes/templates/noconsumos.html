@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>No consumos</title>
-    <!-- Bootstrap CSS -->
+   
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 
-    <!-- Estilos personalizados -->
+   
     <style>
         .centrado {
             margin: 0 auto;
-            width: auto; /* Ajusta el ancho según tus necesidades */
+            width: auto; 
         }
         .info-panel {
             padding: 20px;
@@ -24,7 +24,7 @@
     <div class="container">
         <h1 class="text-center">No consumos</h1>
 
-        <!-- Formulario para ingresar parámetros -->
+        
         <form method="get" class="mb-4">
             <div class="form-group">
                 <label for="idservicio">ID Servicio:</label>
@@ -45,7 +45,7 @@
 
         <div class="row">
             <div class="col-md-8">
-                <!-- Tabla centrada para mostrar los consumos filtrados -->
+               
                 <div class="centrado">
                     <table class="table table-responsive">
                         <thead>
@@ -56,7 +56,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Itera sobre la colección de consumos filtrados -->
                             <tr th:each="noConsumos : ${noConsumos}">
                                 <td th:text="${noConsumos.getIDUSUARIO}">ID Usuario</td>
                                 <td th:text="${noConsumos.getNOMBRE}">Nombre</td>

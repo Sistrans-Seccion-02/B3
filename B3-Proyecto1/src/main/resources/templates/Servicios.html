@@ -14,7 +14,7 @@
             <div class = "container w-100">
                 <div class = "card border border -2 mx_auto">
                     <h5 class="card-header" role ="button" id="headingOne">
-                        <a href = "#" class = "collapsed d-block" data-toggle="collapse" data-target = "#busqueda">
+                        <a href="#" class="collapsed d-block text-center" data-toggle="collapse" data-target="#busqueda">
                             Busqueda Avanzada
                         </a>
                     </h5>
@@ -43,10 +43,10 @@
             <table class="table table-hover table-border">
                 <thead class="thead-dark">
                     <tr>
-                        <th>id_servicio</th>
-                        <th>dtype</th>
-                        <th>nombre</th>
-                        <th>costo</th>
+                        <th>ID Servicio</th>
+                        <th>Tipo</th>
+                        <th>Nombre</th>
+                        <th>Costo</th>
                     </tr>
                 </thead>
                 <th:block th:each="servicio:${servicios}">

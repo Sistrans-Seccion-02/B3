@@ -11,6 +11,19 @@ import org.springframework.transaction.annotation.Transactional;
 import uniandes.edu.co.proyecto.modelo.Servicio;
 
 public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
+
+    public interface Req2 {
+        String getNOMBRE();
+        String getDTYPE();
+        int getVECESPEDIDO();
+    }
+
+    public interface Req4 {
+        String getNOMBRE();
+        String getDTYPE();
+        int getVECESPEDIDO();
+    }
+
     
     @Query(value="SELECT * FROM servicios", nativeQuery = true)
     Collection<Servicio> darServicios();
@@ -36,14 +49,14 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
     @Query(value="DELETE FROM servicios WHERE id=:id", nativeQuery = true)
     void eliminarServicio(@Param("id") int id_servicio); 
 
-    @Query(value= "SELECT s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion "+//
+    @Query(value= "SELECT s.NOMBRE, s.DTYPE, count(c.idconsumo) AS VECESPEDIDO  "+//
                 "FROM servicios s "+//
                 "RIGHT JOIN consumos c ON(s.idservicio = c.idservicio) "+//
                 "GROUP BY s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion "+//
                 "ORDER BY count(c.idconsumo) DESC "+//
                 "FETCH FIRST 20 ROWS ONLY",
                 nativeQuery=true)
-    Collection<Servicio> top20servicios();
+    Collection<Req2> top20servicios();
 
     @Query(value="SELECT s.idservicio, s.nombre, s.dtype, s.costoservicio, s.capacidad, s.estilo, s.hora_final, s.hora_inicio, s.maquinas, s.costo, s.duracion\n" + //
             "FROM servicios s \n" + //

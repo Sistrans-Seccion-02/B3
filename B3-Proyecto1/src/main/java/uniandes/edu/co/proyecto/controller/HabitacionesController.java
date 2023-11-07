@@ -68,16 +68,7 @@ public class HabitacionesController {
 
     @GetMapping("/req1")
     public String getConsumoPorHabitacion(Integer nHabitacion, Model model) {
-
-        if((nHabitacion==null || nHabitacion.equals(""))){
-             model.addAttribute("habitaciones", habitacionRepository.darHabitaciones());
-        }
-       else
-        {
-             model.addAttribute("habitaciones", habitacionRepository.consumoporHabitaciones(nHabitacion));
-        }
-       
-
+             model.addAttribute("costoPorHabitaciones", habitacionRepository.consumoporHabitaciones(nHabitacion));
         return "req1";
     }
 }

@@ -27,21 +27,18 @@
             <div class = "container w-100">
                 <div class = "card border border -2 mx_auto">
                     <h5 class="card-header" role ="button" id="headingOne">
-                        <a href = "#" class = "collapsed d-block" data-toggle="collapse" data-target = "#busqueda">
+                        <a href="#" class="collapsed d-block text-center" data-toggle="collapse" data-target="#busqueda">
                             Busqueda Avanzada
                         </a>
                     </h5>
                     <div id="busqueda" class="collapse">
-                        <form th:action = "@{usuarios}" method = "get">
+                        <form th:action = "@{req9}" method = "get">
+                            <label class ="col-form-label">Id Servicio</label>
+                            <input class = "form-control" type = "text" id="idservicio" name = "idservicio"/>
                             <label class ="col-form-label">Fecha Inicial</label>
-                            <input class = "form-control" type = "text" id="fechainf" name = "fechainf"/>
+                            <input class = "form-control" type = "text" id="fechain" name = "fechain"/>
                             <label class ="col-form-label">Fecha Final</label>
-                            <input class = "form-control" type = "text" id="fechasup" name = "fechasup"/>
-                            <label class ="col-form-label">Costo Inferior</label>
-                            <input class = "form-control" type = "text" id="costoinf" name = "costoinf"/>
-                            <label class ="col-form-label">Costo Superior</label>
-                            <input class = "form-control" type = "text" id="costosup" name = "costosup"/>
-                            
+                            <input class = "form-control" type = "text" id="fechafin" name = "fechafin"/>
                             <div class = "text-center">
                                 <button type="submit" class = "btn btn-secondary">Busqueda Usuario por Servicio</button>
                             </div>
@@ -57,17 +54,15 @@
                         <th><input type="checkbox" class="toggle-column" data-column="0" checked> ID Usuario</th>
                         <th><input type="checkbox" class="toggle-column" data-column="1" checked> Nombre</th>
                         <th><input type="checkbox" class="toggle-column" data-column="2" checked> Email</th>
-                        <th><input type="checkbox" class="toggle-column" data-column="3" checked> Usuario</th>
-                        <th><input type="checkbox" class="toggle-column" data-column="4" checked> Tipo Usuario</th>
+                        <th><input type="checkbox" class="toggle-column" data-column="3" checked> Veces Pidio Servicio</th>
                     </tr>
                 </thead>
-                <th:block th:each="usuario:${usuarios}">
+                <th:block th:each="usuariosConServicio:${usuariosConServicio}">
                     <tr>
-                        <td class="column-0" th:text="${usuario.idusuario}"></td>
-                        <td class="column-1" th:text="${usuario.nombre}"></td>
-                        <td class="column-2" th:text="${usuario.email}"></td>
-                        <td class="column-3" th:text="${usuario.usuario}"></td>
-                        <td class="column-5" th:text="${usuario.tipousuario}"></td>
+                        <td class="column-0" th:text="${usuariosConServicio.getIDUSUARIO}"></td>
+                        <td class="column-1" th:text="${usuariosConServicio.getNOMBRE}"></td>
+                        <td class="column-2" th:text="${usuariosConServicio.getEMAIL}"></td>
+                        <td class="column-3" th:text="${usuariosConServicio.getVECESSERVICIO}"></td>
                     </tr>
                 </th:block>
             </table>

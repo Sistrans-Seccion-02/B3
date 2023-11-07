@@ -14,8 +14,12 @@ import uniandes.edu.co.proyecto.modelo.Habitacion;
 import uniandes.edu.co.proyecto.modelo.TipoHabitacion;
 
 public interface HabitacionRepository extends JpaRepository<Habitacion, Integer> {
-    
-    
+    public interface Req1 {
+        int getNHABITACION();
+        int getCOSTOHABITACION();
+
+    }
+
 
     @Query(value = "SELECT * FROM habitaciones", nativeQuery = true)
     Collection<Habitacion> darHabitaciones();
@@ -39,14 +43,14 @@ public interface HabitacionRepository extends JpaRepository<Habitacion, Integer>
     void eliminarHabitacion(@Param("numHabitacion") int numHabitacion);
 
    
-   @Query(value = "SELECT h.nHabitacion, h.tipohabitacion, sum(s.costoservicio) as costo, h.costohabitacion \n" + //
+   @Query(value = "SELECT h.NHABITACION, sum(s.costoservicio) as COSTOHABITACION  \n" + //
            "" + //
            "FROM habitaciones h \n" + //
-           "INNER JOIN consumos c ON(h.nHabitacion = c.nHabitacion)\n" + //
+           "INNER JOIN consumos c ON(h.NHABITACION = c.NHABITACION)\n" + //
            "RIGHT JOIN servicios s ON(c.idservicio = s.idservicio)\n" + //
-           "WHERE h.nHabitacion = :habitacion\n" + //
-           "GROUP BY h.nHabitacion, h.tipohabitacion, h.costohabitacion \n" + //
-           "ORDER BY h.nHabitacion\n", nativeQuery = true)
-    Collection<Habitacion> consumoporHabitaciones(@Param("habitacion") Integer nHabitacion);
+           "WHERE h.NHABITACION = :habitacion\n" + //
+           "GROUP BY h.NHABITACION \n" + //
+           "ORDER BY h.NHABITACION\n", nativeQuery = true)
+    Collection<Req1> consumoporHabitaciones(@Param("habitacion") Integer nHabitacion);
 
 }

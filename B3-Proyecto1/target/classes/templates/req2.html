@@ -15,14 +15,16 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Nombre</th>
-                        <th>Tipo</th>    
+                        <th>Tipo</th>
+                        <th>Veces Pedido</th>
                     </tr>
                 </thead>
                 
-                <th:block th:each="servicio:${servicios}">
+                <th:block th:each="top20servicios:${top20servicios}">
                     <tr>
-                        <td th:text = "${servicio.nombre}"></td>
-                        <td th:text = "${servicio.dtype}"></td>
+                        <td th:text = "${top20servicios.getNOMBRE}"></td>
+                        <td th:text = "${top20servicios.getDTYPE}"></td>
+                        <td th:text = "${top20servicios.getVECESPEDIDO}"></td>
                     </tr>
                 </th:block>
             </table> 

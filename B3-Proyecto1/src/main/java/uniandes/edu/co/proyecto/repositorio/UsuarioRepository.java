@@ -10,8 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.TipoUsuario;
 import uniandes.edu.co.proyecto.modelo.Usuario;
+import uniandes.edu.co.proyecto.repositorio.ConsumoRepository.Req10;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+    public interface Req9{
+        String getIDUSUARIO();
+        String getNOMBRE();
+        String getEMAIL();
+        Integer getVECESSERVICIO();
+    }
     
 
 
@@ -39,21 +47,19 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     void eliminarUsuario(@Param("id") Integer id);
 
 
-    @Query(value="SELECT u.idusuario, u.nombre, u.email, u.usuario, u.contraseña, u.tipousuario \n" + //
-            "FROM consumos c\n" + //
-            "JOIN reservas r ON (r.nHabitacion = c.nHabitacion)\n" + //
-            "JOIN servicios s ON (s.idservicio = c.idservicio)\n" + //
-            "JOIN reservasservicio rs ON(rs.idservicio = s.idservicio)\n" + //
-            "JOIN usuarios u ON (u.idusuario = r.idusuario)\n" + //
-            "WHERE (s.costoservicio < :costosup\n" + //
-            "AND s.costoservicio > :costoinf)\n" + //
-            "AND\n" + //
-            "(rs.fecha > :fechainf AND rs.fecha < :fechasup\n" + //
-            ")\n" + //
-            "GROUP BY  u.idusuario, u.nombre, u.usuario, u.email, u.contraseña, u.tipousuario\n" + //
-            "ORDER BY count(u.idusuario)\n", nativeQuery = true
-            )
-    Collection<Usuario> usuariosServicios(@Param("fechainf") String fechainf, @Param("fechasup") String fechasup, @Param("costoinf")Integer costoinf, @Param("costosup") Integer costosup);
+   @Query(value = "SELECT u.idusuario, u.nombre, u.email, COUNT(u.idusuario) as VECESSERVICIO\n" + //
+           "FROM reservas r\n" + //
+           "INNER JOIN usuarios u ON (r.idusuario = u.idusuario)\n" + //
+           "INNER JOIN consumos c ON(c.nHabitacion = r.nHabitacion)\n" + //
+           "INNER JOIN reservasservicio rs ON(rs.nHabitacion = r.nHabitacion)\n" + //
+           "WHERE c.idservicio = :idservicio\n" + //
+           "AND rs.idservicio = :idservicio\n" + //
+           "AND (rs.fecha < :fechafin and rs.fecha > :fechain)\n" + //
+           "GROUP BY u.idusuario, u.nombre, u.email\n" + //
+           "ORDER BY COUNT(u.idusuario) DESC",
+            nativeQuery = true)
+    Collection<Req9> usuariosServicios(@Param("idservicio") int id, @Param("fechain") String inicio, @Param("fechafin") String fin);
+
     
 
 

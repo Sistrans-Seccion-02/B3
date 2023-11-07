@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.controller;
 
+import java.util.Collections;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,16 +18,24 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     @GetMapping("/usuarios")
-    public String usuarios(Model model, String fechainf, String fechasup, String costoinf, String costosup){
-        if((fechainf==null || fechainf.equals(""))||(fechasup==null || fechasup.equals(""))||(costoinf==null || costoinf.equals(""))||(costosup==null || costosup.equals("")))
-        {
+    public String usuarios(Model model){
            model.addAttribute("usuarios", usuarioRepository.darUsuarios());
-       }
-      else
-       {
-           model.addAttribute("usuarios", usuarioRepository.usuariosServicios(fechainf, fechasup, Integer.parseInt(costoinf), Integer.parseInt(costosup)));
-       }   
         return "usuarios";
+    }
+
+    
+        
+
+    @GetMapping("/req9")
+    public String req9(Model model, String idservicio, String fechain, String fechafin){
+        if((idservicio==null || idservicio.equals(""))||(fechain==null || fechain.equals(""))||(fechafin==null || fechafin.equals(""))){
+             model.addAttribute("usuariosConServicio", Collections.emptyList());
+        
+        }
+        else {
+            model.addAttribute("usuariosConServicio", usuarioRepository.usuariosServicios(Integer.parseInt(idservicio), fechain, fechafin));
+        }
+        return "req9";
     }
 
     @GetMapping("/usuarios/new")
