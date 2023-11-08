@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="196F13D2-0D75-E20E-EA55-A3ECF82D2C22" name="ReservasServicio">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>03FF5229-FFE5-ABE3-0B0E-321E16707EBD</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<ordsAlias>reservaservicio</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idreservaservicio" id="A51F95E2-B695-80C8-F018-DE6E29BD47F7">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 15:39:46 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="71610C55-17B1-94BD-C3CD-F06D6791ED73">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>20340D6A-DA57-5A56-54C5-A508D5A4C163</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hora" id="6D721605-F7EA-8AE5-9CB3-C58134B75A66">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>73BA9E18-857E-4D88-D52D-8F96B60A833C</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idservicio" id="78F9F578-7DC3-5B60-1110-ED197E4BAD92">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>1B734EC7-CEEE-E340-438E-D45E64B75A2A</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="275E0E32-0F42-B879-DF85-3D0D46F9C352" referredColumn="B484F4D8-47AA-B5C3-0BDF-6D55BB7677CE"/>
+</associations>
+</Column>
+<Column name="nhabitacion" id="BA2A8A0D-621A-2599-579D-9D1FDD6C25A1">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 20:48:15 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9F056B66-571F-6C7A-272A-F2F307794736" referredColumn="6C6676AC-813A-EA38-1056-09BD88F49ED5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C02D598F-94C5-8062-1DB0-5CAA3B11BA63" name="ReservaServicio_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>A635199C-A21B-5B86-DD9F-B00B975C18E4</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A51F95E2-B695-80C8-F018-DE6E29BD47F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D1904ECD-D9B4-8797-9DA0-4250C28B2FCE" name="ReservaServicio_Servicios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>45B5C476-56C7-4EE8-7E30-A0672033A2E3</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78F9F578-7DC3-5B60-1110-ED197E4BAD92"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B76C50AE-EB45-5746-9264-94E867A905E9" name="HabitacionServicio_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 20:48:15 UTC</createdTime>
+<generatorID>440A5902-545D-F517-C14B-D8752F012806</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA2A8A0D-621A-2599-579D-9D1FDD6C25A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

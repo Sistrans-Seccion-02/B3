@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D5955686-F328-E57B-2417-7BF8FBD90A9E" name="Restaurantes">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>6F087663-1533-64AE-5452-95E5641AFCF9</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<ordsAlias>restaurante</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idservicio" id="173F2495-B05B-7CF9-B322-7B7FC1069128">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>9C7F4B22-63E5-777C-93E7-9E920D7CD826</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C540573A-680C-05BC-5D0E-2EFA1AE3823E" referredColumn="B484F4D8-47AA-B5C3-0BDF-6D55BB7677CE"/>
+</associations>
+</Column>
+<Column name="nombre" id="7EC6CA0F-8315-6A5B-BFBE-4528A6B67C5E">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>988DB85A-BA50-5F59-4DB4-FF6F29CAD6E8</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidad" id="72A57810-4E86-2F00-342F-0BAD15E17E60">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>B72EE3CB-83F6-C577-698D-FD4D46153638</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estilo" id="4A52AEFE-7FCE-97C9-57D9-7549F19856E1">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>B67E3772-F841-93A7-474E-22A758C9F60D</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED550995-7257-A7FB-9A87-D5E1A2CA2D6C" name="Restaurante_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>C5A6B612-8E43-C4A3-263B-196C26D3F2F6</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="173F2495-B05B-7CF9-B322-7B7FC1069128"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECF9F742-1066-C6FB-E9AB-FCD7892FD453" name="Restaurante_Servicios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>4B2F87E5-B5F9-D444-B7EA-C7ED4713420C</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="173F2495-B05B-7CF9-B322-7B7FC1069128"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

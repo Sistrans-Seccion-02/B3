@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="29C255F4-BFCB-C7DF-7EDB-59231882D1BE" name="Entrada">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:19:33 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario" id="E2E6A107-94B3-37CE-781B-5D2B9C1037CF">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:21:30 UTC</createdTime>
+<generatorID>8776673D-5515-8C5A-1EE9-3E11276FA07B</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>0E8426FD-0732-5E75-C27E-0053A22CEDD2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4885AB27-D5ED-156A-7C99-BC979564F462" name="Entrada PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:21:30 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<pk>true</pk>
+</identifier>
+</identifiers>
+</Entity>

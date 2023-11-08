@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="454C5A7B-C35E-5EE1-0789-318123E653CF" name="Productos">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>1D8FDF12-3C38-A84A-9347-34F5FF631672</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="3B7FBF1D-E503-57EB-7178-BDBE25254FC7">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>129A1E59-ABF9-5306-DCD2-B0142685D3AB</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="E6340403-75F8-B9F7-0D6F-CBE2BED196F5">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>EFFBF246-7515-F93B-38AE-FF9D7984002B</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="A91A1B0F-D771-0880-D93A-88D9C22540BC">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>6BFD7A2A-79B1-19ED-8872-DDA86439A45A</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idsupermercado" id="6A47C06E-9EBA-BD1F-4702-379CE97D0B4A">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>791D6FD5-2F79-1F86-F493-99FDF7065E44</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DAD8BFD6-D8EF-59AE-FE28-1861301D6AC7" referredColumn="5EE3E6C8-CC43-0422-5582-9A190973D5CD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8C71CC86-723D-3722-25A5-62E2EA94F629" name="Productos_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>7583DF01-7B15-93DA-2A91-4020DC402B87</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B7FBF1D-E503-57EB-7178-BDBE25254FC7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2025026E-04E4-BFAE-C654-0F025F60472F" name="Productos_Supermercados_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>3478E5F8-4CCE-E645-6F66-9EE66A65164C</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A47C06E-9EBA-BD1F-4702-379CE97D0B4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

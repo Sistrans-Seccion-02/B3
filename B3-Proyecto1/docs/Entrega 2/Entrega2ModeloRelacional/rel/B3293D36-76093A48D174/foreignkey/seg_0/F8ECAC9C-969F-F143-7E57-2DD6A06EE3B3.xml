@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F8ECAC9C-969F-F143-7E57-2DD6A06EE3B3" containerWithKeyObject="CA48ED17-157A-9CC5-941A-14154DFDB5C4" localFKIndex="7E972ACA-410D-26EB-9672-994095479545" name="Spas_Servicios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>CBAD2882-0627-9F27-E14B-010320F1BE10</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<referredTableLongName>Servicios</referredTableLongName>
+<arc>81AB84F3-C657-9BE2-C8E0-A8A23D7E8868</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0FF86242-8500-2391-FC8A-D114376FDBDC</referredTableID>
+<keyObject>158B141C-F118-7ECC-2148-9CA9945D3737</keyObject>
+<referredKeyID>158B141C-F118-7ECC-2148-9CA9945D3737</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>idservicio</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorValue>Spas</discriminatorValue>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Entrega2ModeloRelacional" id="82E1F7B6-BAF0-6C69-3C37-35D0FC23177A" version="3.5">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:15:18 UTC</createdTime>
+<ownerDesignName>ProyectoCorregido</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>82E1F7B6-BAF0-6C69-3C37-35D0FC23177A</designId>
+</OSDM_Design>

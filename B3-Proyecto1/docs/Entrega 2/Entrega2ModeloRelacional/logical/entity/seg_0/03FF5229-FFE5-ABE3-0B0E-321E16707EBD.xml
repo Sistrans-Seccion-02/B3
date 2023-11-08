@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="03FF5229-FFE5-ABE3-0B0E-321E16707EBD" name="ReservaServicio">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:26:43 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="fecha" id="20340D6A-DA57-5A56-54C5-A508D5A4C163">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:26:49 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="hora" id="73BA9E18-857E-4D88-D52D-8F96B60A833C">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:27:02 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_servicio" id="1B734EC7-CEEE-E340-438E-D45E64B75A2A">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:28:56 UTC</createdTime>
+<generatorID>45B5C476-56C7-4EE8-7E30-A0672033A2E3</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>9C7F4B22-63E5-777C-93E7-9E920D7CD826</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A635199C-A21B-5B86-DD9F-B00B975C18E4" name="ReservaServicio PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:27:39 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>20340D6A-DA57-5A56-54C5-A508D5A4C163,73BA9E18-857E-4D88-D52D-8F96B60A833C,45B5C476-56C7-4EE8-7E30-A0672033A2E3</newElementsIDs>
+<usedAttributes>
+<attributeRef>20340D6A-DA57-5A56-54C5-A508D5A4C163</attributeRef>
+<attributeRef>73BA9E18-857E-4D88-D52D-8F96B60A833C</attributeRef>
+<attributeRef>1B734EC7-CEEE-E340-438E-D45E64B75A2A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A0B4930B-7828-DDD2-AE84-6CD1298405F0" name="Usuarios">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:43:51 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario" id="0E8426FD-0732-5E75-C27E-0053A22CEDD2">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:43:58 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="AF9785DB-13E0-682F-68D5-F4F4E2B82673">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:44:00 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="C0DF2E72-3968-ACD8-17A7-63268F9098AC">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:44:05 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario" id="4C7382D1-E227-D5EC-C1C1-766A243EDC42">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:45:07 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contraseña" id="CF4A480C-6899-CE04-5070-B0762D69CCDA">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:45:20 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="50855731-94BB-F368-C856-5BA3DB0EC7B1">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:08:34 UTC</createdTime>
+<generatorID>E9D44E61-C2F9-1FD9-A7BD-D7FF11E628C5</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>75AF2B26-298C-FFBB-9570-1552173D80E1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9E595744-C988-B249-4071-20BFC5A2146A" name="Usuarios PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 12:52:29 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>0E8426FD-0732-5E75-C27E-0053A22CEDD2</newElementsIDs>
+<usedAttributes>
+<attributeRef>0E8426FD-0732-5E75-C27E-0053A22CEDD2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

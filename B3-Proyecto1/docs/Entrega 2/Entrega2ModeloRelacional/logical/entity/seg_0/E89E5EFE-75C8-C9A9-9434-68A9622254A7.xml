@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E89E5EFE-75C8-C9A9-9434-68A9622254A7" name="Consumos">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:21:51 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nHabitacion" id="7AA8BFD2-540D-62DD-D6D2-2738E7053D2E">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:24:24 UTC</createdTime>
+<generatorID>E876FB23-12C6-296B-850E-31C4FAD5E07C</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>F0849FBB-DBD3-47C7-0CDD-6112A0E21694</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_servicio" id="F9585848-CF43-9879-E4E0-A7C612DBCE72">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:25:35 UTC</createdTime>
+<generatorID>4861C2DC-0EED-92A8-4C83-B0B207DC4FD2</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<referedAttribute>9C7F4B22-63E5-777C-93E7-9E920D7CD826</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="BB2DBFC7-D0F1-37F0-3612-B7342414D1C0">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 14:27:39 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F84F0F5E-5B7C-E383-D272-A3699E81BE6D" name="Consumos PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:26:16 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<engineerTo>
+<item key="B3293D36-3234-A81F-D59E-76093A48D174" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>BB2DBFC7-D0F1-37F0-3612-B7342414D1C0</newElementsIDs>
+<usedAttributes>
+<attributeRef>BB2DBFC7-D0F1-37F0-3612-B7342414D1C0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

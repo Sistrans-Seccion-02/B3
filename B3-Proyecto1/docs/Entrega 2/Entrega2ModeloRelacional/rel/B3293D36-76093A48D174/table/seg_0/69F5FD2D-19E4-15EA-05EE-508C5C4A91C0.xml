@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="69F5FD2D-19E4-15EA-05EE-508C5C4A91C0" name="Consumos">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>E89E5EFE-75C8-C9A9-9434-68A9622254A7</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idconsumo" id="A6E622C4-ABFE-7803-42F0-30938CF51060">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-21 15:24:25 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nhabitacion" id="6A5C7EC8-7E20-2B9C-1611-00C56E78AC6A">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>7AA8BFD2-540D-62DD-D6D2-2738E7053D2E</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46C9A988-4A1D-4069-C4A9-4EF05159D588" referredColumn="6C6676AC-813A-EA38-1056-09BD88F49ED5"/>
+</associations>
+</Column>
+<Column name="idservicio" id="1DDE78CE-901E-CD50-DBEE-1546189E0D97">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>F9585848-CF43-9879-E4E0-A7C612DBCE72</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D2A039E0-8BF1-3E42-4031-C0E38F71B04F" referredColumn="B484F4D8-47AA-B5C3-0BDF-6D55BB7677CE"/>
+</associations>
+</Column>
+<Column name="identrada" id="607B202F-13FA-AB13-E928-6F346A38E78A">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-23 19:04:00 UTC</createdTime>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A1375D8-7FF5-098D-578F-9DAC5ECB996C" referredColumn="3AA9E31F-44B1-B128-AF05-0E8DCF64D26A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="32A8405D-0EF6-F104-C245-98B5B3367575" name="Consumos_PK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>F84F0F5E-5B7C-E383-D272-A3699E81BE6D</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6E622C4-ABFE-7803-42F0-30938CF51060"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A98057FC-21CC-6B5D-E706-C6C12F14CBD5" name="Consumos_Entrada_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>7120064C-2124-8918-2E22-E868D7CD69B7</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="607B202F-13FA-AB13-E928-6F346A38E78A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FA6A04B6-C1FF-B399-9C8C-21FA3E653EF8" name="Consumos_Habitaciones_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>E876FB23-12C6-296B-850E-31C4FAD5E07C</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A5C7EC8-7E20-2B9C-1611-00C56E78AC6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2C4766F-F586-BCD3-25CB-7B244B069F8F" name="Consumos_Servicios_FK">
+<createdBy>marianapinedamiranda</createdBy>
+<createdTime>2023-10-12 13:39:45 UTC</createdTime>
+<generatorID>4861C2DC-0EED-92A8-4C83-B0B207DC4FD2</generatorID>
+<ownerDesignName>Entrega2ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DDE78CE-901E-CD50-DBEE-1546189E0D97"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
