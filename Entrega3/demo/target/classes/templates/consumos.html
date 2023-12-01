@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumos con su servicio</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Consumos</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Habitacion</th>
+                <th>FechaConsumo</th>
+                <th>Servicio[nombre, tipo, precio]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteramos sobre la lista de tipos de das y mostramos los detalles -->
+            <tr th:each="consumo : ${consumos}">
+                <td th:text="${consumo.idconsumo}"></td>
+                <td th:text="${consumo.habitacion}"></td>
+                <td th:text="${consumo.fechaConsumo}"></td>
+                <td>
+                    <!-- Iteramos sobre la lista de bebidas y mostramos los detalles -->
+                    <ul th:if="${consumo.servicio != null}">
+                        <li th:each="servicio : ${consumo.servicio}">
+                            <span th:text="${servicio.nombre + ', ' + servicio.tipo + ', ' + servicio.precio}"></span>
+                        </li>
+                    </ul>
+
+                    <!-- Botón para redirigir al formulario de adición de la bebida -->
+                    <a th:href="@{'/addServicio?nombre=' + ${consumo.idconsumo}}" class="btn btn-primary">Añadir Servicio</a>
+
+                    <!-- Botón para redirigir al formulario de la eliminacion del tipo de bebida -->
+                    <form th:action="@{/deleteConsumo}" method="post">
+                        <input type="hidden" name="nombre" th:value="${consumo.idconsumo}" />
+                        <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar Consumo</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+     <!-- Botón para redirigir al formulario de creación de tipo bebida -->
+     <a th:href="@{/consumosForm}" class="btn btn-primary" style="margin-bottom: 38px;">Crear Nuevo Consumo</a>
+
+</div>
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

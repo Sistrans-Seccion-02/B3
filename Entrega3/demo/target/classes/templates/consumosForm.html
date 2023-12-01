@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Consumo</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo Consumo</h1>
+
+    <!-- Formulario de creación -->
+    <form th:action="@{/crearConsumo}" th:object="${nuevoConsumo}" method="post">
+        <label for="habitacion">Habitacion:</label>
+        <input type="text" id="habitacion" name="habitacion" th:field="*{habitacion}" required />
+
+        <label for="fechaConsumo">Fecha Consumo:</label>
+        <input type="text" id="fechaConsumo" name="fechaConsumo" th:field="*{fechaConsumo}" required />
+
+        <!-- Campos para la información de la bebida -->
+        <label for="servicioNombre">Nombre del servicio:</label>
+        <input type="text" id="servicioNombre" name="servicio[0].nombre" th:field="*{servicio[0].nombre}" required />
+
+        <label for="tipoServicio">Tipo:</label>
+        <input type="text" id="tipo" name="servicio[0].tipo" th:field="*{servicio[0].tipo}" required />
+
+        <label for="precioServicio">Precio:</label>
+        <input type="text" id="precio" name="servicio[0].precio" th:field="*{servicio[0].precio}" required />
+
+
+        <button type="submit" class="btn btn-success">Crear Consumo</button>
+    </form>
+
+</div>
+
+</body>
+</html>

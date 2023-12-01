@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Servicios</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Servicio</th>
+                <th>Tipo</th>
+                <th>Costo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteramos sobre la lista bebidas y mostramos los detalles -->
+            <tr th:each="servicio: ${servicios}">
+                <td th:text="${servicio.nombre}"></td>
+                <td th:text="${servicio.tipo}"></td>
+                <td th:text="${servicio.precio}"></td>
+                <td>
+                    <form th:action="@{/deleteServicio}" method="post">
+                        <input type="hidden" name="id" th:value="${servicio.idservicio}" />
+                        <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar Servicio</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+     <a th:href="@{/crearServicio}" class="btn btn-primary" style="margin-bottom: 38px;">Crear Nuevo Servicio</a>
+
+</div>
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

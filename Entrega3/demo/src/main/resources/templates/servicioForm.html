@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Servicio</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo Servicio</h1>
+
+    <!-- Formulario de creación -->
+    <form th:action="@{/crearServicioNuevo}" th:object="${servicioNuevo}" method="post">
+
+
+        <label for="servicioNombre">Nombre del Servicio:</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required />
+    
+        <label for="tipoServicio">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" th:field="*{tipo}" required />
+        
+        <label for="precioServicio">Costo:</label>
+        <input type="text" id="precio" name="precio" th:field="*{precio}" required />
+    
+        <button type="submit" class="btn btn-success">Crear Servicio</button>
+    </form>
+    
+
+</div>
+
+</body>
+</html>
