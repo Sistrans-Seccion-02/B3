@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.repository.Aggregation;
+import org.springframework.data.mongodb.repository.Aggregation;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.example.demo.modelo.Consumo;
@@ -41,8 +42,7 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
         
     }
 
-    @Aggregation(pipeline={"{$unwind: '$servicio'}", "{$group:{_id: '$habitacion', ingresos:{$sum:'$servicio.precio'}}}","{$project: {'habitacion':'$_id',ingresos: 1}}", "{$sort: {ingresos: -1}}" })
-    List<RespuestaGrupo> costoPorHabitacion();
+
 
   
 
@@ -162,6 +162,11 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
     })
     List<ClienteInfoAvanzado> findConsumoAvanzado(String fechaInicio, String fechaFin, String nombreServicio);
     
+
+
+
+    @Aggregation(pipeline={"{$unwind: '$servicio'}, {$group: {_id: '$habitacion' , ingresos: { $sum: '$servicio.precio' }}},{$project: {'habitacion':'$_id',ingresos: 1}},{$sort: {ingresos: -1}}" })
+    List<RespuestaGrupo> costoPorHabitacion();
 
 
 }
