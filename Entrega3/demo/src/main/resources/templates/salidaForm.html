@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Salida</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nueva Salida</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+<form th:action="@{/crearSalida}" th:object="${nuevaSalida}" method="post">
+
+    <!-- Campo para el nombre del tipo de bebida -->
+    <label for="fecha">Fecha Salida:</label>
+    <input type="text" id="fecha" name="fecha" th:field="*{fecha}" required />
+
+    <!-- Campos para la información de la bebida -->
+    <label for="habitacionConsumo">Habitacion Consumo:</label>
+    <input type="text" id="habitacionConsumo" name="consumos[0].habitacion" th:field="*{consumos[0].habitacion}" required />
+
+    <label for="fechaConsumo">Fecha Consumo:</label>
+    <input type="text" id="fechaConsumo" name="consumos[0].fechaConsumo" th:field="*{consumos[0].fechaConsumo}" required />
+
+    <label for="entradaConsumo">Entrada:</label>
+    <input type="text" id="entrada" name="consumos[0].entrada" th:field="*{consumos[0].entrada}" required />
+
+    <label for="nombreServCons">Nombre Servicio:</label>
+    <input type="text" id="nombreServCons" name="consumos[0].servicio[0].nombre" th:field="*{consumos[0].servicio[0].nombre}" required />
+
+    <label for="tipoServCons">Tipo Servicio:</label>
+    <input type="text" id="tipoServCons" name="consumos[0].servicio[0].tipo" th:field="*{consumos[0].servicio[0].tipo}" required />
+
+    <label for="precioServCons">Precio Servicio:</label>
+    <input type="text" id="precioServCons" name="consumos[0].servicio[0].tipo" th:field="*{consumos[0].servicio[0].tipo}" required />
+
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-success">Crear Tipo de Bebida</button>
+</form>
+
+</div>
+
+</body>
+</html>

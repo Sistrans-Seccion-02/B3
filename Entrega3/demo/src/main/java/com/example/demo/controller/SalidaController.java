@@ -34,11 +34,11 @@ public class SalidaController {
     @GetMapping("/salidas")
     public String getSalidas(Model model)
     {
-        model.addAttribute("salidasH", salidaRepository.findAll());
+        model.addAttribute("nuevaSalida", salidaRepository.findAll());
         return "salidas";
     }
 
-    @GetMapping("/mostrarResultadosAgregacion")
+    @GetMapping("/mostrarResultadosAgregacionSal")
     public String mostrarResultados(Model model) {
         LookupOperation lookupOperation = LookupOperation.newLookup()
                 .from("consumos")
@@ -49,15 +49,15 @@ public class SalidaController {
         Aggregation aggregation = Aggregation.newAggregation(lookupOperation);
 
         List<Salida> salidas = mongoTemplate.aggregate(aggregation, "salidas", Salida.class).getMappedResults();
-        model.addAttribute("salidas", salidas);
+        model.addAttribute("nuevaSalida", salidas);
 
-        return "resultados";
+        return "resultadosSalida";
     }
 
     @GetMapping("/salidaForm")
     public String mostrarFormulario(Model model) {
 
-        model.addAttribute("nuevasalida", new Salida());
+        model.addAttribute("nuevaSalida", new Salida());
         model.addAttribute(("consumosDisponibles"), consumoRepository.findAll());
         
         return "salidaForm";
