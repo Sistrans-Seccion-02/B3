@@ -49,7 +49,7 @@ public class SalidaController {
         Aggregation aggregation = Aggregation.newAggregation(lookupOperation);
 
         List<Salida> salidas = mongoTemplate.aggregate(aggregation, "salidas", Salida.class).getMappedResults();
-        model.addAttribute("salidas", salidas);
+        model.addAttribute("nuevaSalida", salidas);
 
         return "resultadosSalida";
     }
