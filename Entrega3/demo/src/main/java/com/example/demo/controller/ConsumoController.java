@@ -139,4 +139,13 @@ public String buscarConsumosPorServicio(
     return "buscarConsumoAvanzado"; 
 } 
 
+
+    @GetMapping("/req1")
+    public String getConsumoPorHabitacion(Model model) {
+        model.addAttribute("costoPorHabitaciones", consumoRepository.costoPorHabitacion());
+        return "req1";
+    }
+    
+
+    
 }
