@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos Bebidas</title>
+    <title>Salidas</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
 </head>
 <body>
@@ -19,21 +19,14 @@
                 <tr>
                     <th>#</th>
                     <th>Fecha Salida</th>
-                    <th>Consumos [Object Id]</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Iteramos sobre la lista de tipos de bebidas y mostramos los detalles -->
+              
                 <tr th:each="salida : ${salidas}">
                     <td th:text="${salida.id}"></td>
                     <td th:text="${salida.fecha}"></td>
-                    <td>
-                        <!-- Iteramos sobre la lista de bebidas dentro de cada tipo -->
-                        <span th:each="idConsumo : ${salida.consumos}">
-                            <!-- Mostramos los detalles de cada bebida -->
-                            <span th:text="${idConsumo.idConsumo}"></span>
-                        </span>
-                    </td>
+                    
                 </tr>
             </tbody>
         </table>

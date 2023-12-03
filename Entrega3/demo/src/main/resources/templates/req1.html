@@ -47,9 +47,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="costoHabitacion : ${costoPorHabitaciones}">
-                        <td th:text="${costoHabitacion.gethabitacion()}"></td>
-                        <td th:text="${costoHabitacion.getingresos()}"></td>
+                    <tr th:each="costoporHabitacion : ${costoPorHabitaciones}">
+                        <td th:text="${costoporHabitacion.gethabitacion()}"></td>
+                        <td th:text="${costoporHabitacion.getingresos()}"></td>
                     </tr>
                 </tbody>
             </table> 

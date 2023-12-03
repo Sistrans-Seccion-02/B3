@@ -5,16 +5,19 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document("salidas")
+@Document(collection = "salidas")
 public class Salida {
 
     @Id
     private String id;
 
+    @Field("fecha")
     private String fecha;
 
     @DBRef
+    @Field("consumos")
     private List<Consumo> consumos;
 
     public Salida(){}
@@ -46,6 +49,10 @@ public class Salida {
 
     public void setConsumos(List<Consumo> consumos) {
         this.consumos = consumos;
+    }
+
+    public void addConsumo(Consumo cons){
+        consumos.add(cons);
     }
     
 }

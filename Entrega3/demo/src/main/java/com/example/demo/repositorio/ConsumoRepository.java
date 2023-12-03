@@ -11,32 +11,32 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
     List<Consumo> findByidconsumo(String idconsumo);
 
     public class RespuestaGrupo{
-        Integer habitacion;
-        Long ingresos;
+        String habitacion;
+        int ingresos;
 
-        public RespuestaGrupo(Integer habitacion, Long ingresos){
+        public RespuestaGrupo(String habitacion, int ingresos){
             this.habitacion = habitacion;
             this.ingresos = ingresos;
         }
 
-        public Integer gethabitacion() {
+        public String gethabitacion() {
             return habitacion;
         }
 
-        public void setHabitacion(Integer habitacion) {
+        public void setHabitacion(String habitacion) {
             this.habitacion = habitacion;
         }
 
-        public Long getingresos() {
+        public int getingresos() {
             return ingresos;
         }
 
-        public void setIngresos(Long ingresos) {
+        public void setIngresos(int ingresos) {
             this.ingresos = ingresos;
         }
     }
 
-    @Aggregation(pipeline={"{$unwind: '$servicio'}, {$group: {_id: '$habitacion' , ingresos: { $sum: '$servicio.precio' }}},{$project: {'habitacion':'$_id',ingresos: 1}},{$sort: {ingresos: -1}}" })
+    @Aggregation(pipeline={"{$unwind: '$servicio'}", "{$group:{_id: '$habitacion', ingresos:{$sum:'$servicio.precio'}}}","{$project: {'habitacion':'$_id',ingresos: 1}}", "{$sort: {ingresos: -1}}" })
     List<RespuestaGrupo> costoPorHabitacion();
 
 
