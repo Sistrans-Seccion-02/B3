@@ -16,13 +16,13 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
     public class RespuestaGrupo{
         String habitacion;
         int ingresos;
-        
-        public RespuestaGrupo(String habitacion, int ingresos) {
+
+        public RespuestaGrupo(String habitacion, int ingresos){
             this.habitacion = habitacion;
             this.ingresos = ingresos;
         }
 
-        public String getHabitacion() {
+        public String gethabitacion() {
             return habitacion;
         }
 
@@ -30,7 +30,7 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
             this.habitacion = habitacion;
         }
 
-        public int getIngresos() {
+        public int getingresos() {
             return ingresos;
         }
 
@@ -86,16 +86,7 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
     
 
 
-    @Aggregation(pipeline = {
-        "{ $match: { fechaConsumo: { $gte: ?0, $lte: ?1 } } }",
-        "{ $lookup: { from: 'Entradas', localField: 'entrada', foreignField: 'identrada', as: 'entrada_info' } }",
-        "{ $unwind: { path: '$entrada_info', preserveNullAndEmptyArrays: true } }",
-        "{ $lookup: { from: 'Reservas', localField: 'entrada_info.reserva', foreignField: 'idreserva', as: 'reserva_info' } }",
-        "{ $unwind: { path: '$reserva_info', preserveNullAndEmptyArrays: true } }",
-        "{ $unwind: { path: '$reserva_info.usuario', preserveNullAndEmptyArrays: false } }",
-        "{ $project: { fechaConsumo: 1, cliente_nombre: '$reserva_info.usuario.nombre', cliente_email: '$reserva_info.usuario.email', _id: 0 } }"
-    })
-    List<ClienteInfo> findConsumoInfo(String fechaInicio, String fechaFin);
+    
     
 
 
@@ -149,6 +140,30 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
 
     }
 
+    
+
+
+
+    
+
+    
+
+
+    @Aggregation(pipeline = {
+        "{ $match: { fechaConsumo: { $gte: ?0, $lte: ?1 } } }",
+        "{ $lookup: { from: 'Entradas', localField: 'entrada', foreignField: 'identrada', as: 'entrada_info' } }",
+        "{ $unwind: { path: '$entrada_info', preserveNullAndEmptyArrays: true } }",
+        "{ $lookup: { from: 'Reservas', localField: 'entrada_info.reserva', foreignField: 'idreserva', as: 'reserva_info' } }",
+        "{ $unwind: { path: '$reserva_info', preserveNullAndEmptyArrays: true } }",
+        "{ $unwind: { path: '$reserva_info.usuario', preserveNullAndEmptyArrays: false } }",
+        "{ $project: { fechaConsumo: 1, cliente_nombre: '$reserva_info.usuario.nombre', cliente_email: '$reserva_info.usuario.email', _id: 0 } }"
+    })
+    List<ClienteInfo> findConsumoInfo(String fechaInicio, String fechaFin);
+    
+
+
+    
+
     @Aggregation(pipeline = {
         "{ $match: { fechaConsumo: { $gte: ?0, $lte: ?1 }, 'servicio.nombre': ?2 } }",
         "{ $lookup: { from: 'Entradas', localField: 'entrada', foreignField: 'identrada', as: 'entrada_info' } }",
@@ -165,7 +180,7 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
 
 
 
-    @Aggregation(pipeline={"{$unwind: '$servicio'}, {$group: {_id: '$habitacion' , ingresos: { $sum: '$servicio.precio' }}},{$project: {'habitacion':'$_id',ingresos: 1}},{$sort: {ingresos: -1}}" })
+    @Aggregation(pipeline={"{$unwind: '$servicio'}", "{$group:{_id: '$habitacion', ingresos:{$sum:'$servicio.precio'}}}","{$project: {'habitacion':'$_id',ingresos: 1}}", "{$sort: {ingresos: -1}}" })
     List<RespuestaGrupo> costoPorHabitacion();
 
 
