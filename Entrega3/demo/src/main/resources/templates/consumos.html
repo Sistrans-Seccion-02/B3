@@ -8,12 +8,14 @@
 </head>
 <body>
 
-    <!-- Incluye el navbar -->
+    
     <div th:replace="navbar :: navbar"></div>
 
 <div class="container mt-3">
     <h1>Consumos</h1>
     
+     <a th:href="@{/consumosForm}" class="btn btn-primary" style="margin-bottom: 38px;">Crear Nuevo Consumo</a>
+
     <table class="table">
         <thead>
             <tr>
