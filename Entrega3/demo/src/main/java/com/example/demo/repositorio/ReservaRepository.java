@@ -38,9 +38,10 @@ public  interface ReservaRepository extends MongoRepository<Reserva,Integer>  {
 @Aggregation(pipeline = {
     "{$match: {'fechaEntrada': { $gte: '2023-01-01' }}}",
     "{$group: {_id: '$habitacion',cantidad: { $sum: 1 }}}",
-    "{$project: {'habitacion': '$_id',indice_ocupacion: {$divide: ['$cantidad',365]}}}"
+    "{$project: {'habitacion': '$_id', indiceocupacion: {$divide: ['$cantidad', 365]}}}",
+    "{$project: {'habitacion': 1, 'indiceocupacion': { $multiply: ['$indiceocupacion', 100] }}}"
 })
-
 List<Requerimeinto2> indiceocupacion();
+
 }
 
