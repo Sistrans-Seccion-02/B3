@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>No consumos</title>
+   
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+
+   
+    <style>
+        .centrado {
+            margin: 0 auto;
+            width: auto; 
+        }
+        .info-panel {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">No consumos</h1>
+
+        
+        <form method="get" class="mb-4">
+            <div class="form-group">
+                <label for="idservicio">ID Servicio:</label>
+                <input type="text" id="idservicio" name="idservicio" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="inicio">Fecha Inicio (formato YYYY-MM-DD):</label>
+                <input type="text" id="inicio" name="inicio" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fin">Fecha Fin (formato YYYY-MM-DD):</label>
+                <input type="text" id="fin" name="fin" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </form>
+
+        <a href="/hotelandes" class="btn btn-secondary mb-4">Volver al Menú Principal</a>
+
+        <div class="row">
+            <div class="col-md-8">
+               
+                <div class="centrado">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>ID Usuario</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="noConsumos : ${noConsumos}">
+                                <td th:text="${noConsumos.getIDUSUARIO}">ID Usuario</td>
+                                <td th:text="${noConsumos.getNOMBRE}">Nombre</td>
+                                <td th:text="${noConsumos.getEMAIL}">Email</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- Panel para mostrar parámetros ingresados -->
+                <div class="info-panel">
+                    <h4>Parámetros Ingresados:</h4>
+                    <p>ID Servicio: <span th:text="${param.idservicio}">[idservicio]</span></p>
+                    <p>Fecha Inicio: <span th:text="${param.inicio}">[inicio]</span></p>
+                    <p>Fecha Fin: <span th:text="${param.fin}">[fin]</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
