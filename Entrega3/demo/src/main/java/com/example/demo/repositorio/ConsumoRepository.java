@@ -39,7 +39,13 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
         }
     }
 
+
     
+
+    @Aggregation(pipeline={"{$unwind: '$servicio'}", "{$group:{_id: '$habitacion', ingresos:{$sum:'$servicio.precio'}}}","{$project: {'habitacion':'$_id',ingresos: 1}}", "{$sort: {ingresos: -1}}" })
+    List<RespuestaGrupo> costoPorHabitacion();
+
+
 
     public class ClienteInfo {
         private String cliente_nombre;
@@ -175,8 +181,6 @@ public interface ConsumoRepository extends MongoRepository<Consumo, String>{
 
 
 
-    @Aggregation(pipeline={"{$unwind: '$servicio'}", "{$group:{_id: '$habitacion', ingresos:{$sum:'$servicio.precio'}}}","{$project: {'habitacion':'$_id',ingresos: 1}}", "{$sort: {ingresos: -1}}" })
-    List<RespuestaGrupo> costoPorHabitacion();
 
 
 }
