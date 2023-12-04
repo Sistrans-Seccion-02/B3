@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Tipo de Habitación</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <div th:replace="navbar :: navbar"></div>
+
+    <div class="container mt-3">
+        <h1>Crear Tipo de Habitación</h1>
+        
+        <form th:action="@{/crearTipoHabitacionNuevo}" th:object="${nuevoTipoHabitacion}" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del tipo de habitación" th:field="*{nombre}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dotacion">Dotación:</label>
+                <textarea class="form-control" id="dotacion" name="dotacion" placeholder="Lista de dotación separada por comas" th:field="*{dotacion}" required></textarea>
+                <small id="dotacionHelp" class="form-text text-muted">Introduzca los elementos separados por comas (ej: TV, WiFi, Aire acondicionado).</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Crear Tipo de Habitación</button>
+        </form>
+
+    </div>
+
+    <script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

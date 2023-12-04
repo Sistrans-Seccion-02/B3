@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Habitación</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <div th:replace="navbar :: navbar"></div>
+
+    <div class="container mt-3">
+        <h1>Tipos de Habitación</h1>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dotación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tipoHabitacion : ${tiposHabitacion}">
+                    <td th:text="${tipoHabitacion.nombre}"></td>
+                    <td th:text="${#strings.listJoin(tipoHabitacion.dotacion, ', ')}"></td>
+                    <td>
+                        <form th:action="@{/deleteTipoHabitacion}" method="post">
+                            <input type="hidden" name="id" th:value="${tipoHabitacion.id}" />
+                            <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar Tipo de Habitación</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{/tipoHabitacionForm}" class="btn btn-primary" style="margin-bottom: 38px;">Crear Nuevo Tipo de Habitación</a>
+
+    </div>
+
+    <script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

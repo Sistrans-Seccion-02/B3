@@ -25,10 +25,10 @@
         <tbody>
             <tr th:each="salida : ${salidas}">
                 <td th:text="${salida.id}"></td>
-                <td th:text="${salida.fechaConsumo}"></td>
+                <td th:text="${salida.fecha}"></td>
                 <td>
                     <ul>
-                        <li th:each="consumo : ${salida.consumos}" th:text="${consumo.idConsumo} + ' (Habitacion: ' + ${consumo.habitacion} +')'"></li>
+                        <li th:each="consumo : ${salida.consumos}" th:text="${consumo.idconsumo} + ' (Habitacion: ' + ${consumo.habitacion} +')'"></li>
                     </ul>
                 </td>
             </tr>
