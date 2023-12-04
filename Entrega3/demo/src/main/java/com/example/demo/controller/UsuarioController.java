@@ -28,7 +28,7 @@ public class UsuarioController {
     public String crearUsuarioNuevo(@ModelAttribute("usuarioNuevo") Usuario usuario){
        
         Usuario nuevo=new Usuario(
-            usuario.getidusuario(), usuario.getnombre(), usuario.getemail(), usuario.getusuario(), usuario.getcontraseña()
+            usuario.getidusuario(), usuario.getnombre(), usuario.getemail(), usuario.getusuario(), usuario.getcontrasena()
         );
         usuarioRepository.save(nuevo);
         return "redirect:/usuarios";

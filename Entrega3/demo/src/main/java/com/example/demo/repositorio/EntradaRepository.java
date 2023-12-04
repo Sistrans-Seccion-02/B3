@@ -4,6 +4,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.example.demo.modelo.Entrada;
 
-public interface EntradaRepository extends MongoRepository<Entrada, Integer> {
+public interface EntradaRepository extends MongoRepository<Entrada, String> {
     
 }
