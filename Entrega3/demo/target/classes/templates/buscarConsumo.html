@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Consumos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        table {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        input[type=text], label {
+            margin: 10px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Buscar Consumos por Rango de Fechas</h1>
+
+    <form action="/buscarConsumo" method="get">
+        <label for="fechaInicio">Fecha Inicio (formato YYYY-MM-DD):</label>
+        <input type="text" id="fechaInicio" name="fechaInicio" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" required>
+
+        <label for="fechaFin">Fecha Fin (formato YYYY-MM-DD):</label>
+        <input type="text" id="fechaFin" name="fechaFin" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" required>
+
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div>
+        <h2>Resultados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha de Consumo</th>
+                    <th>Nombre del Cliente</th>
+                    <th>Email del Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="consumo : ${consumos}">
+                    <td th:text="${consumo.fechaConsumo}">Fecha de Consumo</td>
+                    <td th:text="${consumo.cliente_nombre}">Nombre del Cliente</td>
+                    <td th:text="${consumo.cliente_email}">Email del Cliente</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="/" class="back-button">Volver al Menú Principal</a>
+
+</body>
+</html>
