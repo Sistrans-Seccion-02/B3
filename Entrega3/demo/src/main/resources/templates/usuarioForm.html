@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Usuario</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nueva Usuario</h1>
+
+    <!-- Formulario de creación -->
+    <form th:action="@{/crearUsuarioNuevo}" th:object="${usuarioNuevo}" method="post">
+
+        <!-- Campos para la información de la bebida -->
+
+    
+        <label for="idusuario">Id de Usuario:</label>
+        <input type="text" id="idusuario" name="idusuario" th:field="*{idusuario}" required />
+    
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required />
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" th:field="*{email}" required />
+
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" th:field="*{usuario}" required />
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="text" id="contraseña" name="contraseña" th:field="*{contraseña}" required />
+    
+        <button type="submit" class="btn btn-success">Crear Usuario</button>
+    </form>
+    
+
+</div>
+
+</body>
+</html>

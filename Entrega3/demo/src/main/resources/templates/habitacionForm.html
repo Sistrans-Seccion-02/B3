@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Habitacion</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nueva Habitacion</h1>
+
+    <!-- Formulario de creación -->
+    <form th:action="@{/crearHabitacion}" th:object="${nuevaHabitacion}" method="post">
+        <label for="nhabitacion">Numero de habitacion:</label>
+        <input type="text" id="nhabitacion" name="nhabitacion" th:field="*{nhabitacion}" required />
+
+
+    
+        <!-- Campos para la información de la tipo habitacion -->
+        <label for="nombre">Nombre del tipo de habitacion:</label>
+        <input type="text" id="nombre" name="tipoHabitacion[0].nombre" th:field="*{tipoHabitacion[0].nombre}" required />
+
+        <label for="dotacion">Dotacion:</label>
+        <input type="text" id="dotacion" name="tipoHabitacion[0].dotacion" th:field="*{tipoHabitacion[0].dotacion}" required />
+
+        <label for="capacidad">Capacidad:</label>
+        <input type="text" id="capacidad" name="tipoHabitacion[0].capacidad" th:field="*{tipoHabitacion[0].capacidad}" required />
+
+
+        <button type="submit" class="btn btn-success">Crear Habitacion</button>
+    </form>
+
+</div>
+
+</body>
+</html>

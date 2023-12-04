@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Entrada</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nuevo Entrada</h1>
+
+    <!-- Formulario de creación de TipoBebida -->
+<form th:action="@{/crearEntrada}" th:object="${nuevaEntrada}" method="post">
+
+   
+    <!-- Campo para el nombre del tipo de bebida -->
+    
+
+    <!-- Campos para la información de la bebida -->
+
+    <label for="idreserva">IdReserva:</label>
+    <input type="text" id="idreserva" name="reserva[0].idreserva" th:field="*{reserva[0].idreserva}" required />
+
+    <label for="npersonas">Personas:</label>
+    <input type="text" id="npersonas" name="reserva[0].npersonas" th:field="*{reserva[0].npersonas}" required />
+
+    <label for="fechaentrada">fechaEntrada:</label>
+    <input type="text" id="fechaentrada" name="reserva[0].fechaentrada" th:field="*{reserva[0].fechaentrada}" required />
+
+    <label for="fechasalida">fechaSalida:</label>
+    <input type="text" id="fechasalida" name="reserva[0].fechasalida" th:field="*{reserva[0].fechasalida}" required />
+
+
+    <label for="habitacion">habitacion:</label>
+    <input type="text" id="habitacion" name="reserva[0].habitacion" th:field="*{reserva[0].habitacion}" required />
+
+   
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-success">Crear Entrada</button>
+</form>
+
+</div>
+
+</body>
+</html>

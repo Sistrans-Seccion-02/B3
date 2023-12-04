@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Usuarios</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>IdUsusario</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                
+    
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteramos sobre la lista bebidas y mostramos los detalles -->
+            <tr th:each="usuarios: ${usuarios}">
+                <td th:text="${usuarios.idusuario}"></td>
+                <td>
+                    <h5 th:text="${usuarios.nombre}"> </h5>
+                    <h5 th:text="${usuarios.email}"> </h5>
+                    <h5 th:text="${usuarios.usuario}"> </h5>
+                    <h5 th:text="${usuarios.contraseña}"> </h5>
+                    
+                    <!-- Botón para redirigir al formulario de la eliminacion de la bebida -->
+                    <form th:action="@{/deleteUsuario}" method="post">
+                        <input type="hidden" name="id" th:value="${usuarios.idusuario}" />
+                        <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar Usuario</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+     <!-- Botón para redirigir al formulario de creación de tipo bebida -->
+     <a th:href="@{/crearUsuario}" class="btn btn-primary" style="margin-bottom: 38px;">Crear Nuevo Usuario</a>
+
+</div>
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

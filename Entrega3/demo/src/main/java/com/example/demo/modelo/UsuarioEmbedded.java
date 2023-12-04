@@ -1,25 +1,22 @@
 package com.example.demo.modelo;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "usuarios")
-public class Usuario {
+public class UsuarioEmbedded {
     @Id
     public Integer idusuario;
     
-    private String nombre;
+    public String nombre;
     
-    private String email;
+    public String email;
     
-    private String usuario;
+    public String usuario;
    
-    private String contrasena;
+    public String contrasena;
 
-    public Usuario(){}
+    public UsuarioEmbedded(){}
 
-    public Usuario(Integer idusuario, String nombre, String email, String usuario, String contrasena){
+    public UsuarioEmbedded(Integer idusuario, String nombre, String email, String usuario, String contrasena){
         this.idusuario=idusuario;
         this.nombre=nombre;
         this.email=email;
@@ -66,9 +63,6 @@ public class Usuario {
     public void setcontrasena(String contrasena){
         this.contrasena=contrasena;
     }
-
     
-
-
     
 }

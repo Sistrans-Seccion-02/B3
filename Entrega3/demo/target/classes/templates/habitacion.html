@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones con los tipos de habitaciones</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Habitaciones</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numero Habitacion</th>
+                <th>Tipo de Habitacion [Nombre, Dotacion, Capacidad]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteramos sobre la lista de tipos de bebidas y mostramos los detalles -->
+            <tr th:each="habitacion : ${habitaciones}">
+                <td th:text="${habitacion.nhabitacion}"></td>
+                <td>
+                    <!-- Iteramos sobre la lista de bebidas y mostramos los detalles -->
+                    <ul th:if="${habitacion.tipoHabitacion != null}">
+                        <li th:each="tipoHabitacion : ${habitacion.tipoHabitacion}">
+                            <span th:text="${tipoHabitacion.nombre + ', ' + tipoHabitacion.dotacion + ', ' +  tipoHabitacion.capacidad}"></span>
+                        </li>
+                    </ul>
+
+                    <!-- Botón para redirigir al formulario de adición de la bebida -->
+                    
+                    <!-- Botón para redirigir al formulario de la eliminacion del tipo de bebida -->
+                    <form th:action="@{/deleteHabitacion}" method="post">
+                        <input type="hidden" name="nhabitacion" th:value="${habitacion.nhabitacion}" />
+                        <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar Habitacion</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+     <!-- Botón para redirigir al formulario de creación de tipo bebida -->
+     <a th:href="@{/habitacionForm}" class="btn btn-primary" style="margin-bottom: 38px;">Crear Nueva Habitacion</a>
+
+</div>
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

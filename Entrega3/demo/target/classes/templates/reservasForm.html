@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Reserva</title>
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Nueva Reserva</h1>
+
+    <!-- Formulario de creación -->
+    <form th:action="@{/crearReserva}" th:object="${nuevaReserva}" method="post">
+        <label for="idreserva">Id Reserva:</label>
+        <input type="text" id="idreserva" name="idreserva" th:field="*{idreserva}" required />
+
+       
+    
+        <!-- Campos para la información de la tipo habitacion -->
+        <label for="idusuario">ID Usuario:</label>
+        <input type="text" id="idusuario" name="usuario[0].idusuario" th:field="*{usuario[0].idusuario}" required />
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="usuario[0].nombre" th:field="*{usuario[0].nombre}" required />
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="usuario[0].email" th:field="*{usuario[0].email}" required />
+
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario[0].usuario" th:field="*{usuario[0].usuario}" required />
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="text" id="contrasena" name="usuario[0].contrasena" th:field="*{usuario[0].contrasena}" required />
+
+        <button type="submit" class="btn btn-success">Crear Usuario</button>
+    </form>
+
+</div>
+
+</body>
+</html>

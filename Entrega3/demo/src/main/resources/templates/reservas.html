@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas con los usuarios</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <!-- Incluye el navbar -->
+    <div th:replace="navbar :: navbar"></div>
+
+<div class="container mt-3">
+    <h1>Reservas</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                
+                
+                
+
+                <th>IdReserva</th>
+                <th>Personas</th>
+                <th>FechaEntrada</th>
+                <th>FechaSalida</th>
+                <th>Habitacion</th>
+                <th>Usuario[IdUsuario, Nombre, Email, Usuario, Contraseña]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteramos sobre la lista de tipos de bebidas y mostramos los detalles -->
+            <tr th:each="reserva : ${reservas}">
+                <td th:text="${reserva.idreserva}"></td>
+                <td th:text="${reserva.npersonas}"></td>
+                <td th:text="${reserva.fechaentrada}"></td>
+                <td th:text="${reserva.fechasalida}"></td>
+                <td th:text="${reserva.habitacion}"></td>
+                <td>
+                    <!-- Iteramos sobre la lista de bebidas y mostramos los detalles -->
+
+                
+                    <ul th:if="${reserva.usuario != null}">
+                        <li th:each="usuario : ${reserva.usuario}">
+                        
+                            <span th:text="${usuario.idusuario+ ', ' + usuario.nombre+ ', ' + usuario.email+ ', ' + usuario.usuario+ ', ' + usuario.contrasena}"></span>
+                        </li>
+                    </ul>
+
+                    <!-- Botón para redirigir al formulario de adición de la bebida -->
+                    
+                    <!-- Botón para redirigir al formulario de la eliminacion del tipo de bebida -->
+                    <form th:action="@{/deleteReserva}" method="post">
+                        <input type="hidden" name="idreserva" th:value="${reserva.idreserva}" />
+                        <button type="submit" class="btn btn-primary" style="background-color: red; border-color: red; margin-top: 10px;">Eliminar Reserva</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+     <!-- Botón para redirigir al formulario de creación de tipo bebida -->
+     <a th:href="@{/reservasForm}" class="btn btn-primary" style="margin-bottom: 38px;">Crear Nueva Reserva</a>
+
+</div>
+
+<script src="/webjars/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+</body>
+</html>
